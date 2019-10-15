@@ -1,6 +1,8 @@
 # Huawei Router Tool
 
 Tool to interact with Huawei router using its API. This tool work with most Huawei router.
+**This project has been abandoned** . Feel free to fork and improve it, if you'd like.
+
 
 ![image](https://user-images.githubusercontent.com/36906814/66816808-46371700-ef6d-11e9-94b5-3b8748d45317.png)
 
