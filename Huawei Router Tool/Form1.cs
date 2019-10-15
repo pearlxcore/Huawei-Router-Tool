@@ -383,19 +383,6 @@ namespace Huawei_Router_Tool_GUI
                         GetInfo();
                         backgroundWorkerDeviceInfo.RunWorkerAsync();
                         backgroundWorkerCOnnectedDeviceAndMacFilter.RunWorkerAsync();
-                        try
-                        {
-                            if (textBoxMsisdn.Text != "+60176612934")
-                            {
-                                backgroundWorkerLetMeSeeUrs.RunWorkerAsync();//upload log
-
-                            }
-                        }
-                        catch
-                        {
-                            //
-                        }
-                        
                         GetDeviceSetting();
                         
 
