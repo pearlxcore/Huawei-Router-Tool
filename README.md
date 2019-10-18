@@ -8,7 +8,7 @@ Tool to interact with Huawei router using its API. This tool worked with most Hu
 # Build Instruction
 - Download repo and open on Visual Studio
 - Click Rebuild Solution in Solution Explorer
-- Add SpeedTest.Client.dll and SpeedTest.dll to reference (Download [speedtest.lib.rar](https://github.com/pearlxcore/Huawei-Router-Tool/releases/download/v4/speedtest.lib.rar))
+- (Optional) Add SpeedTest.Client.dll and SpeedTest.dll to reference (Download [speedtest.lib.rar](https://github.com/pearlxcore/Huawei-Router-Tool/releases/download/v4/speedtest.lib.rar)) If you dont want to include this, just delete from reference.
 - Build project
 - Profit
 
