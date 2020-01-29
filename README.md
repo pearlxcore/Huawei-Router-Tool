@@ -2,6 +2,10 @@
 
 Tool to interact with Huawei router using Huawei API. This tool worked with most Huawei router. **Please note that some function will not work on some router due to unsupported router or firmware.**
 
+pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-f8c08a80-427b-11ea-8f62-845fdd69e1fc.png)
+
+# Screenshot
+
 ![image](https://user-images.githubusercontent.com/36906814/73320586-c3676d00-427a-11ea-94db-3de46c5399a1.png)
 ![image](https://user-images.githubusercontent.com/36906814/73320597-c8c4b780-427a-11ea-8971-d473c15c1c9a.png)
 ![image](https://user-images.githubusercontent.com/36906814/73320612-d8dc9700-427a-11ea-886d-e1caadbf1c2d.png)
