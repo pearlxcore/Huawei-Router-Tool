@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.backgroundWorkerDeviceInfo = new System.ComponentModel.BackgroundWorker();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -45,7 +50,6 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.backgroundWorkerCOnnectedDeviceAndMacFilter = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.buttonApplyWLAN = new System.Windows.Forms.Button();
@@ -186,6 +190,30 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.metroTabPage9 = new MetroFramework.Controls.MetroTabPage();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.btnSMSSend = new MetroFramework.Controls.MetroButton();
+            this.label42 = new System.Windows.Forms.Label();
+            this.rtbSMSContent = new System.Windows.Forms.RichTextBox();
+            this.rtbSMSRecipient = new MetroFramework.Controls.MetroTextBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroTabPage8 = new MetroFramework.Controls.MetroTabPage();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.tbUSSDCMD = new MetroFramework.Controls.MetroTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -235,6 +263,8 @@
             this.buttonWebpage = new MetroFramework.Controls.MetroButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.backgroundWorkerDetect_eerorCODE = new System.ComponentModel.BackgroundWorker();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyPhoneNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -250,6 +280,12 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
+            this.metroTabPage9.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.metroTabPage8.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.metroTabPage6.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -258,6 +294,7 @@
             this.menuStrip1.SuspendLayout();
             this.metroTabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // backgroundWorkerDeviceInfo
@@ -352,11 +389,6 @@
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(76, 13);
             this.label30.TabIndex = 10;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // backgroundWorkerCOnnectedDeviceAndMacFilter
             // 
@@ -507,6 +539,8 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
+            this.metroTabControl1.Controls.Add(this.metroTabPage9);
+            this.metroTabControl1.Controls.Add(this.metroTabPage8);
             this.metroTabControl1.Controls.Add(this.metroTabPage6);
             this.metroTabControl1.Controls.Add(this.metroTabPage7);
             this.metroTabControl1.Enabled = false;
@@ -2134,6 +2168,317 @@
             this.richTextBox1.Text = "";
             this.richTextBox1.WordWrap = false;
             // 
+            // metroTabPage9
+            // 
+            this.metroTabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.metroTabPage9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroTabPage9.Controls.Add(this.groupBox15);
+            this.metroTabPage9.Controls.Add(this.groupBox14);
+            this.metroTabPage9.CustomBackground = true;
+            this.metroTabPage9.HorizontalScrollbarBarColor = true;
+            this.metroTabPage9.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage9.Name = "metroTabPage9";
+            this.metroTabPage9.Size = new System.Drawing.Size(773, 390);
+            this.metroTabPage9.TabIndex = 8;
+            this.metroTabPage9.Text = "SMS";
+            this.metroTabPage9.VerticalScrollbarBarColor = true;
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.label56);
+            this.groupBox15.Controls.Add(this.label41);
+            this.groupBox15.Controls.Add(this.btnSMSSend);
+            this.groupBox15.Controls.Add(this.label42);
+            this.groupBox15.Controls.Add(this.rtbSMSContent);
+            this.groupBox15.Controls.Add(this.rtbSMSRecipient);
+            this.groupBox15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox15.ForeColor = System.Drawing.Color.DarkGray;
+            this.groupBox15.Location = new System.Drawing.Point(9, 8);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(753, 154);
+            this.groupBox15.TabIndex = 80;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Send SMS";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label56.Location = new System.Drawing.Point(676, 62);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(29, 17);
+            this.label56.TabIndex = 78;
+            this.label56.Text = "160";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label41.Location = new System.Drawing.Point(61, 16);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(70, 17);
+            this.label41.TabIndex = 57;
+            this.label41.Text = "Recipients:";
+            // 
+            // btnSMSSend
+            // 
+            this.btnSMSSend.Highlight = true;
+            this.btnSMSSend.Location = new System.Drawing.Point(209, 36);
+            this.btnSMSSend.Name = "btnSMSSend";
+            this.btnSMSSend.Size = new System.Drawing.Size(96, 23);
+            this.btnSMSSend.Style = MetroFramework.MetroColorStyle.Lime;
+            this.btnSMSSend.TabIndex = 45;
+            this.btnSMSSend.Text = "Send SMS";
+            this.btnSMSSend.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnSMSSend.Click += new System.EventHandler(this.btnSMSSend_Click);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label42.Location = new System.Drawing.Point(61, 62);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(56, 17);
+            this.label42.TabIndex = 58;
+            this.label42.Text = "Content:";
+            // 
+            // rtbSMSContent
+            // 
+            this.rtbSMSContent.BackColor = System.Drawing.Color.DarkGray;
+            this.rtbSMSContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbSMSContent.Location = new System.Drawing.Point(64, 82);
+            this.rtbSMSContent.MaxLength = 160;
+            this.rtbSMSContent.Name = "rtbSMSContent";
+            this.rtbSMSContent.Size = new System.Drawing.Size(641, 58);
+            this.rtbSMSContent.TabIndex = 55;
+            this.rtbSMSContent.Text = "";
+            this.rtbSMSContent.TextChanged += new System.EventHandler(this.rtbSMSContent_TextChanged);
+            // 
+            // rtbSMSRecipient
+            // 
+            this.rtbSMSRecipient.BackColor = System.Drawing.Color.DarkGray;
+            this.rtbSMSRecipient.CustomBackground = true;
+            this.rtbSMSRecipient.Location = new System.Drawing.Point(64, 36);
+            this.rtbSMSRecipient.Name = "rtbSMSRecipient";
+            this.rtbSMSRecipient.Size = new System.Drawing.Size(139, 23);
+            this.rtbSMSRecipient.TabIndex = 61;
+            this.rtbSMSRecipient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.dataGridView1);
+            this.groupBox14.Controls.Add(this.metroButton1);
+            this.groupBox14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox14.ForeColor = System.Drawing.Color.DarkGray;
+            this.groupBox14.Location = new System.Drawing.Point(9, 165);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(753, 216);
+            this.groupBox14.TabIndex = 79;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "SMS List";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(85)))), ((int)(((byte)(88)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(69)))), ((int)(((byte)(71)))));
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dataGridView1.Location = new System.Drawing.Point(56, 51);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Silver;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(641, 153);
+            this.dataGridView1.TabIndex = 77;
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Highlight = true;
+            this.metroButton1.Location = new System.Drawing.Point(56, 22);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(96, 23);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroButton1.TabIndex = 63;
+            this.metroButton1.Text = "Retrieve SMS";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click_3);
+            // 
+            // metroTabPage8
+            // 
+            this.metroTabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.metroTabPage8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroTabPage8.Controls.Add(this.label59);
+            this.metroTabPage8.Controls.Add(this.label58);
+            this.metroTabPage8.Controls.Add(this.tbUSSDCMD);
+            this.metroTabPage8.Controls.Add(this.richTextBox3);
+            this.metroTabPage8.Controls.Add(this.metroButton2);
+            this.metroTabPage8.Controls.Add(this.listBox1);
+            this.metroTabPage8.Controls.Add(this.menuStrip2);
+            this.metroTabPage8.CustomBackground = true;
+            this.metroTabPage8.HorizontalScrollbarBarColor = true;
+            this.metroTabPage8.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage8.Name = "metroTabPage8";
+            this.metroTabPage8.Size = new System.Drawing.Size(773, 390);
+            this.metroTabPage8.TabIndex = 9;
+            this.metroTabPage8.Text = "USSD";
+            this.metroTabPage8.VerticalScrollbarBarColor = true;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label59.Location = new System.Drawing.Point(211, 124);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(70, 15);
+            this.label59.TabIndex = 50;
+            this.label59.Text = "USSD result:";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label58.Location = new System.Drawing.Point(211, 71);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(159, 15);
+            this.label58.TabIndex = 45;
+            this.label58.Text = "USSD command (e.g *100#) :";
+            // 
+            // tbUSSDCMD
+            // 
+            this.tbUSSDCMD.BackColor = System.Drawing.Color.DarkGray;
+            this.tbUSSDCMD.CustomBackground = true;
+            this.tbUSSDCMD.Location = new System.Drawing.Point(214, 89);
+            this.tbUSSDCMD.Name = "tbUSSDCMD";
+            this.tbUSSDCMD.Size = new System.Drawing.Size(93, 23);
+            this.tbUSSDCMD.TabIndex = 48;
+            this.tbUSSDCMD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.Color.DarkGray;
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox3.Location = new System.Drawing.Point(214, 142);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.Size = new System.Drawing.Size(346, 176);
+            this.richTextBox3.TabIndex = 46;
+            this.richTextBox3.Text = "";
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Highlight = true;
+            this.metroButton2.Location = new System.Drawing.Point(313, 89);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(109, 23);
+            this.metroButton2.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroButton2.TabIndex = 42;
+            this.metroButton2.Text = "Send command";
+            this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(321, 181);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(141, 69);
+            this.listBox1.TabIndex = 49;
+            this.listBox1.Visible = false;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem4});
+            this.menuStrip2.Location = new System.Drawing.Point(379, 29);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(89, 24);
+            this.menuStrip2.TabIndex = 4;
+            this.menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.Visible = false;
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItem1.Text = "File";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Enabled = false;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(160, 22);
+            this.toolStripMenuItem2.Text = "Save Device Info";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(160, 22);
+            this.toolStripMenuItem3.Text = "Exit";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem5});
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(44, 20);
+            this.toolStripMenuItem4.Text = "Help";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(107, 22);
+            this.toolStripMenuItem5.Text = "About";
+            // 
             // metroTabPage6
             // 
             this.metroTabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -2660,6 +3005,20 @@
             // 
             this.backgroundWorkerDetect_eerorCODE.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorkerDetect_eerorCODE_DoWork);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyPhoneNumberToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 26);
+            // 
+            // copyPhoneNumberToolStripMenuItem
+            // 
+            this.copyPhoneNumberToolStripMenuItem.Name = "copyPhoneNumberToolStripMenuItem";
+            this.copyPhoneNumberToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.copyPhoneNumberToolStripMenuItem.Text = "Copy Phone Number";
+            this.copyPhoneNumberToolStripMenuItem.Click += new System.EventHandler(this.copyPhoneNumberToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2719,6 +3078,15 @@
             this.groupBox6.PerformLayout();
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage5.PerformLayout();
+            this.metroTabPage9.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.metroTabPage8.ResumeLayout(false);
+            this.metroTabPage8.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.metroTabPage6.ResumeLayout(false);
             this.metroTabPage6.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -2733,6 +3101,7 @@
             this.metroTabPage7.ResumeLayout(false);
             this.metroTabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2754,7 +3123,6 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.ComponentModel.BackgroundWorker backgroundWorkerCOnnectedDeviceAndMacFilter;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label57;
@@ -2944,6 +3312,32 @@
         private MetroFramework.Controls.MetroButton buttonWebpage;
         private System.Windows.Forms.Panel panel1;
         private System.ComponentModel.BackgroundWorker backgroundWorkerDetect_eerorCODE;
+        private MetroFramework.Controls.MetroTabPage metroTabPage9;
+        private MetroFramework.Controls.MetroButton btnSMSSend;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        public System.Windows.Forms.RichTextBox rtbSMSContent;
+        private MetroFramework.Controls.MetroTextBox rtbSMSRecipient;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem copyPhoneNumberToolStripMenuItem;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private MetroFramework.Controls.MetroTabPage metroTabPage8;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        public System.Windows.Forms.RichTextBox richTextBox3;
+        private MetroFramework.Controls.MetroTextBox tbUSSDCMD;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label59;
     }
 }
 

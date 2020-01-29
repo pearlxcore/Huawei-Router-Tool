@@ -57,8 +57,9 @@ namespace Huawei_Router_Tool_GUI
         public static string SeriesRSSI;
         public static string Seriessinr;
         public static string RSRQ, RSRP, RSSI, sinr, nei_cellid, txpower, ip_webpage, cell_id, ulbandwidth, dlbandwidth, earfcn, mcc, mnc, DownloadRate, UploadRate, DETECT_ERROR_CODE;
-
-
+        private string copyNumber;
+        private int USSDresult;
+        private string outstring;
 
         public enum ErrorCode
         {
@@ -304,7 +305,7 @@ namespace Huawei_Router_Tool_GUI
             _requestTokenOne = "";
             _requestTokenTwo = "";
             _sessionCookie = "";
-
+            dataGridView1.ScrollBars = ScrollBars.Both;
             
         }
 
@@ -2187,10 +2188,18 @@ namespace Huawei_Router_Tool_GUI
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (Directory.Exists(Path.GetTempPath() + @"HuaweiRouterTool\"))
+            try
             {
-                Directory.Delete(path, true);
+                if (Directory.Exists(Path.GetTempPath() + @"HuaweiRouterTool\"))
+                {
+                    Directory.Delete(path, true);
+                }
             }
+            catch
+            {
+
+            }
+           
 
 
 
@@ -3848,6 +3857,356 @@ namespace Huawei_Router_Tool_GUI
         private void BackgroundWorkerLogin_Reboot_Shutdown_DoWork_1(object sender, DoWorkEventArgs e)
         {
 
+        }
+
+        private void rtbSMSContent_TextChanged(object sender, EventArgs e)
+        {
+            int CharLeft = 160 - rtbSMSContent.Text.Length;
+            label56.Text = CharLeft.ToString();
+           
+
+        }
+
+        private void btnSMSSend_Click(object sender, EventArgs e)
+        {
+            string recipient = rtbSMSRecipient.Text;
+            string content = rtbSMSContent.Text;
+
+            if(recipient != string.Empty && content != string.Empty)
+            {
+                Initialise();
+                var data = "<?xml version:\"1.0\" encoding=\"UTF-8\"?><request><Index>-1</Index><Phones><Phone>" + recipient + "</Phone></Phones><Sca></Sca><Content>" + content + "</Content><Length> " + rtbSMSContent.Text.Length.ToString() + "</Length><Reserved>1</Reserved><Date>" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").ToString() + "</Date></request>";
+                LogDebug("\n[*] Sending SMS to " + recipient);
+                var POST_doc = Post("api/sms/send-sms", data);
+                string compare = POST_doc.OuterXml.ToString();
+
+                if (POST_doc == null)
+                {
+                    MessageBox.Show("No response");
+
+                }
+                else
+                {
+                    //MessageBox.Show(compare);
+
+                    if (compare == "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response>OK</response>")
+                    {
+                        APItype = Get_API("api/sms/send-status");
+
+
+                        if (!string.IsNullOrEmpty(APItype.OuterXml.ToString()))
+                        {
+                            string response = xmlformat.Beautify(APItype);
+                            XmlDocument xml = new XmlDocument();
+                            xml.LoadXml(response);
+                            var test = xml.SelectSingleNode("response");
+
+                            bool isFail = false;
+
+                            foreach(XmlNode node in test)
+                            {
+                                if (node.Name == "Phone")
+                                {
+                                    if(node.Value == recipient)
+                                    {
+                                        if (node.Name == "FailPhone")
+                                        {
+                                            if (node.Value == "1")
+                                                isFail = true;
+                                        }
+                                    }
+                                }
+
+                            }
+
+                            if (!isFail)
+                                MessageBox.Show("Request accepted");
+                            else
+                                MessageBox.Show("Request failed");
+
+                            response = "";
+                            xml = null;
+                            //MessageBox.Show(response);
+                        }
+                        else
+                        {
+                            LogDebug("\n[*] Result : Fail");
+                        }
+
+                        APItype = null;
+
+                        //MessageBox.Show("Request accepted", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //LogDebug("\n[*] Result : SUCCESS");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Request failed", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LogDebug("\n[*] Result : Fail");
+
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill recipients and content", "Huawei Router Tool");
+            }
+            
+        }
+
+        private void metroButton1_Click_3(object sender, EventArgs e)
+        {
+            var data = "<?xml version:\"1.0\" encoding=\"UTF-8\"?><request><PageIndex>1</PageIndex><ReadCount>20</ReadCount><BoxType>1</BoxType><SortType>0</SortType><Ascending>0</Ascending><UnreadPreferred>0</UnreadPreferred></request>";
+            LogDebug("\n[*] Retrieving SMS..");
+            var POST_doc = Post("api/sms/sms-list", data);
+            string compare = POST_doc.OuterXml.ToString();
+
+            if (POST_doc == null)
+            {
+                MessageBox.Show("No response");
+
+            }
+            else
+            {
+                /*
+                if (compare == "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response>OK</response>")
+                {
+                    MessageBox.Show("Request accepted", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LogDebug("\n[*] Result : SUCCESS");
+                }
+                else
+                {
+                    MessageBox.Show("Request failed", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LogDebug("\n[*] Result : Fail");
+
+                }
+                */
+
+                //rtbSMSContent.Text += compare;
+
+                DataTable dt = new DataTable();
+                dt.Columns.Add("From");
+                dt.Columns.Add("Content");
+                dt.Columns.Add("Date");
+
+
+                XmlDocument serverDoc = new XmlDocument();
+                serverDoc.LoadXml(compare);
+                XmlNodeList xml =
+                serverDoc.SelectNodes("response/Messages/Message");
+                foreach (XmlNode node in xml)
+                {
+                    // get information needed to extract temprature i.e XML location, and the XPath :
+                    var Phone = node.SelectSingleNode("Phone").InnerText;
+                    var Content = node.SelectSingleNode("Content").InnerText;
+                    var Date = node.SelectSingleNode("Date").InnerText;
+
+                    dt.Rows.Add(Phone, Content, Date);
+
+
+                    //rtbSMSContent.Text += Phone + "\n";
+                    //rtbSMSContent.Text += Content + "\n";
+                    //rtbSMSContent.Text += Date + "\n";
+                    //rtbSMSContent.Text += "\n\n";
+
+                    dataGridView1.DataSource = dt;
+                }
+            }
+        }
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //get selected item value
+                int currentMouseOverRow = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+                if (dataGridView1.GetCellCount(DataGridViewElementStates.Selected) > 0)
+                {
+                    //richTextBox1.Clear();
+                    try
+                    {
+                        copyNumber = "";
+                        //get each selected pkg full path
+                        foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
+                        {
+                            int selectedrowindex = cell.RowIndex;
+                            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                            //path + filename.pkg
+                            copyNumber = Convert.ToString(selectedRow.Cells[0].Value);
+                            if (copyNumber != string.Empty)
+                                contextMenuStrip1.Show(dataGridView1, new Point(e.X, e.Y));
+                        }
+                        //richTextBox1.Text += "a is " + a + "\n\n";
+                        //richTextBox1.Text += "b is " + b + "\n\n";
+                        //DarkMessageBox.ShowInformation(filename);
+                    }
+                    catch (System.Runtime.InteropServices.ExternalException)
+                    {
+                        MessageBox.Show("The Clipboard could not be accessed. Please try again.", "Huawei Router Tool");
+                    }
+
+                }
+            }
+
+        }
+
+        private bool isCheckingUSSD()
+        {
+            XmlDocument APItype = Get_API("api/ussd/status");
+
+            var result = xmlformat.Beautify(APItype);
+
+
+
+            var status = "";
+            StringReader reader = new StringReader(result);
+
+            while ((result = reader.ReadLine()) != null)
+            {
+                if (result.Contains("result"))
+                    status = result.Replace("<result>", "").Replace("</result>", "").Replace(" ", "");
+            };
+
+
+            //if ussd ready = 0
+            if (status == "0")
+            {
+
+                return false;
+
+
+
+            }
+            else
+                return true;
+
+        }
+
+        private void copyPhoneNumberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            Clipboard.SetText(copyNumber);
+            MessageBox.Show("Phone Number copied to clipboard", "Huawei Router Tool");
+        }
+
+        private int checkUSSD()
+        {
+            USSDresult = 0;
+            outstring = "";
+            XmlDocument APItype = Get_API("api/ussd/get");
+
+            var result = xmlformat.Beautify(APItype);
+            if (result.Contains("<response>"))
+            {
+                USSDresult = 1;
+                outstring = result.Replace("<response>", "").Replace("<content>", "").Replace("</content>", "").Replace("</response>", "");
+            }
+            else
+            {
+                StringReader reader = new StringReader(result);
+                string line = reader.ReadLine();
+                if (line.Contains("<error>"))
+                {
+                    USSDresult = 0;
+                }
+            }
+            return USSDresult;
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            richTextBox3.Clear();
+
+            if (isCheckingUSSD() == false)
+            {
+                var data = "<?xml version:\"1.0\" encoding=\"UTF-8\"?><request><content>" + tbUSSDCMD.Text + "</content><codeType>CodeType</codeType><timeout></timeout></request>";
+                LogDebug("\n[*] Sending command to API.. (api/ussd/send)");
+                var POST_doc = Post("api/ussd/send", data);
+                string compare = POST_doc.OuterXml.ToString();
+
+                if (POST_doc == null)
+                {
+                    richTextBox3.Text += "No response" + "\n";
+
+                }
+                else
+                {
+
+                    if (compare == "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response>OK</response>")
+                    {
+                        richTextBox3.Text += "Request accepted. Please wait.." + "\n";
+
+                      
+
+                        while(USSDresult != 1)
+                        {
+                            checkUSSD();
+                        }
+
+
+
+                        
+                        richTextBox3.Text = outstring;
+                        richTextBox3.Lines = richTextBox3.Lines.Skip(2).ToArray();
+
+                        string trimmed = richTextBox3.Text.Trim();
+                        richTextBox3.Text = trimmed;
+                        listBox1.Items.Clear();
+                        using (var reader = new StringReader(richTextBox3.Text))
+                        {
+                            for (string line = reader.ReadLine(); line != null; line = reader.ReadLine())
+                            {
+                                if (Regex.IsMatch(line, @"^\d+"))
+                                {
+                                }
+
+                                listBox1.Items.Add(line);
+
+                            }
+                        }
+
+                        //if(listBox1.GetItemText(listBox1.SelectedItem);)
+
+                        USSDresult = 0;
+                        outstring = "";
+                    }
+                    else
+                    {
+                        richTextBox3.Text += "Error " + POST_doc.SelectSingleNode("//error/code").InnerText.ToString() + " : " + ((ErrorCode)(int.Parse(POST_doc.SelectSingleNode("//error/code").InnerText))).ToString() + "\n";
+
+                    }
+
+                }
+
+
+            }
+            else
+                richTextBox3.Text += "USSD in progress" + "\n";
+
+            
+
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void metroButton3_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string text = listBox1.GetItemText(listBox1.SelectedItem);
+
+            if (Regex.IsMatch(text, @"^\d+"))
+            {
+                string part = text.Substring(0, text.IndexOf(' '));
+                tbUSSDCMD.Text = part;
+            }
+            
         }
 
         private void CheckBoxB38_CheckStateChanged(object sender, EventArgs e)
