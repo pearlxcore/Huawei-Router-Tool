@@ -252,10 +252,10 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AboutLog = new System.Windows.Forms.RichTextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -265,6 +265,7 @@
             this.backgroundWorkerDetect_eerorCODE = new System.ComponentModel.BackgroundWorker();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyPhoneNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRefreshMAC = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -293,6 +294,7 @@
             this.groupBox4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.metroTabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -301,6 +303,7 @@
             // 
             this.backgroundWorkerDeviceInfo.WorkerSupportsCancellation = true;
             this.backgroundWorkerDeviceInfo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerDeviceInfo_DoWork);
+            this.backgroundWorkerDeviceInfo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerDeviceInfo_RunWorkerCompleted);
             // 
             // backgroundWorkerLetMeSeeUrs
             // 
@@ -417,7 +420,6 @@
             // 
             // buttonShutdown
             // 
-            this.buttonShutdown.Enabled = false;
             this.buttonShutdown.Highlight = true;
             this.buttonShutdown.Location = new System.Drawing.Point(584, 76);
             this.buttonShutdown.Name = "buttonShutdown";
@@ -430,7 +432,6 @@
             // 
             // buttonReboot
             // 
-            this.buttonReboot.Enabled = false;
             this.buttonReboot.Highlight = true;
             this.buttonReboot.Location = new System.Drawing.Point(479, 76);
             this.buttonReboot.Name = "buttonReboot";
@@ -547,7 +548,7 @@
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
             this.metroTabControl1.Location = new System.Drawing.Point(16, 159);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(781, 429);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTabControl1.TabIndex = 31;
@@ -1524,6 +1525,7 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.btnRefreshMAC);
             this.groupBox11.Controls.Add(this.buttonUnblockAll);
             this.groupBox11.Controls.Add(this.buttonBlockDevice);
             this.groupBox11.Controls.Add(this.textBoxBlockMAC0);
@@ -2254,7 +2256,7 @@
             this.rtbSMSContent.Name = "rtbSMSContent";
             this.rtbSMSContent.Size = new System.Drawing.Size(641, 58);
             this.rtbSMSContent.TabIndex = 55;
-            this.rtbSMSContent.Text = "";
+            this.rtbSMSContent.Text = "Send from Huawei Router Tool";
             this.rtbSMSContent.TextChanged += new System.EventHandler(this.rtbSMSContent_TextChanged);
             // 
             // rtbSMSRecipient
@@ -2265,6 +2267,7 @@
             this.rtbSMSRecipient.Name = "rtbSMSRecipient";
             this.rtbSMSRecipient.Size = new System.Drawing.Size(139, 23);
             this.rtbSMSRecipient.TabIndex = 61;
+            this.rtbSMSRecipient.Text = "0176612934";
             this.rtbSMSRecipient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox14
@@ -2856,10 +2859,10 @@
             // metroTabPage7
             // 
             this.metroTabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.metroTabPage7.Controls.Add(this.pictureBox1);
             this.metroTabPage7.Controls.Add(this.AboutLog);
             this.metroTabPage7.Controls.Add(this.linkLabel1);
             this.metroTabPage7.Controls.Add(this.metroLabel4);
-            this.metroTabPage7.Controls.Add(this.metroLabel3);
             this.metroTabPage7.Controls.Add(this.metroLabel2);
             this.metroTabPage7.Controls.Add(this.pictureBox2);
             this.metroTabPage7.Controls.Add(this.metroLabel1);
@@ -2871,6 +2874,15 @@
             this.metroTabPage7.TabIndex = 6;
             this.metroTabPage7.Text = "About";
             this.metroTabPage7.VerticalScrollbarBarColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(434, 79);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 25);
+            this.pictureBox1.TabIndex = 55;
+            this.pictureBox1.TabStop = false;
             // 
             // AboutLog
             // 
@@ -2888,12 +2900,12 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.linkLabel1.Location = new System.Drawing.Point(381, 82);
+            this.linkLabel1.Location = new System.Drawing.Point(310, 83);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(140, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(118, 17);
             this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "github.com/pearlxcore";
+            this.linkLabel1.Text = "© pearlxcore 2020";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
             // 
             // metroLabel4
@@ -2904,29 +2916,13 @@
             this.metroLabel4.CustomForeColor = true;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.metroLabel4.Location = new System.Drawing.Point(205, 48);
+            this.metroLabel4.Location = new System.Drawing.Point(170, 48);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(363, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(433, 19);
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroLabel4.TabIndex = 6;
-            this.metroLabel4.Text = "Thanks for making this possible : HSPDev | Raggles | valexi";
+            this.metroLabel4.Text = "Thanks for making this possible : HSPDev | Raggles | valexi | zainuddin";
             this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.metroLabel3.CustomBackground = true;
-            this.metroLabel3.CustomForeColor = true;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.metroLabel3.Location = new System.Drawing.Point(251, 80);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(129, 19);
-            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroLabel3.TabIndex = 5;
-            this.metroLabel3.Text = "Checkout my repo :";
-            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel2
             // 
@@ -2936,7 +2932,7 @@
             this.metroLabel2.CustomForeColor = true;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.metroLabel2.Location = new System.Drawing.Point(265, 112);
+            this.metroLabel2.Location = new System.Drawing.Point(280, 115);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(131, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Lime;
@@ -2948,9 +2944,10 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(411, 109);
+            this.pictureBox2.Location = new System.Drawing.Point(417, 115);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(96, 25);
+            this.pictureBox2.Size = new System.Drawing.Size(76, 19);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
@@ -2982,7 +2979,6 @@
             // 
             // buttonWebpage
             // 
-            this.buttonWebpage.Enabled = false;
             this.buttonWebpage.Highlight = true;
             this.buttonWebpage.Location = new System.Drawing.Point(689, 76);
             this.buttonWebpage.Name = "buttonWebpage";
@@ -3018,6 +3014,18 @@
             this.copyPhoneNumberToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.copyPhoneNumberToolStripMenuItem.Text = "Copy Phone Number";
             this.copyPhoneNumberToolStripMenuItem.Click += new System.EventHandler(this.copyPhoneNumberToolStripMenuItem_Click);
+            // 
+            // btnRefreshMAC
+            // 
+            this.btnRefreshMAC.Highlight = true;
+            this.btnRefreshMAC.Location = new System.Drawing.Point(149, 96);
+            this.btnRefreshMAC.Name = "btnRefreshMAC";
+            this.btnRefreshMAC.Size = new System.Drawing.Size(100, 23);
+            this.btnRefreshMAC.Style = MetroFramework.MetroColorStyle.Lime;
+            this.btnRefreshMAC.TabIndex = 91;
+            this.btnRefreshMAC.Text = "Refresh";
+            this.btnRefreshMAC.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnRefreshMAC.Click += new System.EventHandler(this.btnRefreshMAC_Click);
             // 
             // Form1
             // 
@@ -3100,6 +3108,7 @@
             this.menuStrip1.PerformLayout();
             this.metroTabPage7.ResumeLayout(false);
             this.metroTabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -3304,7 +3313,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         public System.Windows.Forms.RichTextBox AboutLog;
         private System.Windows.Forms.Panel panel2;
@@ -3338,6 +3346,8 @@
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroButton btnRefreshMAC;
     }
 }
 

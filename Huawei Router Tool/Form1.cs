@@ -28,7 +28,6 @@ namespace Huawei_Router_Tool_GUI
         public static string selected_band, final, string_display;
         TextBox lastSelected;
         string logoutStatus = "";
-        string loginStatus = "";
         string runAPIstatus = "";
         bool runProc = true;
         static string path, band_tool, bat, args, server_detail, logininfo, authinfo;
@@ -37,11 +36,15 @@ namespace Huawei_Router_Tool_GUI
         public string BaseAddress { get; set; } = "http://192.168.1.1/";
         //public string SessionToken
         private WebClient _wc = new WebClient();
+        private string _requestTokenSMS;
+        private string _tokenSMS;
+        private string _sessionCookieSMS;
+        private string _sessionIDSMS;
         private string _sessionID = "";
         private string _token = "";
-        private string _requestToken = "";
         private string _requestTokenOne = "";
         private string _requestTokenTwo = "";
+        private string _requestToken = "";
         private string _sessionCookie = "";
         private static SpeedTestClient client;
         private static Settings settings;
@@ -60,6 +63,9 @@ namespace Huawei_Router_Tool_GUI
         private string copyNumber;
         private int USSDresult;
         private string outstring;
+        private bool loginSuccess = true;
+        private static string _CurrentSessionID;
+        private static string _CurrentToken;
 
         public enum ErrorCode
         {
@@ -129,7 +135,7 @@ namespace Huawei_Router_Tool_GUI
             ERROR_NET_NET_CONNECTED_ORDER_NOT_MATCH = 112006,
             ERROR_NET_REGISTER_NET_FAILED = 112005,
             ERROR_NET_SIM_CARD_NOT_READY_STATUS = 112008,
-            ERROR_FIRMWARE_NOT_SUPPORT_OR_INVALID_API = 100002,
+            ERROR_FIRMWARE_NOT_SUPPORTED = 100002,
             ERROR_NO_DEVICE = -2,
             ERROR_NO_RIGHT = 100003,
             ERROR_NO_SIM_CARD_OR_INVALID_SIM_CARD = 101001,
@@ -296,7 +302,6 @@ namespace Huawei_Router_Tool_GUI
 "config/wifi/countryChannel.xml", });
             #endregion addAPI
             logoutStatus = "";
-            loginStatus = "";
             runAPIstatus = "";
             mcc = ""; mnc = ""; path = ""; band_tool = ""; args = ""; server_detail = ""; logininfo = ""; authinfo = "";
             _sessionID = "";
@@ -329,7 +334,6 @@ namespace Huawei_Router_Tool_GUI
 
         private void Login()
         {
-            loginStatus = "";
             if (!string.IsNullOrEmpty(textBoxIP.Text) || !string.IsNullOrEmpty(textBoxUsername.Text) || !string.IsNullOrEmpty(textBoxPassword.Text))
             {
                 if (checkBoxRememberUserpass.Checked)
@@ -372,26 +376,17 @@ namespace Huawei_Router_Tool_GUI
                     else if (login.SelectSingleNode("//response").InnerText == "OK")
                     {
                         LogDebug("\n[*] Login successful.");
-                        loginStatus = "1";
                         buttonShutdown.Enabled = true;
                         buttonReboot.Enabled = true;
                         metroTabControl1.Enabled = true;
                         buttonWebpage.Enabled = true;
-                        //buttonLogin.Enabled = false;
                         saveDeviceInfoToolStripMenuItem1.Enabled = true;
-                        buttonLogin.Enabled = false;
 
                         GetInfo();
                         backgroundWorkerDeviceInfo.RunWorkerAsync();
                         backgroundWorkerCOnnectedDeviceAndMacFilter.RunWorkerAsync();
                         GetDeviceSetting();
                         
-
-
-
-
-
-
 
                     }
                     else if (login.OuterXml.ToString().Contains("error"))
@@ -523,6 +518,7 @@ namespace Huawei_Router_Tool_GUI
             }
             return doc1_API;
         }
+
         private XmlDocument Get(string path)
         {
             var wc = NewWebClient();
@@ -578,16 +574,14 @@ namespace Huawei_Router_Tool_GUI
             catch
             {
                 MessageBox.Show("Fail to connect to " + textBoxIP.Text + ". Please try again.", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                loginStatus = "0";
                 metroTabControl1.Enabled = false;
-                buttonLogin.Enabled = true;
 
             }
 
             return doc2;
         }
 
-        public void GetInfo()
+        public async Task GetInfo()
         {
             var simlock = Get("api/pin/simlock");
             var Info = Get("api/device/information");
@@ -830,492 +824,453 @@ namespace Huawei_Router_Tool_GUI
         public void GetTraffic()
         {
 
+                string NULL = "NA";
+                var RAT = Get("api/net/current-plmn");
+                var traffic = Get("api/monitoring/traffic-statistics");
+                var signal = Get("api/device/signal");
+                //CurrentDownloadRate
+                if (traffic.SelectSingleNode("//response/CurrentDownloadRate") != null)
+                {
+                    string CurrentDownloadRate = traffic.SelectSingleNode("//response/CurrentDownloadRate").InnerText;
+                    int a = Int32.Parse(CurrentDownloadRate);
+                    DownloadRate = ByteSize.FromBytes(a).ToString(); // 1 MB
+                    textBoxCurrentDownloadRate.Text = DownloadRate.ToString();
 
-            string NULL = "NA";
-            var RAT = Get("api/net/current-plmn");
-            var traffic = Get("api/monitoring/traffic-statistics");
-            var signal = Get("api/device/signal");
-            //CurrentDownloadRate
-            if (traffic.SelectSingleNode("//response/CurrentDownloadRate") != null)
-            {
-                string CurrentDownloadRate = traffic.SelectSingleNode("//response/CurrentDownloadRate").InnerText;
-                int a = Int32.Parse(CurrentDownloadRate);
-                DownloadRate = ByteSize.FromBytes(a).ToString(); // 1 MB
-                textBoxCurrentDownloadRate.Text = DownloadRate.ToString();
+                }
+                else
+                {
+                    textBoxCurrentDownloadRate.Text = NULL;
+                }
 
-            }
-            else
-            {
-                textBoxCurrentDownloadRate.Text = NULL;
-            }
+                //CurrentUploadRate
+                if (traffic.SelectSingleNode("//response/CurrentUploadRate") != null)
+                {
+                    string CurrentUploadRate = traffic.SelectSingleNode("//response/CurrentUploadRate").InnerText;
+                    int b = Int32.Parse(CurrentUploadRate);
+                    UploadRate = ByteSize.FromBytes(b).ToString(); // 1 MB
+                    textBoxCurrentUploadRate.Text = UploadRate.ToString();
 
-            //CurrentUploadRate
-            if (traffic.SelectSingleNode("//response/CurrentUploadRate") != null)
-            {
-                string CurrentUploadRate = traffic.SelectSingleNode("//response/CurrentUploadRate").InnerText;
-                int b = Int32.Parse(CurrentUploadRate);
-                UploadRate = ByteSize.FromBytes(b).ToString(); // 1 MB
-                textBoxCurrentUploadRate.Text = UploadRate.ToString();
+                }
+                else
+                {
+                    textBoxCurrentUploadRate.Text = NULL;
+                }
 
-            }
-            else
-            {
-                textBoxCurrentUploadRate.Text = NULL;
-            }
+                //currentconnecttime
+                if (traffic.SelectSingleNode("//response/CurrentConnectTime") != null)
+                {
+                    string CurrentConnectTime = traffic.SelectSingleNode("//response/CurrentConnectTime").InnerText;
+                    int c = Int32.Parse(CurrentConnectTime);
+                    int hours = c / 3600;
+                    int mins = (c % 3600) / 60;
+                    c = c % 60;
+                    textBoxCurrentConnectTime.Text = (string.Format("{0:D2}:{1:D2}:{2:D2}", hours, mins, c));
 
-            //currentconnecttime
-            if (traffic.SelectSingleNode("//response/CurrentConnectTime") != null)
-            {
-                string CurrentConnectTime = traffic.SelectSingleNode("//response/CurrentConnectTime").InnerText;
-                int c = Int32.Parse(CurrentConnectTime);
-                int hours = c / 3600;
-                int mins = (c % 3600) / 60;
-                c = c % 60;
-                textBoxCurrentConnectTime.Text = (string.Format("{0:D2}:{1:D2}:{2:D2}", hours, mins, c));
+                }
+                else
+                {
+                    textBoxCurrentConnectTime.Text = NULL;
+                }
 
-            }
-            else
-            {
-                textBoxCurrentConnectTime.Text = NULL;
-            }
+                //totalupload
+                if (traffic.SelectSingleNode("//response/TotalUpload") != null)
+                {
+                    string TotalUpload = traffic.SelectSingleNode("//response/TotalUpload").InnerText;
+                    var uploads = Convert.ToInt64(TotalUpload);
+                    var tupload = ByteSize.FromBytes(uploads).ToString();
+                    textBoxTotalUpload.Text = tupload.ToString();
+                }
+                else
+                {
+                    textBoxTotalUpload.Text = NULL;
+                }
 
-            //totalupload
-            if (traffic.SelectSingleNode("//response/TotalUpload") != null)
-            {
-                string TotalUpload = traffic.SelectSingleNode("//response/TotalUpload").InnerText;
-                var uploads = Convert.ToInt64(TotalUpload);
-                var tupload = ByteSize.FromBytes(uploads).ToString();
-                textBoxTotalUpload.Text = tupload.ToString();
-            }
-            else
-            {
-                textBoxTotalUpload.Text = NULL;
-            }
+                //totaldownload
+                if (traffic.SelectSingleNode("//response/TotalDownload") != null)
+                {
+                    string TotalDownload = traffic.SelectSingleNode("//response/TotalDownload").InnerText;
+                    var download = Convert.ToInt64(TotalDownload);
+                    var tdownload = ByteSize.FromBytes(download).ToString();
+                    textBoxTotalDownload.Text = tdownload.ToString();
+                }
+                else
+                {
+                    textBoxTotalDownload.Text = NULL;
+                }
 
-            //totaldownload
-            if (traffic.SelectSingleNode("//response/TotalDownload") != null)
-            {
-                string TotalDownload = traffic.SelectSingleNode("//response/TotalDownload").InnerText;
-                var download = Convert.ToInt64(TotalDownload);
-                var tdownload = ByteSize.FromBytes(download).ToString();
-                textBoxTotalDownload.Text = tdownload.ToString();
-            }
-            else
-            {
-                textBoxTotalDownload.Text = NULL;
-            }
+                //totaltime
+                if (traffic.SelectSingleNode("//response/TotalConnectTime") != null)
+                {
+                    string TotalConnectTime = traffic.SelectSingleNode("//response/TotalConnectTime").InnerText;
+                    int d = Int32.Parse(TotalConnectTime);
+                    int thours = d / 3600;
+                    int tmins = (d % 3600) / 60;
+                    d = d % 60;
+                    textBoxTotalConnectTime.Text = (string.Format("{0:D2}:{1:D2}:{2:D2}", thours, tmins, d));
 
-            //totaltime
-            if (traffic.SelectSingleNode("//response/TotalConnectTime") != null)
-            {
-                string TotalConnectTime = traffic.SelectSingleNode("//response/TotalConnectTime").InnerText;
-                int d = Int32.Parse(TotalConnectTime);
-                int thours = d / 3600;
-                int tmins = (d % 3600) / 60;
-                d = d % 60;
-                textBoxTotalConnectTime.Text = (string.Format("{0:D2}:{1:D2}:{2:D2}", thours, tmins, d));
+                }
+                else
+                {
+                    textBoxTotalConnectTime.Text = NULL;
+                }
 
-            }
-            else
-            {
-                textBoxTotalConnectTime.Text = NULL;
-            }
+                if (signal.SelectSingleNode("//response/rsrq") != null)
+                {
+                    RSRQ = signal.SelectSingleNode("//response/rsrq").InnerText;
+                    SeriesRSRQ = RSRQ.Replace("dB", "");
+                    textBoxRSRQ.Text = RSRQ.ToString();
+                }
+                else
+                {
+                    textBoxRSRQ.Text = NULL;
+                }
 
-            if (signal.SelectSingleNode("//response/rsrq") != null)
-            {
-                RSRQ = signal.SelectSingleNode("//response/rsrq").InnerText;
-                SeriesRSRQ = RSRQ.Replace("dB", "");
-                textBoxRSRQ.Text = RSRQ.ToString();
-            }
-            else
-            {
-                textBoxRSRQ.Text = NULL;
-            }
+                if (signal.SelectSingleNode("//response/rsrp") != null)
+                {
+                    RSRP = signal.SelectSingleNode("//response/rsrp").InnerText;
+                    SeriesRSRP = RSRP.Replace("dBm", "");
+                    textBoxRSRP.Text = RSRP.ToString();
+                }
+                else
+                {
+                    textBoxRSRP.Text = NULL;
+                }
 
-            if (signal.SelectSingleNode("//response/rsrp") != null)
-            {
-                RSRP = signal.SelectSingleNode("//response/rsrp").InnerText;
-                SeriesRSRP = RSRP.Replace("dBm", "");
-                textBoxRSRP.Text = RSRP.ToString();
-            }
-            else
-            {
-                textBoxRSRP.Text = NULL;
-            }
+                if (signal.SelectSingleNode("//response/rssi") != null)
+                {
+                    RSSI = signal.SelectSingleNode("//response/rssi").InnerText;
+                    SeriesRSSI = RSSI.Replace("dBm", "");
+                    textBoxRSSI.Text = RSSI.ToString();
+                }
+                else
+                {
+                    textBoxRSSI.Text = NULL;
+                }
 
-            if (signal.SelectSingleNode("//response/rssi") != null)
-            {
-                RSSI = signal.SelectSingleNode("//response/rssi").InnerText;
-                SeriesRSSI = RSSI.Replace("dBm", "");
-                textBoxRSSI.Text = RSSI.ToString();
-            }
-            else
-            {
-                textBoxRSSI.Text = NULL;
-            }
-
-            if (signal.SelectSingleNode("//response/sinr") != null)
-            {
-                sinr = signal.SelectSingleNode("//response/sinr").InnerText;
-                Seriessinr = sinr.Replace("dB", "");
-                textBoxSINR.Text = sinr.ToString();
-            }
-            else
-            {
-                textBoxSINR.Text = NULL;
-            }
-
-
-            try
-            {
-                Logger.logSignal(string.Format(" SINR : {0}  |  RSSI : {1}  |  RSRP : {2}  |  RSRQ : {3}", sinr.ToString(), RSSI.ToString(), RSRP.ToString(), RSRQ.ToString()));
-
-            }
-            catch
-            {
-
-            }
+                if (signal.SelectSingleNode("//response/sinr") != null)
+                {
+                    sinr = signal.SelectSingleNode("//response/sinr").InnerText;
+                    Seriessinr = sinr.Replace("dB", "");
+                    textBoxSINR.Text = sinr.ToString();
+                }
+                else
+                {
+                    textBoxSINR.Text = NULL;
+                }
 
 
+                try
+                {
+                    Logger.logSignal(string.Format(" SINR : {0}  |  RSSI : {1}  |  RSRP : {2}  |  RSRQ : {3}", sinr.ToString(), RSSI.ToString(), RSRP.ToString(), RSRQ.ToString()));
 
-            //nei_cellid
-            if (signal.SelectSingleNode("//response/nei_cellid") != null)
-            {
-                nei_cellid = signal.SelectSingleNode("//response/nei_cellid").InnerText;
-                nei_cellid.Replace("No", " No");
-            }
-            else
-            {
-                nei_cellid = "NA";
-            }
+                }
+                catch
+                {
 
-            //txpower
-            if (signal.SelectSingleNode("//response/txpower") != null)
-            {
-                txpower = signal.SelectSingleNode("//response/txpower").InnerText;
-            }
-            else
-            {
-                txpower = "NA";
-            }
+                }
 
-            //cell_id
-            if (signal.SelectSingleNode("//response/cell_id") != null)
-            {
-                cell_id = signal.SelectSingleNode("//response/cell_id").InnerText;
-            }
-            else
-            {
-                cell_id = "NA";
-            }
 
-            //ulbandwidth
-            if (signal.SelectSingleNode("//response/ulbandwidth") != null)
-            {
-                ulbandwidth = signal.SelectSingleNode("//response/ulbandwidth").InnerText;
-            }
-            else
-            {
-                ulbandwidth = "NA";
-            }
 
-            //dlbandwidth
-            if (signal.SelectSingleNode("//response/dlbandwidth") != null)
-            {
-                dlbandwidth = signal.SelectSingleNode("//response/dlbandwidth").InnerText;
-            }
-            else
-            {
-                dlbandwidth = "NA";
-            }
+                //nei_cellid
+                if (signal.SelectSingleNode("//response/nei_cellid") != null)
+                {
+                    nei_cellid = signal.SelectSingleNode("//response/nei_cellid").InnerText;
+                    nei_cellid.Replace("No", " No");
+                }
+                else
+                {
+                    nei_cellid = "NA";
+                }
 
-            //earfcn
-            if (signal.SelectSingleNode("//response/earfcn") != null)
-            {
-                earfcn = signal.SelectSingleNode("//response/earfcn").InnerText;
-            }
-            else
-            {
-                earfcn = "NA";
-            }
+                //txpower
+                if (signal.SelectSingleNode("//response/txpower") != null)
+                {
+                    txpower = signal.SelectSingleNode("//response/txpower").InnerText;
+                }
+                else
+                {
+                    txpower = "NA";
+                }
 
-            metroButtonSIGNALMONITOR.Enabled = true;
+                //cell_id
+                if (signal.SelectSingleNode("//response/cell_id") != null)
+                {
+                    cell_id = signal.SelectSingleNode("//response/cell_id").InnerText;
+                }
+                else
+                {
+                    cell_id = "NA";
+                }
+
+                //ulbandwidth
+                if (signal.SelectSingleNode("//response/ulbandwidth") != null)
+                {
+                    ulbandwidth = signal.SelectSingleNode("//response/ulbandwidth").InnerText;
+                }
+                else
+                {
+                    ulbandwidth = "NA";
+                }
+
+                //dlbandwidth
+                if (signal.SelectSingleNode("//response/dlbandwidth") != null)
+                {
+                    dlbandwidth = signal.SelectSingleNode("//response/dlbandwidth").InnerText;
+                }
+                else
+                {
+                    dlbandwidth = "NA";
+                }
+
+                //earfcn
+                if (signal.SelectSingleNode("//response/earfcn") != null)
+                {
+                    earfcn = signal.SelectSingleNode("//response/earfcn").InnerText;
+                }
+                else
+                {
+                    earfcn = "NA";
+                }
+
+                metroButtonSIGNALMONITOR.Enabled = true;
+            
         }
 
-        private void GetDeviceSetting()
+        private async Task GetDeviceSetting()
         {
-            try
-            {
-                var FWUpdate1 = Get("api/webserver/white_list_switch");
-                string setting1 = xmlformat.Beautify(FWUpdate1);
 
-                File.WriteAllText(path + @"setting1.XML", setting1);
-                var lines1 = File.ReadAllLines(path + @"setting1.XML");
-                File.WriteAllLines(path + @"setting1.XML", lines1.Skip(1).ToArray());
+            this.Invoke((MethodInvoker)delegate {
 
-                DataSet DataSet1 = new DataSet();
-                DataSet1.ReadXml(path + @"setting1.XML");
-                foreach (DataRow dr1 in DataSet1.Tables["response"].Rows)
+                LogDebug("\n[*] Retrieving device setting..");
+
+                try
                 {
-                    if (dr1["whitelist_enable"].ToString() == "0")
+                    var FWUpdate1 = Get("api/webserver/white_list_switch");
+                    string setting1 = xmlformat.Beautify(FWUpdate1);
+
+                    File.WriteAllText(path + @"setting1.XML", setting1);
+                    var lines1 = File.ReadAllLines(path + @"setting1.XML");
+                    File.WriteAllLines(path + @"setting1.XML", lines1.Skip(1).ToArray());
+
+                    DataSet DataSet1 = new DataSet();
+                    DataSet1.ReadXml(path + @"setting1.XML");
+                    foreach (DataRow dr1 in DataSet1.Tables["response"].Rows)
                     {
-                        checkBoxFW1.Checked = false;
-                    }
-                    else
-                    {
-                        checkBoxFW1.Checked = true;
+                        if (dr1["whitelist_enable"].ToString() == "0")
+                        {
+                            checkBoxFW1.Checked = false;
+                        }
+                        else
+                        {
+                            checkBoxFW1.Checked = true;
+
+                        }
+
 
                     }
 
+
+
+                    var FWUpdate2 = Get("api/online-update/configuration");
+                    string setting2 = xmlformat.Beautify(FWUpdate2);
+
+                    File.WriteAllText(path + @"setting2.XML", setting2);
+                    var lines2 = File.ReadAllLines(path + @"setting2.XML");
+                    File.WriteAllLines(path + @"setting2.XML", lines2.Skip(1).ToArray());
+                    DataSet DataSet2 = new DataSet();
+                    DataSet2.ReadXml(path + @"setting2.XML");
+                    foreach (DataRow dr2 in DataSet2.Tables["response"].Rows)
+                    {
+                        if (dr2["server_force_enable"].ToString() == "0")
+                        {
+                            checkBoxFW2.Checked = false;
+                        }
+                        else
+                        {
+                            checkBoxFW2.Checked = true;
+
+                        }
+
+
+                    }
+
+                    var FWUpdate3 = Get("api/online-update/autoupdate-config");
+                    string setting3 = xmlformat.Beautify(FWUpdate3);
+
+                    File.WriteAllText(path + @"setting3.XML", setting3);
+                    var lines3 = File.ReadAllLines(path + @"setting3.XML");
+                    File.WriteAllLines(path + @"setting3.XML", lines3.Skip(1).ToArray());
+
+                    DataSet DataSet3 = new DataSet();
+                    DataSet3.ReadXml(path + @"setting3.XML");
+                    foreach (DataRow dr3 in DataSet3.Tables["response"].Rows)
+                    {
+                        if (dr3["auto_update"].ToString() == "0")
+                        {
+                            checkBoxFW3.Checked = false;
+                        }
+                        else
+                        {
+                            checkBoxFW3.Checked = true;
+
+                        }
+
+
+                    }
+
+                    var DataSwitch = Get("api/dialup/mobile-dataswitch");
+                    string setting4 = xmlformat.Beautify(DataSwitch);
+
+                    File.WriteAllText(path + @"setting4.XML", setting4);
+                    var lines4 = File.ReadAllLines(path + @"setting4.XML");
+                    File.WriteAllLines(path + @"setting4.XML", lines4.Skip(1).ToArray());
+
+                    DataSet DataSet4 = new DataSet();
+                    DataSet4.ReadXml(path + @"setting4.XML");
+                    foreach (DataRow dr4 in DataSet4.Tables["response"].Rows)
+                    {
+                        if (dr4["dataswitch"].ToString() == "0")
+                        {
+                            checkBoxMobileConnection.Checked = false;
+                        }
+                        else
+                        {
+                            checkBoxMobileConnection.Checked = true;
+
+                        }
+
+
+                    }
+
+                    var DMZ = Get("api/security/dmz");
+                    string setting5 = xmlformat.Beautify(DMZ);
+
+                    File.WriteAllText(path + @"setting5.XML", setting5);
+                    var lines5 = File.ReadAllLines(path + @"setting5.XML");
+                    File.WriteAllLines(path + @"setting5.XML", lines5.Skip(1).ToArray());
+
+                    DataSet DataSet5 = new DataSet();
+                    DataSet5.ReadXml(path + @"setting5.XML");
+                    foreach (DataRow dr5 in DataSet5.Tables["response"].Rows)
+                    {
+                        if (dr5["DmzStatus"].ToString() == "0")
+                        {
+                            checkBoxDMZ.Checked = false;
+                        }
+                        else
+                        {
+                            checkBoxDMZ.Checked = true;
+
+                        }
+
+                        if (dr5["DmzIPAddress"].ToString() == "null")
+                        {
+                            textBoxDMZ.Text = "";
+                        }
+                        else
+                        {
+                            textBoxDMZ.Text = dr5["DmzIPAddress"].ToString();
+
+                        }
+
+
+
+                    }
+
+                    var SIP = Get("api/security/sip");
+                    string setting6 = xmlformat.Beautify(SIP);
+
+                    File.WriteAllText(path + @"setting6.XML", setting6);
+                    var lines6 = File.ReadAllLines(path + @"setting6.XML");
+                    File.WriteAllLines(path + @"setting6.XML", lines6.Skip(1).ToArray());
+
+                    DataSet DataSet6 = new DataSet();
+                    DataSet6.ReadXml(path + @"setting6.XML");
+                    foreach (DataRow dr6 in DataSet6.Tables["response"].Rows)
+                    {
+                        if (dr6["SipStatus"].ToString() == "0")
+                        {
+                            checkBoxSIP.Checked = false;
+                        }
+                        else
+                        {
+                            checkBoxSIP.Checked = true;
+
+                        }
+
+                        if (dr6["SipPort"].ToString() == "0")
+                        {
+                            textBoxSIP.Text = "";
+                        }
+                        else
+                        {
+                            textBoxSIP.Text = dr6["SipPort"].ToString();
+
+                        }
+
+                    }
+
+                    var UPnp = Get("api/security/upnp");
+                    string setting7 = xmlformat.Beautify(UPnp);
+
+                    File.WriteAllText(path + @"setting7.XML", setting7);
+                    var lines7 = File.ReadAllLines(path + @"setting7.XML");
+                    File.WriteAllLines(path + @"setting7.XML", lines7.Skip(1).ToArray());
+
+                    DataSet DataSet7 = new DataSet();
+                    DataSet7.ReadXml(path + @"setting7.XML");
+                    foreach (DataRow dr7 in DataSet7.Tables["response"].Rows)
+                    {
+                        if (dr7["UpnpStatus"].ToString() == "0")
+                        {
+                            checkBoxUPnP.Checked = false;
+                        }
+                        else
+                        {
+                            checkBoxUPnP.Checked = true;
+
+                        }
+
+
+
+                    }
+
+                    var NAT = Get("api/security/nat");
+                    string setting8 = xmlformat.Beautify(NAT);
+
+                    File.WriteAllText(path + @"setting8.XML", setting8);
+                    var lines8 = File.ReadAllLines(path + @"setting8.XML");
+                    File.WriteAllLines(path + @"setting8.XML", lines8.Skip(1).ToArray());
+
+                    DataSet DataSet8 = new DataSet();
+                    DataSet8.ReadXml(path + @"setting8.XML");
+                    foreach (DataRow dr8 in DataSet8.Tables["response"].Rows)
+                    {
+                        if (dr8["NATType"].ToString() == "0")
+                        {
+                            checkBoxNAT.Checked = false;
+                        }
+                        else
+                        {
+                            checkBoxNAT.Checked = true;
+
+                        }
+
+
+
+                    }
+                }
+                catch
+                {
+                    LogDebug("\n[*] An error occur while getting device setting info.");
 
                 }
-            }
-            catch
-            {
 
-            }
-
-            try
-            {
-                var FWUpdate2 = Get("api/online-update/configuration");
-                string setting2 = xmlformat.Beautify(FWUpdate2);
-
-                File.WriteAllText(path + @"setting2.XML", setting2);
-                var lines2 = File.ReadAllLines(path + @"setting2.XML");
-                File.WriteAllLines(path + @"setting2.XML", lines2.Skip(1).ToArray());
-                DataSet DataSet2 = new DataSet();
-                DataSet2.ReadXml(path + @"setting2.XML");
-                foreach (DataRow dr2 in DataSet2.Tables["response"].Rows)
-                {
-                    if (dr2["server_force_enable"].ToString() == "0")
-                    {
-                        checkBoxFW2.Checked = false;
-                    }
-                    else
-                    {
-                        checkBoxFW2.Checked = true;
-
-                    }
-
-
-                }
-            }
-            catch
-            {
-
-            }
-
-            try
-            {
-                var FWUpdate3 = Get("api/online-update/autoupdate-config");
-                string setting3 = xmlformat.Beautify(FWUpdate3);
-
-                File.WriteAllText(path + @"setting3.XML", setting3);
-                var lines3 = File.ReadAllLines(path + @"setting3.XML");
-                File.WriteAllLines(path + @"setting3.XML", lines3.Skip(1).ToArray());
-
-                DataSet DataSet3 = new DataSet();
-                DataSet3.ReadXml(path + @"setting3.XML");
-                foreach (DataRow dr3 in DataSet3.Tables["response"].Rows)
-                {
-                    if (dr3["auto_update"].ToString() == "0")
-                    {
-                        checkBoxFW3.Checked = false;
-                    }
-                    else
-                    {
-                        checkBoxFW3.Checked = true;
-
-                    }
-
-
-                }
-            }
-            catch
-            {
-
-            }
-
-            try
-            {
-                var DataSwitch = Get("api/dialup/mobile-dataswitch");
-                string setting4 = xmlformat.Beautify(DataSwitch);
-
-                File.WriteAllText(path + @"setting4.XML", setting4);
-                var lines4 = File.ReadAllLines(path + @"setting4.XML");
-                File.WriteAllLines(path + @"setting4.XML", lines4.Skip(1).ToArray());
-
-                DataSet DataSet4 = new DataSet();
-                DataSet4.ReadXml(path + @"setting4.XML");
-                foreach (DataRow dr4 in DataSet4.Tables["response"].Rows)
-                {
-                    if (dr4["dataswitch"].ToString() == "0")
-                    {
-                        checkBoxMobileConnection.Checked = false;
-                    }
-                    else
-                    {
-                        checkBoxMobileConnection.Checked = true;
-
-                    }
-
-
-                }
-            }
-            catch
-            {
-
-            }
-
-            try
-            {
-                var DMZ = Get("api/security/dmz");
-                string setting5 = xmlformat.Beautify(DMZ);
-
-                File.WriteAllText(path + @"setting5.XML", setting5);
-                var lines5 = File.ReadAllLines(path + @"setting5.XML");
-                File.WriteAllLines(path + @"setting5.XML", lines5.Skip(1).ToArray());
-
-                DataSet DataSet5 = new DataSet();
-                DataSet5.ReadXml(path + @"setting5.XML");
-                foreach (DataRow dr5 in DataSet5.Tables["response"].Rows)
-                {
-                    if (dr5["DmzStatus"].ToString() == "0")
-                    {
-                        checkBoxDMZ.Checked = false;
-                    }
-                    else
-                    {
-                        checkBoxDMZ.Checked = true;
-
-                    }
-
-                    if (dr5["DmzIPAddress"].ToString() == "null")
-                    {
-                        textBoxDMZ.Text = "";
-                    }
-                    else
-                    {
-                        textBoxDMZ.Text = dr5["DmzIPAddress"].ToString();
-
-                    }
-
-
-
-                }
-            }
-            catch
-            {
-
-            }
-
-            try
-            {
-                var SIP = Get("api/security/sip");
-                string setting6 = xmlformat.Beautify(SIP);
-
-                File.WriteAllText(path + @"setting6.XML", setting6);
-                var lines6 = File.ReadAllLines(path + @"setting6.XML");
-                File.WriteAllLines(path + @"setting6.XML", lines6.Skip(1).ToArray());
-
-                DataSet DataSet6 = new DataSet();
-                DataSet6.ReadXml(path + @"setting6.XML");
-                foreach (DataRow dr6 in DataSet6.Tables["response"].Rows)
-                {
-                    if (dr6["SipStatus"].ToString() == "0")
-                    {
-                        checkBoxSIP.Checked = false;
-                    }
-                    else
-                    {
-                        checkBoxSIP.Checked = true;
-
-                    }
-
-                    if (dr6["SipPort"].ToString() == "0")
-                    {
-                        textBoxSIP.Text = "";
-                    }
-                    else
-                    {
-                        textBoxSIP.Text = dr6["SipPort"].ToString();
-
-                    }
-
-                }
-            }
-            catch
-            {
-
-            }
-
-            try
-            {
-                var UPnp = Get("api/security/upnp");
-                string setting7 = xmlformat.Beautify(UPnp);
-
-                File.WriteAllText(path + @"setting7.XML", setting7);
-                var lines7 = File.ReadAllLines(path + @"setting7.XML");
-                File.WriteAllLines(path + @"setting7.XML", lines7.Skip(1).ToArray());
-
-                DataSet DataSet7 = new DataSet();
-                DataSet7.ReadXml(path + @"setting7.XML");
-                foreach (DataRow dr7 in DataSet7.Tables["response"].Rows)
-                {
-                    if (dr7["UpnpStatus"].ToString() == "0")
-                    {
-                        checkBoxUPnP.Checked = false;
-                    }
-                    else
-                    {
-                        checkBoxUPnP.Checked = true;
-
-                    }
-
-
-
-                }
-            }
-            catch
-            {
-
-            }
-
-            try
-            {
-                var NAT = Get("api/security/nat");
-                string setting8 = xmlformat.Beautify(NAT);
-
-                File.WriteAllText(path + @"setting8.XML", setting8);
-                var lines8 = File.ReadAllLines(path + @"setting8.XML");
-                File.WriteAllLines(path + @"setting8.XML", lines8.Skip(1).ToArray());
-
-                DataSet DataSet8 = new DataSet();
-                DataSet8.ReadXml(path + @"setting8.XML");
-                foreach (DataRow dr8 in DataSet8.Tables["response"].Rows)
-                {
-                    if (dr8["NATType"].ToString() == "0")
-                    {
-                        checkBoxNAT.Checked = false;
-                    }
-                    else
-                    {
-                        checkBoxNAT.Checked = true;
-
-                    }
-
-
-
-                }
-            }
-            catch
-            {
-                //MessageBox.Show("An error occur while getting device setting info", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
+            });
+            
         }
 
-        private void GetConnectedDevice()
+        private async Task GetConnectedDevice()
         {
             LogDebug("\n[*] Retrieving connected client device..");
 
@@ -1417,8 +1372,6 @@ namespace Huawei_Router_Tool_GUI
                 if (DETECT_ERROR_CODE == "ERROR_SESSION")
                 {
                     metroTabControl1.Enabled = false;
-                    loginStatus = "0";
-                    buttonLogin.Enabled = true;
                     buttonReboot.Enabled = false;
                     buttonShutdown.Enabled = false;
                 }
@@ -1432,23 +1385,44 @@ namespace Huawei_Router_Tool_GUI
 
         private void backgroundWorkerDeviceInfo_DoWork(object sender, DoWorkEventArgs e)
         {
-
-            while (runProc)
+            //starting background task
+            Task f = Task.Factory.StartNew(async () =>
             {
-                if (loginStatus == "1")
+
+                //display on program
+                GetInfo();
+                GetDeviceSetting();
+                MacFilter();
+                GetConnectedDevice();
+
+                //loop to monitor traffic
+                while (true)
                 {
-                    GetTraffic();
-                    //backgroundWorkerDeviceInfo.CancelAsync();
-                }
-                else if (loginStatus == "0")
-                {
-                    
-                    break;
-                }
-                
+                    if (loginState() == true)
+                    {
+                        GetTraffic();
+
+                    }
+                    else
+                    {
+                        backgroundWorkerDeviceInfo.CancelAsync();
+                        break;
+                    }
 
 
-            }
+
+                }
+
+            });
+
+            //enable control
+            buttonShutdown.Enabled = true;
+            buttonReboot.Enabled = true;
+            metroTabControl1.Enabled = true;
+            buttonWebpage.Enabled = true;
+            saveDeviceInfoToolStripMenuItem1.Enabled = true;
+
+           
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1749,7 +1723,7 @@ namespace Huawei_Router_Tool_GUI
 
         }
 
-        private void MacFilter()
+        private async Task MacFilter()
         {
             LogDebug("\n[*] Retrieving filtered MAC address..");
 
@@ -1790,10 +1764,8 @@ namespace Huawei_Router_Tool_GUI
             else
             {
 
-
-                //MessageBox.Show("Fail : " + ((ErrorCode)(int.Parse(API.SelectSingleNode("//error/code").InnerText))).ToString(), "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MessageBox.Show("Unable to retrieve filtered MAC address : " + ((ErrorCode)(int.Parse(API.SelectSingleNode("//error/code").InnerText))).ToString(), "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                //MessageBox.Show("Unable to retrieve filtered MAC address : " + ((ErrorCode)(int.Parse(API.SelectSingleNode("//error/code").InnerText))).ToString(), "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupBox11.Enabled = false;
                 LogDebug("\n[*] Fail : ERROR " + API.SelectSingleNode("//error/code").InnerText.ToString() + " [" + ((ErrorCode)(int.Parse(API.SelectSingleNode("//error/code").InnerText))).ToString() + "]");
 
 
@@ -1801,8 +1773,6 @@ namespace Huawei_Router_Tool_GUI
                 if (DETECT_ERROR_CODE == "ERROR_SESSION")
                 {
                     metroTabControl1.Enabled = false;
-                    loginStatus = "0";
-                    buttonLogin.Enabled = true;
                     buttonReboot.Enabled = false;
                     buttonShutdown.Enabled = false;
                 }
@@ -2152,8 +2122,6 @@ namespace Huawei_Router_Tool_GUI
                 if (richTextBox1.Text.Contains("ERROR_SESSION"))
                 {
                     metroTabControl1.Enabled = false;
-                    loginStatus = "0";
-                    buttonLogin.Enabled = true;
                     buttonReboot.Enabled = false;
                     buttonShutdown.Enabled = false;
                 }
@@ -2416,7 +2384,7 @@ namespace Huawei_Router_Tool_GUI
         private void backgroundWorkerCOnnectedDeviceAndMacFilter_DoWork(object sender, DoWorkEventArgs e)
         {
             GetConnectedDevice();
-            MacFilter();
+            //MacFilter();
             //GetWLANSetting();
         }
 
@@ -2447,7 +2415,6 @@ namespace Huawei_Router_Tool_GUI
                 MessageBox.Show("Logged out", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LogDebug("\n[*] Logged out.");
                 metroTabControl1.Enabled = false;
-                buttonLogin.Enabled = true;
 
             }
             else
@@ -2582,30 +2549,98 @@ namespace Huawei_Router_Tool_GUI
 
         }
 
+        private bool loginUser()
+        {
+
+            _sessionID = "";
+            _token = "";
+            _requestToken = "";
+            _requestTokenOne = "";
+            _requestTokenTwo = "";
+            _sessionCookie = "";
+            Initialise();
+
+            LogDebug("\n[*] Generating authentication hashes..");
+            authinfo = SHA256andB64(textBoxUsername.Text + SHA256andB64(textBoxPassword.Text) + _requestToken);
+            logininfo = string.Format("<?xml version=\"1.0\" encoding=\"UTF-8\"?><request><Username>{0}</Username><Password>{1}</Password><password_type>4</password_type>", textBoxUsername.Text, authinfo);
+
+            LogDebug("\n[*] Attempting to log in..");
+            login = Post("api/user/login", logininfo);
+
+            if (login.ToString() == string.Empty)
+            {
+                MessageBox.Show("No response", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            else if (login.OuterXml.ToString().Contains("error"))
+            {
+                MessageBox.Show("Fail : " + ((ErrorCode)(int.Parse(login.SelectSingleNode("//error/code").InnerText))).ToString(), "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LogDebug("\n[*] Fail : ERROR " + login.SelectSingleNode("//error/code").InnerText.ToString() + " [" + ((ErrorCode)(int.Parse(login.SelectSingleNode("//error/code").InnerText))).ToString() + "]");
+                return false;
+
+            }
+            else
+                return true;
+
+        }
 
 
-        
+        private bool loginState()
+        {
+            XmlDocument checkLoginState;
+            checkLoginState = Get_API("api/user/state-login");
 
-        
-
-       
-
-       
+            if (checkLoginState.OuterXml.ToString().Contains("<State>0</State>"))
+                return true;
+            else
+                return false;
+        }
 
       
 
+
+
+
+
+
+
+
         private void ButtonLogin_Click_3(object sender, EventArgs e)
         {
-            runProc = true;
-            if (loginStatus == "1")
-            {
-                MessageBox.Show("Already logged in.", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //if already logged in, return
+            if (loginState() == true)
+                MessageBox.Show("Already logged in", "Huawei Router Tool");
             else
             {
-                Login();
+                if (loginUser() == false)
+                    return;
+                
+                //save credential
+                if (checkBoxRememberUserpass.Checked)
+                {
+                    Huawei_Router_Tool_GUI.Properties.Settings.Default.Username = textBoxUsername.Text;
+                    Huawei_Router_Tool_GUI.Properties.Settings.Default.Password = textBoxPassword.Text;
+                    Huawei_Router_Tool_GUI.Properties.Settings.Default.IPAddress = textBoxIP.Text;
+                    Huawei_Router_Tool_GUI.Properties.Settings.Default.Checkbox = checkBoxRememberUserpass.CheckState;
+                    Huawei_Router_Tool_GUI.Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Huawei_Router_Tool_GUI.Properties.Settings.Default.Reset();
+                }
+
+                LogDebug("\n[*] Login successful.");
+
+
+                if (backgroundWorkerDeviceInfo.IsBusy != true)
+                    backgroundWorkerDeviceInfo.RunWorkerAsync();
+
+
 
             }
+
+
+
 
             ip_webpage = textBoxIP.Text;
             /*
@@ -2622,85 +2657,99 @@ namespace Huawei_Router_Tool_GUI
             */
         }
 
-        private void ButtonReboot_Click_1(object sender, EventArgs e)
+        private bool rebootRouter()
         {
-            //Initialise();
             var reboot = "<?xml version:\"1.0\" encoding=\"UTF-8\"?><request><Control>1</Control></request>";
             LogDebug("\n[*] Requesting router to reboot...");
             var REBOOT_doc = Post("api/device/control", reboot);
-            if (REBOOT_doc.ToString().Contains("response"))
+            if (REBOOT_doc.ToString() == string.Empty)
             {
-                if (REBOOT_doc.SelectSingleNode("//response").InnerText == "OK")
-                {
-                    runProc = false;
-                    loginStatus = "";
-                    LogDebug("\n[*] Rebooting..");
-                    MessageBox.Show("Rebooting..", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    metroTabControl1.Enabled = false;
-                    buttonShutdown.Enabled = false;
-                    buttonReboot.Enabled = false;
-                    buttonLogin.Enabled = true;
-                }
-                else
-                {
-                    MessageBox.Show("Request fail", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                    LogDebug("\n[*] Request fail");
-                }
+                MessageBox.Show("No response.", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
-            else
+            else if (REBOOT_doc.OuterXml.ToString().Contains("error"))
             {
-                if (REBOOT_doc.OuterXml.ToString().Contains("error"))
+                MessageBox.Show("Fail : " + ((ErrorCode)(int.Parse(REBOOT_doc.SelectSingleNode("//error/code").InnerText))).ToString(), "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LogDebug("\n[*] Fail : ERROR " + REBOOT_doc.SelectSingleNode("//error/code").InnerText.ToString() + " [" + ((ErrorCode)(int.Parse(REBOOT_doc.SelectSingleNode("//error/code").InnerText))).ToString() + "]");
+                return false;
+
+            }
+
+            return true;
+
+        }
+
+        private void ButtonReboot_Click_1(object sender, EventArgs e)
+        {
+
+            if (loginState() == true)
+            {
+                DialogResult dialog = MessageBox.Show("Reboot the router?", "Huawei Router Tool", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if(dialog == DialogResult.OK)
                 {
-                    MessageBox.Show("Fail : " + ((ErrorCode)(int.Parse(REBOOT_doc.SelectSingleNode("//error/code").InnerText))).ToString(), "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LogDebug("\n[*] Fail : ERROR " + REBOOT_doc.SelectSingleNode("//error/code").InnerText.ToString() + " [" + ((ErrorCode)(int.Parse(REBOOT_doc.SelectSingleNode("//error/code").InnerText))).ToString() + "]");
+                    if (rebootRouter() == false)
+                        return;
+                    else
+                    {
+                        LogDebug("\n[*] Rebooting..");
+                        MessageBox.Show("Rebooting..", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        metroTabControl1.Enabled = false;
+                        buttonShutdown.Enabled = false;
+                        buttonReboot.Enabled = false;
+                    }
 
                 }
-                else
-                {
-                    LogDebug("\n[*] Result : Fail");
-                };
+                
             }
+            else
+                MessageBox.Show("Not logged in.", "Huawei Router Tool");
+            
+
+            
+        }
+
+        private bool shutdownRouter() 
+        {
+            var shutdown_data = "<?xml version:\"1.0\" encoding=\"UTF-8\"?><request><Control>4</Control></request>";
+            LogDebug("\n[*] Requesting router to shutdown..");
+            var shutdown = Post("api/device/control", shutdown_data);
+
+            if(shutdown.ToString() == string.Empty)
+            {
+                MessageBox.Show("No response.", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (shutdown.OuterXml.ToString().Contains("error"))
+            {
+                MessageBox.Show("Fail : " + ((ErrorCode)(int.Parse(shutdown.SelectSingleNode("//error/code").InnerText))).ToString(), "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LogDebug("\n[*] Fail : ERROR " + shutdown.SelectSingleNode("//error/code").InnerText.ToString() + " [" + ((ErrorCode)(int.Parse(shutdown.SelectSingleNode("//error/code").InnerText))).ToString() + "]");
+                return false;
+            }
+
+            return true;
         }
 
         private void ButtonShutdown_Click_1(object sender, EventArgs e)
         {
-            Initialise();
-            var shutdown_data = "<?xml version:\"1.0\" encoding=\"UTF-8\"?><request><Control>4</Control></request>";
-            LogDebug("\n[*] Requesting router to shutdown..");
-            var shutdown = Post("api/device/control", shutdown_data);
-            if (shutdown.ToString().Contains("response"))
+            DialogResult dialog = MessageBox.Show("Reboot the router?", "Huawei Router Tool", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialog == DialogResult.OK)
             {
-                if (shutdown.SelectSingleNode("//response").InnerText == "OK")
+
+                if (shutdownRouter() == false)
+                    return;
+                else
                 {
-                    runProc = false;
-                    loginStatus = "";
                     LogDebug("\n[*] Shutting down..");
                     MessageBox.Show("Shutting down..", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     metroTabControl1.Enabled = false;
                     buttonShutdown.Enabled = false;
                     buttonReboot.Enabled = false;
-                    buttonLogin.Enabled = true;
-
                 }
-                else
-                {
-                    MessageBox.Show("Request fail", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                    LogDebug("\n[*] Request fail");
-                }
+                
             }
             else
-            {
-                if (shutdown.OuterXml.ToString().Contains("error"))
-                {
-                    MessageBox.Show("Fail : " + ((ErrorCode)(int.Parse(shutdown.SelectSingleNode("//error/code").InnerText))).ToString(), "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LogDebug("\n[*] Fail : ERROR " + shutdown.SelectSingleNode("//error/code").InnerText.ToString() + " [" + ((ErrorCode)(int.Parse(shutdown.SelectSingleNode("//error/code").InnerText))).ToString() + "]");
+                MessageBox.Show("Not logged in.", "Huawei Router Tool");
 
-                }
-                else
-                {
-                    LogDebug("\n[*] Result : Fail");
-                };
-            }
         }
 
         private void Button13_Click_1(object sender, EventArgs e)
@@ -2787,8 +2836,6 @@ namespace Huawei_Router_Tool_GUI
                             if (DETECT_ERROR_CODE == "ERROR_SESSION")
                             {
                                 metroTabControl1.Enabled = false;
-                                loginStatus = "0";
-                                buttonLogin.Enabled = true;
                                 buttonReboot.Enabled = false;
                                 buttonShutdown.Enabled = false;
                             }
@@ -2855,8 +2902,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -2909,8 +2954,6 @@ namespace Huawei_Router_Tool_GUI
                         if (DETECT_ERROR_CODE == "ERROR_SESSION")
                         {
                             metroTabControl1.Enabled = false;
-                            loginStatus = "0";
-                            buttonLogin.Enabled = true;
                             buttonReboot.Enabled = false;
                             buttonShutdown.Enabled = false;
                         }
@@ -2939,8 +2982,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -2974,8 +3015,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3002,8 +3041,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3039,8 +3076,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3071,8 +3106,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3105,8 +3138,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3134,8 +3165,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3182,8 +3211,6 @@ namespace Huawei_Router_Tool_GUI
                         if (DETECT_ERROR_CODE == "ERROR_SESSION")
                         {
                             metroTabControl1.Enabled = false;
-                            loginStatus = "0";
-                            buttonLogin.Enabled = true;
                             buttonReboot.Enabled = false;
                             buttonShutdown.Enabled = false;
                         }
@@ -3213,8 +3240,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3264,8 +3289,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3298,8 +3321,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3326,8 +3347,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3361,8 +3380,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3390,8 +3407,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3425,8 +3440,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3453,8 +3466,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3488,8 +3499,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3516,8 +3525,6 @@ namespace Huawei_Router_Tool_GUI
                     if (DETECT_ERROR_CODE == "ERROR_SESSION")
                     {
                         metroTabControl1.Enabled = false;
-                        loginStatus = "0";
-                        buttonLogin.Enabled = true;
                         buttonReboot.Enabled = false;
                         buttonShutdown.Enabled = false;
                     }
@@ -3556,8 +3563,6 @@ namespace Huawei_Router_Tool_GUI
                         if (DETECT_ERROR_CODE == "ERROR_SESSION")
                         {
                             metroTabControl1.Enabled = false;
-                            loginStatus = "0";
-                            buttonLogin.Enabled = true;
                             buttonReboot.Enabled = false;
                             buttonShutdown.Enabled = false;
                         }
@@ -3854,85 +3859,181 @@ namespace Huawei_Router_Tool_GUI
 
         }
 
+        private void InitialiseSMS()
+        {
+            if (string.IsNullOrEmpty(_sessionCookie) || string.IsNullOrEmpty(_requestToken))
+            {
+                GetTokenSMS();
+            }
+        }
+
+        
+
+        private void GetTokenSMS()
+        {
+
+            try
+            {
+                XmlDocument GetTokens_doc = Get("api/webserver/SesTokInfo");
+                _sessionIDSMS = GetTokens_doc.SelectSingleNode("//response/SesInfo").InnerText;
+                _tokenSMS = GetTokens_doc.SelectSingleNode("//response/TokInfo").InnerText;
+
+                //LogDebug(string.Format("\n[*] New session ID: {0}", _sessionID));
+                //LogDebug(string.Format("\n[*] New token ID: {0}", _token));
+
+                _requestTokenSMS = _tokenSMS;
+                _sessionCookieSMS = _sessionIDSMS;
+            }
+            catch
+            {
+                LogError("\n[*] Unable to connect to the remote server. Make sure PC is connected to the network!");
+            }
+
+
+        }
+
+        private WebClient NewWebClientSMS()
+        {
+            var wc = new WebClient();
+            wc.Headers.Add(HttpRequestHeader.Cookie, _sessionCookieSMS);
+            //wc.Headers.Add("Cache-Control", "no-cache");
+            wc.Headers.Add("__RequestVerificationToken", _requestTokenSMS);
+            wc.Headers.Add("Accept", "*/*");
+            wc.Headers.Add("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12");
+            return wc;
+        }
+
+        
+
+        private void HandleHeaderSMS(WebClient wc)
+        {
+            if (!string.IsNullOrEmpty(wc.ResponseHeaders["__RequestVerificationToken"]))
+            {
+                _requestTokenSMS = wc.ResponseHeaders["__RequestVerificationToken"];
+                //LogDebug(string.Format("\n[*] Recieved new RVT: {0}", _requestToken));
+            }
+            if (!string.IsNullOrEmpty(wc.ResponseHeaders["Set-Cookie"]))
+            {
+                _sessionCookieSMS = wc.ResponseHeaders["Set-Cookie"];
+                //LogDebug(string.Format("\n[*] Recieved new cookie: {0}", _sessionCookie));
+            }
+        }
+
+        private XmlDocument PostSMS(string path, string data)
+        {
+            var wc = PostWebClient();
+            var response = wc.UploadData("http://" + textBoxIP.Text + "/" + path, Encoding.UTF8.GetBytes(data));
+            var responseString = Encoding.Default.GetString(response);
+            //PostHandleHeaders(wc);
+            XmlDocument Post_doc = new XmlDocument();
+            Post_doc.LoadXml(responseString);
+            return Post_doc;
+        }
+
+        private static WebClient PostWebClient()
+        {
+            var wc = new WebClient();
+            wc.Headers.Add(HttpRequestHeader.Cookie, _CurrentSessionID);
+            //wc.Headers.Add("Cache-Control", "no-cache");
+            wc.Headers.Add("__RequestVerificationToken", _CurrentToken);
+            wc.Headers.Add("Accept", "*/*");
+            wc.Headers.Add("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12");
+            return wc;
+        }
+
+
         private void btnSMSSend_Click(object sender, EventArgs e)
         {
             string recipient = rtbSMSRecipient.Text;
             string content = rtbSMSContent.Text;
 
-            if(recipient != string.Empty && content != string.Empty)
+            //get session id n token
+            var Sestoken = Get("api/webserver/SesTokInfo");
+            _CurrentSessionID = Sestoken.SelectSingleNode("//response/SesInfo").InnerText;
+            _CurrentToken = Sestoken.SelectSingleNode("//response/TokInfo").InnerText;
+
+           
+
+            if (recipient != string.Empty && content != string.Empty)
             {
-                Initialise();
-                var data = "<?xml version:\"1.0\" encoding=\"UTF-8\"?><request><Index>-1</Index><Phones><Phone>" + recipient + "</Phone></Phones><Sca></Sca><Content>" + content + "</Content><Length> " + rtbSMSContent.Text.Length.ToString() + "</Length><Reserved>1</Reserved><Date>" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").ToString() + "</Date></request>";
+               
+                
+
+                var data = "<?xml version:\"1.0\" encoding=\"UTF-8\"?><request><Index>-1</Index><Phones><Phone>" + recipient + "</Phone></Phones><Sca></Sca><Content>" + content + "</Content><Length> " + content.Length.ToString() + "</Length><Reserved>1</Reserved><Date>" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").ToString() + "</Date></request>";
                 LogDebug("\n[*] Sending SMS to " + recipient);
-                var POST_doc = Post("api/sms/send-sms", data);
+                var POST_doc = PostSMS("api/sms/send-sms", data);
                 string compare = POST_doc.OuterXml.ToString();
+
 
                 if (POST_doc == null)
                 {
                     MessageBox.Show("No response");
+                    LogDebug("\n[*] No response");
 
                 }
-                else
+                else if (compare.Contains("OK"))
                 {
-                    //MessageBox.Show(compare);
+                    APItype = Get_API("api/sms/send-status");
 
-                    if (compare == "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response>OK</response>")
+
+                    if (!string.IsNullOrEmpty(APItype.OuterXml.ToString()))
                     {
-                        APItype = Get_API("api/sms/send-status");
+                        string response = xmlformat.Beautify(APItype);
+                        XmlDocument xml = new XmlDocument();
+                        xml.LoadXml(response);
+                        var test = xml.SelectSingleNode("response");
 
+                        bool isFail = false;
 
-                        if (!string.IsNullOrEmpty(APItype.OuterXml.ToString()))
+                        foreach (XmlNode node in test)
                         {
-                            string response = xmlformat.Beautify(APItype);
-                            XmlDocument xml = new XmlDocument();
-                            xml.LoadXml(response);
-                            var test = xml.SelectSingleNode("response");
-
-                            bool isFail = false;
-
-                            foreach(XmlNode node in test)
+                            if (node.Name == "Phone")
                             {
-                                if (node.Name == "Phone")
+                                if (node.Value == recipient)
                                 {
-                                    if(node.Value == recipient)
+                                    if (node.Name == "FailPhone")
                                     {
-                                        if (node.Name == "FailPhone")
-                                        {
-                                            if (node.Value == "1")
-                                                isFail = true;
-                                        }
+                                        if (node.Value == "1")
+                                            isFail = true;
                                     }
                                 }
-
                             }
 
-                            if (!isFail)
-                                MessageBox.Show("Request accepted");
-                            else
-                                MessageBox.Show("Request failed");
+                        }
 
-                            response = "";
-                            xml = null;
-                            //MessageBox.Show(response);
+                        if (!isFail)
+                        {
+                            MessageBox.Show("Request accepted.");
+
+                            LogDebug("\n[*] Request accepted.");
                         }
                         else
                         {
-                            LogDebug("\n[*] Result : Fail");
+                            MessageBox.Show("Request failed.");
+                            LogDebug("\n[*] Request failed.");
+
                         }
 
-                        APItype = null;
-
-                        //MessageBox.Show("Request accepted", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //LogDebug("\n[*] Result : SUCCESS");
+                        response = "";
+                        xml = null;
+                        //MessageBox.Show(response);
                     }
-                    else
-                    {
-                        MessageBox.Show("Request failed", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LogDebug("\n[*] Result : Fail");
+                   
 
-                    }
+                    APItype = null;
+
+                    //MessageBox.Show("Request accepted", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //LogDebug("\n[*] Result : SUCCESS");
+                }
+                else if (compare.Contains("error"))
+                {
+
+                    MessageBox.Show("Request failed", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LogDebug("\n[*] Result : Fail");
 
                 }
+
+
             }
             else
             {
@@ -4106,14 +4207,20 @@ namespace Huawei_Router_Tool_GUI
 
             if (isCheckingUSSD() == false)
             {
+                //get session id n token
+                var Sestoken = Get("api/webserver/SesTokInfo");
+                _CurrentSessionID = Sestoken.SelectSingleNode("//response/SesInfo").InnerText;
+                _CurrentToken = Sestoken.SelectSingleNode("//response/TokInfo").InnerText;
+
                 var data = "<?xml version:\"1.0\" encoding=\"UTF-8\"?><request><content>" + tbUSSDCMD.Text + "</content><codeType>CodeType</codeType><timeout></timeout></request>";
-                LogDebug("\n[*] Sending command to API.. (api/ussd/send)");
-                var POST_doc = Post("api/ussd/send", data);
+                LogDebug("\n[*] Sending USSD command to API.. (api/ussd/send)");
+                var POST_doc = PostSMS("api/ussd/send", data);
                 string compare = POST_doc.OuterXml.ToString();
 
                 if (POST_doc == null)
                 {
-                    richTextBox3.Text += "No response" + "\n";
+                    richTextBox3.Text += "No response." + "\n";
+                    LogDebug("\n[*] No response.");
 
                 }
                 else
@@ -4122,17 +4229,20 @@ namespace Huawei_Router_Tool_GUI
                     if (compare == "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response>OK</response>")
                     {
                         richTextBox3.Text += "Request accepted. Please wait.." + "\n";
+                        LogDebug("\n[*] Request accepted. Waiting for response..");
 
-                      
 
-                        while(USSDresult != 1)
+
+                        while (USSDresult != 1)
                         {
+
                             checkUSSD();
                         }
 
+                        LogDebug("\n[*] Response received.");
 
 
-                        
+
                         richTextBox3.Text = outstring;
                         richTextBox3.Lines = richTextBox3.Lines.Skip(2).ToArray();
 
@@ -4160,6 +4270,7 @@ namespace Huawei_Router_Tool_GUI
                     else
                     {
                         richTextBox3.Text += "Error " + POST_doc.SelectSingleNode("//error/code").InnerText.ToString() + " : " + ((ErrorCode)(int.Parse(POST_doc.SelectSingleNode("//error/code").InnerText))).ToString() + "\n";
+                        LogDebug("\n[*] Error " + POST_doc.SelectSingleNode("//error/code").InnerText.ToString() + " : " + ((ErrorCode)(int.Parse(POST_doc.SelectSingleNode("//error/code").InnerText))).ToString() + "\n");
 
                     }
 
@@ -4194,6 +4305,16 @@ namespace Huawei_Router_Tool_GUI
                 tbUSSDCMD.Text = part;
             }
             
+        }
+
+        private void backgroundWorkerDeviceInfo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void btnRefreshMAC_Click(object sender, EventArgs e)
+        {
+            MacFilter();
         }
 
         private void CheckBoxB38_CheckStateChanged(object sender, EventArgs e)
@@ -4357,14 +4478,20 @@ namespace Huawei_Router_Tool_GUI
             }
             else
             {
-                Initialise();
-                //Login();
+
+               
+                
                 DialogResult dialogResult = MessageBox.Show("Data : \n\n" + richTextBox2.Text + "\n\nPost to API : " + comboBoxAPIList.Text + "\n\nConfirm?", "Huawei Router Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    //get session id n token
+                    var Sestoken = Get("api/webserver/SesTokInfo");
+                    _CurrentSessionID = Sestoken.SelectSingleNode("//response/SesInfo").InnerText;
+                    _CurrentToken = Sestoken.SelectSingleNode("//response/TokInfo").InnerText;
+
                     var data = "<?xml version:\"1.0\" encoding=\"UTF-8\"?>" + richTextBox2.Text;
                     LogDebug("\n[*] Sending command to API.. (" + comboBoxAPIList.Text + ")");
-                    var POST_doc = Post(comboBoxAPIList.Text, data);
+                    var POST_doc = PostSMS(comboBoxAPIList.Text, data);
                     string compare = POST_doc.OuterXml.ToString();
 
                     if (POST_doc == null)

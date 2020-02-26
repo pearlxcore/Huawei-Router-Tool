@@ -276,7 +276,7 @@ namespace Huawei_Router_Tool_GUI
                 }
                 else
                 {
-                    MessageBox.Show("RSRQ parsing error");
+                    //MessageBox.Show("RSRQ parsing error");
                 }
 
 
@@ -314,7 +314,7 @@ namespace Huawei_Router_Tool_GUI
                 }
                 else
                 {
-                    MessageBox.Show("RSRP parsing error");
+                    //MessageBox.Show("RSRP parsing error");
 
                 }
 
@@ -351,7 +351,7 @@ namespace Huawei_Router_Tool_GUI
                 }
                 else
                 {
-                    MessageBox.Show("SINR parsing error");
+                    //MessageBox.Show("SINR parsing error");
                 }
 
                 //sinr
@@ -386,7 +386,7 @@ namespace Huawei_Router_Tool_GUI
                 }
                 else
                 {
-                    MessageBox.Show("SINR parsing error");
+                    //MessageBox.Show("SINR parsing error");
                 }
 
 

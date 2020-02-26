@@ -153,8 +153,35 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1137, 56</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
+        IwAALiMBeKU/dgAAA9lJREFUSEullm1Mk1cUx5+GOGMFAqRBRwIzRDFVtxVmRCbGRcI+AF9IjC/EFwxq
+        NBhiwlQU2AQmYubkg4m8iEF5UVqLm211gI3Vgm0QECcwZkFNSj/oyMBEIMY2+XvPLS308QE2+fDLc+7p
+        vef/POfce24FAP+JznYTLA/NaLp5k2MwGplbeq4YSed0rmmNyP1Fj22ZNYjZegn6vccxfuQwXhf9DLte
+        jz87O9k06bUeJJ1Eo74V6TkGqFLrsXTDBQRGn4EQfhSaO71wsQmuiQk3zB4dH8fg0BCzpGNJOs9WPEBK
+        Zgs27W1CxMZSLF6VC7/IbMgUmWioMMA5MADn056pJ+NtVxfsjLaODhbCN57PgMg934LUY1YuIo/KgSwi
+        ywt9SUPgakC+EM5F8o8Yk8nwoqgIlp4eFmoGkZIyE75Nt2Ln0Xp8rtzlDUx47OsKFRAUAGdQkCTDcjme
+        1dWxcBIiVAPVljswmPJx7uxKJCbtgP/ywzxNCyKzptJVbYTT4ZgZlkKbxYK+vj4WViRC6Tl18TSspi/g
+        F/oDZ9naAyguXMchm0TUhm534WdheHQUj9iuu9vaykaTIjd+b4Fi/XXomhNwKOs7yIJP8LdPS08GHGwK
+        I21PkrsmygS4vvpyVsaUSjyJjkaH1Tol8uOvv0FYcREFJYmou7wSwmc/8YDrEtJg1IZzyBYiTkAtC4eL
+        LZsN2gCD7NlWWuoW6Wq/zw/a4lWFCI06glvXIpF3LB7KbzJ4TSJUGRyyebpOVcFp0M/JUG0tmq9cwV82
+        GwRqFaod1RBWF/M3JRK3b0dM0h5ebI9PWH6Si9TcfyFZBzEOBrWe54ODEJrutkCzeSeqQmJQFfw1KgNV
+        OO8XiwsL13KbfBz2e7l8DQa+T4UrI2NOHOxFtQcPorO3F8If7e3ugonyOl+oJtq4OPS/egXhttmM15VV
+        eJ+Xj4ncPP6cLxSnb/9+aAoKeE/ju8v+74hkXj+VUYaZHUrPdcBFqF07Kys5rrKyeWMvKUFjdja/f7wi
+        xNuUFMnc/l/ojFjYU717t7dRekWo33Ch5ORPhtbb4uNRGxvL24ontleEoNqMuVySeZ4LWvdyZAQanY7X
+        YkYRyiEdnuF79/CONTd+IXV3TzF5QXmZ9L9hPYrau4a1kQa12qcDEz4iBN1sNrYBbAEB+If9TDkmpHJP
+        2JlNNbiqUEBXXs7biDimz2A6tOO69u3D09BQ2EJCYA8L84H8Zn9/NC5Zwk82pYdOtzgO8ZFjOqbHj/ni
+        tuZm/jdIx1KhZY3PA43py8XXrRhJpxSUZ6oXif7d389t8RxpIHwA8S3T8NrGn1EAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="AboutLog.Text" xml:space="preserve">
     <value>
+V6 Changelog :
+
+- Compatibility : This program now works with both 32-bit and 64-bit Windows.
+
 V5 Changelog :
 
 - Added : Send SMS.
@@ -192,7 +219,6 @@ V1 Changelog :
 
 Note : Some features may not work on some Huawei router due to router's API won't accept request. It may be disabled by default on particular firmware for particular Huawei router.</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAAAYCAYAAAAMAljuAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -287,7 +313,7 @@ Note : Some features may not work on some Huawei router due to router's API won'
     <value>558, 56</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>100</value>
+    <value>148</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
