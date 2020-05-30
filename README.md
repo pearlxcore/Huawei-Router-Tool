@@ -3,7 +3,7 @@
 
 Huawei Router Tool is a tool to interact with Huawei router using Huawei API. This tool worked with most Huawei router. **Please note that some function will not work on some router because of different API used by the router.**
 
-- pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-f8c08a80-427b-11ea-8f62-845fdd69e1fc.png)
+pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-f8c08a80-427b-11ea-8f62-845fdd69e1fc.png)
 
 # Build Instruction
 - Download repo and open on Visual Studio
