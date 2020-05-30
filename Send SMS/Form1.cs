@@ -69,7 +69,7 @@ namespace Send_SMS
                 Logger("Operation failed.");
         }
 
-        private static XmlDocument GET(string ip_addr, string api_type)
+        public static XmlDocument GET(string ip_addr, string api_type)
         {
             XmlDocument doc = new XmlDocument();
 
@@ -238,10 +238,13 @@ namespace Send_SMS
 
 
 
+
         #endregion SMS
 
-
+       
     }
+
+
 
     public static class xmlformat
     {

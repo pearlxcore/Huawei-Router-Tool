@@ -60,22 +60,18 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label20 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
-            this.label24 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label27 = new System.Windows.Forms.Label();
             this.progressBar4 = new System.Windows.Forms.ProgressBar();
-            this.label25 = new System.Windows.Forms.Label();
             this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.label5 = new System.Windows.Forms.Label();
@@ -257,7 +253,6 @@
             // 
             this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.chart1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Gray;
@@ -270,7 +265,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(184, 170);
+            this.progressBar1.Location = new System.Drawing.Point(140, 170);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(159, 19);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -281,21 +276,10 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label20.Location = new System.Drawing.Point(119, 171);
+            this.label20.Location = new System.Drawing.Point(75, 171);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(0, 15);
             this.label20.TabIndex = 100;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label22.Location = new System.Drawing.Point(57, 171);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(53, 15);
-            this.label22.TabIndex = 98;
-            this.label22.Text = "Reading:";
             // 
             // chart1
             // 
@@ -329,7 +313,6 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.progressBar2);
             this.groupBox2.Controls.Add(this.chart3);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -346,25 +329,14 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label21.Location = new System.Drawing.Point(119, 168);
+            this.label21.Location = new System.Drawing.Point(74, 168);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(0, 15);
             this.label21.TabIndex = 101;
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label23.Location = new System.Drawing.Point(57, 168);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(53, 15);
-            this.label23.TabIndex = 97;
-            this.label23.Text = "Reading:";
-            // 
             // progressBar2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(186, 166);
+            this.progressBar2.Location = new System.Drawing.Point(141, 166);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(159, 19);
             this.progressBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -403,7 +375,6 @@
             // 
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.progressBar3);
-            this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.chart2);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.Gray;
@@ -419,29 +390,18 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label26.Location = new System.Drawing.Point(118, 172);
+            this.label26.Location = new System.Drawing.Point(75, 172);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(0, 15);
             this.label26.TabIndex = 134;
             // 
             // progressBar3
             // 
-            this.progressBar3.Location = new System.Drawing.Point(183, 170);
+            this.progressBar3.Location = new System.Drawing.Point(140, 170);
             this.progressBar3.Name = "progressBar3";
             this.progressBar3.Size = new System.Drawing.Size(159, 19);
             this.progressBar3.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar3.TabIndex = 135;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label24.Location = new System.Drawing.Point(57, 172);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(53, 15);
-            this.label24.TabIndex = 100;
-            this.label24.Text = "Reading:";
             // 
             // chart2
             // 
@@ -476,7 +436,6 @@
             // 
             this.groupBox4.Controls.Add(this.label27);
             this.groupBox4.Controls.Add(this.progressBar4);
-            this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.chart4);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Gray;
@@ -492,29 +451,18 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label27.Location = new System.Drawing.Point(118, 168);
+            this.label27.Location = new System.Drawing.Point(75, 168);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(0, 15);
             this.label27.TabIndex = 135;
             // 
             // progressBar4
             // 
-            this.progressBar4.Location = new System.Drawing.Point(183, 166);
+            this.progressBar4.Location = new System.Drawing.Point(140, 166);
             this.progressBar4.Name = "progressBar4";
             this.progressBar4.Size = new System.Drawing.Size(159, 19);
             this.progressBar4.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar4.TabIndex = 136;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label25.Location = new System.Drawing.Point(57, 168);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(53, 15);
-            this.label25.TabIndex = 99;
-            this.label25.Text = "Reading:";
             // 
             // chart4
             // 
@@ -853,16 +801,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label label5;

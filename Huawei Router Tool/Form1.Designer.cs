@@ -66,6 +66,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.textBoxSupportedBand = new MetroFramework.Controls.MetroTextBox();
+            this.label60 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroButtonSIGNALMONITOR = new MetroFramework.Controls.MetroButton();
             this.textBoxRSSI = new MetroFramework.Controls.MetroTextBox();
@@ -115,6 +117,33 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.buttonRefreshConnectedClient = new MetroFramework.Controls.MetroButton();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.btnRefreshMAC = new MetroFramework.Controls.MetroButton();
+            this.buttonUnblockAll = new MetroFramework.Controls.MetroButton();
+            this.buttonBlockDevice = new MetroFramework.Controls.MetroButton();
+            this.textBoxBlockMAC0 = new MetroFramework.Controls.MetroTextBox();
+            this.textBoxBlockMAC1 = new MetroFramework.Controls.MetroTextBox();
+            this.textBoxBlockMAC2 = new MetroFramework.Controls.MetroTextBox();
+            this.textBoxBlockMAC3 = new MetroFramework.Controls.MetroTextBox();
+            this.textBoxBlockMAC4 = new MetroFramework.Controls.MetroTextBox();
+            this.textBoxBlockMAC5 = new MetroFramework.Controls.MetroTextBox();
+            this.textBoxBlockMAC9 = new MetroFramework.Controls.MetroTextBox();
+            this.textBoxBlockMAC6 = new MetroFramework.Controls.MetroTextBox();
+            this.textBoxBlockMAC8 = new MetroFramework.Controls.MetroTextBox();
+            this.textBoxBlockMAC7 = new MetroFramework.Controls.MetroTextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.buttonRestore = new MetroFramework.Controls.MetroButton();
             this.comboBoxDeviceMode = new MetroFramework.Controls.MetroComboBox();
@@ -138,28 +167,7 @@
             this.checkBoxFW3 = new MetroFramework.Controls.MetroCheckBox();
             this.checkBoxFW2 = new MetroFramework.Controls.MetroCheckBox();
             this.checkBoxFW1 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.buttonRefreshConnectedClient = new MetroFramework.Controls.MetroButton();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.buttonUnblockAll = new MetroFramework.Controls.MetroButton();
-            this.buttonBlockDevice = new MetroFramework.Controls.MetroButton();
-            this.textBoxBlockMAC0 = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxBlockMAC1 = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxBlockMAC2 = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxBlockMAC3 = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxBlockMAC4 = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxBlockMAC5 = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxBlockMAC9 = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxBlockMAC6 = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxBlockMAC8 = new MetroFramework.Controls.MetroTextBox();
-            this.textBoxBlockMAC7 = new MetroFramework.Controls.MetroTextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.buttonAuto = new MetroFramework.Controls.MetroButton();
-            this.button4G = new MetroFramework.Controls.MetroButton();
-            this.button3G = new MetroFramework.Controls.MetroButton();
-            this.button2G = new MetroFramework.Controls.MetroButton();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.checkBoxOLED_Password = new MetroFramework.Controls.MetroCheckBox();
             this.label51 = new System.Windows.Forms.Label();
@@ -172,24 +180,14 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.checkBoxB3 = new MetroFramework.Controls.MetroCheckBox();
-            this.checkBoxB7 = new MetroFramework.Controls.MetroCheckBox();
-            this.checkBoxB8 = new MetroFramework.Controls.MetroCheckBox();
-            this.checkBoxB40 = new MetroFramework.Controls.MetroCheckBox();
-            this.checkBoxB38 = new MetroFramework.Controls.MetroCheckBox();
-            this.checkBoxB20 = new MetroFramework.Controls.MetroCheckBox();
-            this.checkBoxB1 = new MetroFramework.Controls.MetroCheckBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.buttonApplyBand = new MetroFramework.Controls.MetroButton();
-            this.label32 = new System.Windows.Forms.Label();
-            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
-            this.comboBoxAPIList = new MetroFramework.Controls.MetroComboBox();
-            this.buttonpostAPI = new MetroFramework.Controls.MetroButton();
-            this.buttonApplyAPI = new MetroFramework.Controls.MetroButton();
-            this.comboBoxAPIs = new System.Windows.Forms.ComboBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.buttonAuto = new MetroFramework.Controls.MetroButton();
+            this.button4G = new MetroFramework.Controls.MetroButton();
+            this.button3G = new MetroFramework.Controls.MetroButton();
+            this.button2G = new MetroFramework.Controls.MetroButton();
             this.metroTabPage9 = new MetroFramework.Controls.MetroTabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.label56 = new System.Windows.Forms.Label();
@@ -214,6 +212,15 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
+            this.comboBoxAPIList = new MetroFramework.Controls.MetroComboBox();
+            this.buttonpostAPI = new MetroFramework.Controls.MetroButton();
+            this.buttonApplyAPI = new MetroFramework.Controls.MetroButton();
+            this.comboBoxAPIs = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -265,28 +272,29 @@
             this.backgroundWorkerDetect_eerorCODE = new System.ComponentModel.BackgroundWorker();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyPhoneNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnRefreshMAC = new MetroFramework.Controls.MetroButton();
+            this.replyMessageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bgw_networkQuickSwitch = new System.ComponentModel.BackgroundWorker();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.metroTabPage2.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.metroTabPage2.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
-            this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.metroTabPage5.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.metroTabPage9.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.metroTabPage8.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            this.metroTabPage5.SuspendLayout();
             this.metroTabPage6.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -312,12 +320,10 @@
             // backgroundWorkerApplyBand
             // 
             this.backgroundWorkerApplyBand.WorkerSupportsCancellation = true;
-            this.backgroundWorkerApplyBand.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerBand_Tool_DoWork);
             // 
             // backgroundWorkerPerformanceTool
             // 
             this.backgroundWorkerPerformanceTool.WorkerSupportsCancellation = true;
-            this.backgroundWorkerPerformanceTool.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerBandTool_DoWork);
             this.backgroundWorkerPerformanceTool.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerBandTool_RunWorkerCompleted);
             // 
             // backgroundWorkerAPI
@@ -329,7 +335,6 @@
             // backgroundWorkerLogin_Reboot_Shutdown
             // 
             this.backgroundWorkerLogin_Reboot_Shutdown.WorkerSupportsCancellation = true;
-            this.backgroundWorkerLogin_Reboot_Shutdown.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorkerLogin_Reboot_Shutdown_DoWork_1);
             // 
             // backgroundWorkerSpeedtest
             // 
@@ -536,19 +541,19 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
+            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
-            this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Controls.Add(this.metroTabPage9);
             this.metroTabControl1.Controls.Add(this.metroTabPage8);
+            this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Controls.Add(this.metroTabPage6);
             this.metroTabControl1.Controls.Add(this.metroTabPage7);
             this.metroTabControl1.Enabled = false;
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
-            this.metroTabControl1.Location = new System.Drawing.Point(16, 159);
+            this.metroTabControl1.Location = new System.Drawing.Point(19, 159);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(781, 429);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTabControl1.TabIndex = 31;
@@ -559,6 +564,8 @@
             // 
             this.metroTabPage1.BackColor = System.Drawing.Color.Transparent;
             this.metroTabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroTabPage1.Controls.Add(this.textBoxSupportedBand);
+            this.metroTabPage1.Controls.Add(this.label60);
             this.metroTabPage1.Controls.Add(this.groupBox1);
             this.metroTabPage1.Controls.Add(this.textBoxCurrentDownloadRate);
             this.metroTabPage1.Controls.Add(this.textBoxCurrentUploadRate);
@@ -610,6 +617,28 @@
             this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             // 
+            // textBoxSupportedBand
+            // 
+            this.textBoxSupportedBand.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxSupportedBand.CustomBackground = true;
+            this.textBoxSupportedBand.Location = new System.Drawing.Point(195, 351);
+            this.textBoxSupportedBand.Name = "textBoxSupportedBand";
+            this.textBoxSupportedBand.ReadOnly = true;
+            this.textBoxSupportedBand.Size = new System.Drawing.Size(134, 23);
+            this.textBoxSupportedBand.TabIndex = 92;
+            this.textBoxSupportedBand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label60.Location = new System.Drawing.Point(64, 356);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(129, 17);
+            this.label60.TabIndex = 91;
+            this.label60.Text = "Supported LTE Band:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.metroButtonSIGNALMONITOR);
@@ -623,9 +652,9 @@
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox1.Location = new System.Drawing.Point(398, 231);
+            this.groupBox1.Location = new System.Drawing.Point(398, 230);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(308, 125);
+            this.groupBox1.Size = new System.Drawing.Size(308, 143);
             this.groupBox1.TabIndex = 90;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Signal Monitoring";
@@ -634,7 +663,7 @@
             // 
             this.metroButtonSIGNALMONITOR.Enabled = false;
             this.metroButtonSIGNALMONITOR.Highlight = true;
-            this.metroButtonSIGNALMONITOR.Location = new System.Drawing.Point(101, 89);
+            this.metroButtonSIGNALMONITOR.Location = new System.Drawing.Point(101, 102);
             this.metroButtonSIGNALMONITOR.Name = "metroButtonSIGNALMONITOR";
             this.metroButtonSIGNALMONITOR.Size = new System.Drawing.Size(92, 24);
             this.metroButtonSIGNALMONITOR.Style = MetroFramework.MetroColorStyle.Lime;
@@ -647,7 +676,7 @@
             // 
             this.textBoxRSSI.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxRSSI.CustomBackground = true;
-            this.textBoxRSSI.Location = new System.Drawing.Point(216, 25);
+            this.textBoxRSSI.Location = new System.Drawing.Point(216, 29);
             this.textBoxRSSI.Name = "textBoxRSSI";
             this.textBoxRSSI.ReadOnly = true;
             this.textBoxRSSI.Size = new System.Drawing.Size(54, 23);
@@ -658,7 +687,7 @@
             // 
             this.textBoxSINR.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxSINR.CustomBackground = true;
-            this.textBoxSINR.Location = new System.Drawing.Point(216, 57);
+            this.textBoxSINR.Location = new System.Drawing.Point(216, 65);
             this.textBoxSINR.Name = "textBoxSINR";
             this.textBoxSINR.ReadOnly = true;
             this.textBoxSINR.Size = new System.Drawing.Size(54, 23);
@@ -669,7 +698,7 @@
             // 
             this.textBoxRSRQ.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxRSRQ.CustomBackground = true;
-            this.textBoxRSRQ.Location = new System.Drawing.Point(84, 25);
+            this.textBoxRSRQ.Location = new System.Drawing.Point(84, 29);
             this.textBoxRSRQ.Name = "textBoxRSRQ";
             this.textBoxRSRQ.ReadOnly = true;
             this.textBoxRSRQ.Size = new System.Drawing.Size(54, 23);
@@ -680,7 +709,7 @@
             // 
             this.textBoxRSRP.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxRSRP.CustomBackground = true;
-            this.textBoxRSRP.Location = new System.Drawing.Point(84, 57);
+            this.textBoxRSRP.Location = new System.Drawing.Point(84, 65);
             this.textBoxRSRP.Name = "textBoxRSRP";
             this.textBoxRSRP.ReadOnly = true;
             this.textBoxRSRP.Size = new System.Drawing.Size(54, 23);
@@ -692,7 +721,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label25.Location = new System.Drawing.Point(166, 61);
+            this.label25.Location = new System.Drawing.Point(166, 69);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(35, 15);
             this.label25.TabIndex = 86;
@@ -703,7 +732,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label24.Location = new System.Drawing.Point(166, 29);
+            this.label24.Location = new System.Drawing.Point(166, 33);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(32, 15);
             this.label24.TabIndex = 85;
@@ -714,7 +743,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label23.Location = new System.Drawing.Point(39, 61);
+            this.label23.Location = new System.Drawing.Point(39, 69);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(37, 15);
             this.label23.TabIndex = 84;
@@ -725,7 +754,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label22.Location = new System.Drawing.Point(39, 29);
+            this.label22.Location = new System.Drawing.Point(39, 33);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(39, 15);
             this.label22.TabIndex = 83;
@@ -735,7 +764,7 @@
             // 
             this.textBoxCurrentDownloadRate.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxCurrentDownloadRate.CustomBackground = true;
-            this.textBoxCurrentDownloadRate.Location = new System.Drawing.Point(622, 28);
+            this.textBoxCurrentDownloadRate.Location = new System.Drawing.Point(622, 15);
             this.textBoxCurrentDownloadRate.Name = "textBoxCurrentDownloadRate";
             this.textBoxCurrentDownloadRate.ReadOnly = true;
             this.textBoxCurrentDownloadRate.Size = new System.Drawing.Size(84, 23);
@@ -746,7 +775,7 @@
             // 
             this.textBoxCurrentUploadRate.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxCurrentUploadRate.CustomBackground = true;
-            this.textBoxCurrentUploadRate.Location = new System.Drawing.Point(622, 56);
+            this.textBoxCurrentUploadRate.Location = new System.Drawing.Point(622, 43);
             this.textBoxCurrentUploadRate.Name = "textBoxCurrentUploadRate";
             this.textBoxCurrentUploadRate.ReadOnly = true;
             this.textBoxCurrentUploadRate.Size = new System.Drawing.Size(84, 23);
@@ -757,7 +786,7 @@
             // 
             this.textBoxCurrentConnectTime.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxCurrentConnectTime.CustomBackground = true;
-            this.textBoxCurrentConnectTime.Location = new System.Drawing.Point(622, 84);
+            this.textBoxCurrentConnectTime.Location = new System.Drawing.Point(622, 71);
             this.textBoxCurrentConnectTime.Name = "textBoxCurrentConnectTime";
             this.textBoxCurrentConnectTime.ReadOnly = true;
             this.textBoxCurrentConnectTime.Size = new System.Drawing.Size(84, 23);
@@ -768,7 +797,7 @@
             // 
             this.textBoxTotalUpload.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxTotalUpload.CustomBackground = true;
-            this.textBoxTotalUpload.Location = new System.Drawing.Point(622, 112);
+            this.textBoxTotalUpload.Location = new System.Drawing.Point(622, 99);
             this.textBoxTotalUpload.Name = "textBoxTotalUpload";
             this.textBoxTotalUpload.ReadOnly = true;
             this.textBoxTotalUpload.Size = new System.Drawing.Size(84, 23);
@@ -779,7 +808,7 @@
             // 
             this.textBoxTotalDownload.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxTotalDownload.CustomBackground = true;
-            this.textBoxTotalDownload.Location = new System.Drawing.Point(622, 140);
+            this.textBoxTotalDownload.Location = new System.Drawing.Point(622, 127);
             this.textBoxTotalDownload.Name = "textBoxTotalDownload";
             this.textBoxTotalDownload.ReadOnly = true;
             this.textBoxTotalDownload.Size = new System.Drawing.Size(84, 23);
@@ -790,7 +819,7 @@
             // 
             this.textBoxMNC.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxMNC.CustomBackground = true;
-            this.textBoxMNC.Location = new System.Drawing.Point(622, 196);
+            this.textBoxMNC.Location = new System.Drawing.Point(622, 183);
             this.textBoxMNC.Name = "textBoxMNC";
             this.textBoxMNC.ReadOnly = true;
             this.textBoxMNC.Size = new System.Drawing.Size(84, 23);
@@ -801,7 +830,7 @@
             // 
             this.textBoxTotalConnectTime.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxTotalConnectTime.CustomBackground = true;
-            this.textBoxTotalConnectTime.Location = new System.Drawing.Point(622, 168);
+            this.textBoxTotalConnectTime.Location = new System.Drawing.Point(622, 155);
             this.textBoxTotalConnectTime.Name = "textBoxTotalConnectTime";
             this.textBoxTotalConnectTime.ReadOnly = true;
             this.textBoxTotalConnectTime.Size = new System.Drawing.Size(84, 23);
@@ -812,7 +841,7 @@
             // 
             this.textBoxModel.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxModel.CustomBackground = true;
-            this.textBoxModel.Location = new System.Drawing.Point(195, 28);
+            this.textBoxModel.Location = new System.Drawing.Point(195, 15);
             this.textBoxModel.Name = "textBoxModel";
             this.textBoxModel.ReadOnly = true;
             this.textBoxModel.Size = new System.Drawing.Size(134, 23);
@@ -823,7 +852,7 @@
             // 
             this.textBoxSerialNumber.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxSerialNumber.CustomBackground = true;
-            this.textBoxSerialNumber.Location = new System.Drawing.Point(195, 56);
+            this.textBoxSerialNumber.Location = new System.Drawing.Point(195, 43);
             this.textBoxSerialNumber.Name = "textBoxSerialNumber";
             this.textBoxSerialNumber.ReadOnly = true;
             this.textBoxSerialNumber.Size = new System.Drawing.Size(134, 23);
@@ -834,7 +863,7 @@
             // 
             this.textBoxImei.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxImei.CustomBackground = true;
-            this.textBoxImei.Location = new System.Drawing.Point(195, 84);
+            this.textBoxImei.Location = new System.Drawing.Point(195, 71);
             this.textBoxImei.Name = "textBoxImei";
             this.textBoxImei.ReadOnly = true;
             this.textBoxImei.Size = new System.Drawing.Size(134, 23);
@@ -845,7 +874,7 @@
             // 
             this.textBoxIccid.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxIccid.CustomBackground = true;
-            this.textBoxIccid.Location = new System.Drawing.Point(195, 112);
+            this.textBoxIccid.Location = new System.Drawing.Point(195, 99);
             this.textBoxIccid.Name = "textBoxIccid";
             this.textBoxIccid.ReadOnly = true;
             this.textBoxIccid.Size = new System.Drawing.Size(134, 23);
@@ -856,7 +885,7 @@
             // 
             this.textBoxMsisdn.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxMsisdn.CustomBackground = true;
-            this.textBoxMsisdn.Location = new System.Drawing.Point(195, 140);
+            this.textBoxMsisdn.Location = new System.Drawing.Point(195, 127);
             this.textBoxMsisdn.Name = "textBoxMsisdn";
             this.textBoxMsisdn.ReadOnly = true;
             this.textBoxMsisdn.Size = new System.Drawing.Size(134, 23);
@@ -867,7 +896,7 @@
             // 
             this.textBoxHardwareVersion.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxHardwareVersion.CustomBackground = true;
-            this.textBoxHardwareVersion.Location = new System.Drawing.Point(195, 168);
+            this.textBoxHardwareVersion.Location = new System.Drawing.Point(195, 155);
             this.textBoxHardwareVersion.Name = "textBoxHardwareVersion";
             this.textBoxHardwareVersion.ReadOnly = true;
             this.textBoxHardwareVersion.Size = new System.Drawing.Size(134, 23);
@@ -878,7 +907,7 @@
             // 
             this.textBoxSoftwareVersion.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxSoftwareVersion.CustomBackground = true;
-            this.textBoxSoftwareVersion.Location = new System.Drawing.Point(195, 196);
+            this.textBoxSoftwareVersion.Location = new System.Drawing.Point(195, 183);
             this.textBoxSoftwareVersion.Name = "textBoxSoftwareVersion";
             this.textBoxSoftwareVersion.ReadOnly = true;
             this.textBoxSoftwareVersion.Size = new System.Drawing.Size(134, 23);
@@ -889,7 +918,7 @@
             // 
             this.textBoxMacAddress.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxMacAddress.CustomBackground = true;
-            this.textBoxMacAddress.Location = new System.Drawing.Point(195, 252);
+            this.textBoxMacAddress.Location = new System.Drawing.Point(195, 239);
             this.textBoxMacAddress.Name = "textBoxMacAddress";
             this.textBoxMacAddress.ReadOnly = true;
             this.textBoxMacAddress.Size = new System.Drawing.Size(134, 23);
@@ -900,7 +929,7 @@
             // 
             this.textBoxWorkmode.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxWorkmode.CustomBackground = true;
-            this.textBoxWorkmode.Location = new System.Drawing.Point(195, 280);
+            this.textBoxWorkmode.Location = new System.Drawing.Point(195, 267);
             this.textBoxWorkmode.Name = "textBoxWorkmode";
             this.textBoxWorkmode.ReadOnly = true;
             this.textBoxWorkmode.Size = new System.Drawing.Size(134, 23);
@@ -911,7 +940,7 @@
             // 
             this.textBoxNetworkProvider.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxNetworkProvider.CustomBackground = true;
-            this.textBoxNetworkProvider.Location = new System.Drawing.Point(195, 308);
+            this.textBoxNetworkProvider.Location = new System.Drawing.Point(195, 295);
             this.textBoxNetworkProvider.Name = "textBoxNetworkProvider";
             this.textBoxNetworkProvider.ReadOnly = true;
             this.textBoxNetworkProvider.Size = new System.Drawing.Size(134, 23);
@@ -922,7 +951,7 @@
             // 
             this.textBoxsimLock.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxsimLock.CustomBackground = true;
-            this.textBoxsimLock.Location = new System.Drawing.Point(195, 336);
+            this.textBoxsimLock.Location = new System.Drawing.Point(195, 323);
             this.textBoxsimLock.Name = "textBoxsimLock";
             this.textBoxsimLock.ReadOnly = true;
             this.textBoxsimLock.Size = new System.Drawing.Size(134, 23);
@@ -933,7 +962,7 @@
             // 
             this.textBoxWebuiVersion.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxWebuiVersion.CustomBackground = true;
-            this.textBoxWebuiVersion.Location = new System.Drawing.Point(195, 224);
+            this.textBoxWebuiVersion.Location = new System.Drawing.Point(195, 211);
             this.textBoxWebuiVersion.Name = "textBoxWebuiVersion";
             this.textBoxWebuiVersion.ReadOnly = true;
             this.textBoxWebuiVersion.Size = new System.Drawing.Size(134, 23);
@@ -945,7 +974,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.linkLabel2.Location = new System.Drawing.Point(525, 200);
+            this.linkLabel2.Location = new System.Drawing.Point(525, 187);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(47, 17);
             this.linkLabel2.TabIndex = 66;
@@ -958,7 +987,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label21.Location = new System.Drawing.Point(395, 200);
+            this.label21.Location = new System.Drawing.Point(395, 187);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(71, 17);
             this.label21.TabIndex = 57;
@@ -969,7 +998,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label15.Location = new System.Drawing.Point(395, 32);
+            this.label15.Location = new System.Drawing.Point(395, 19);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(147, 17);
             this.label15.TabIndex = 52;
@@ -980,7 +1009,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label16.Location = new System.Drawing.Point(395, 172);
+            this.label16.Location = new System.Drawing.Point(395, 159);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(196, 17);
             this.label16.TabIndex = 55;
@@ -991,7 +1020,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label17.Location = new System.Drawing.Point(395, 144);
+            this.label17.Location = new System.Drawing.Point(395, 131);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(102, 17);
             this.label17.TabIndex = 54;
@@ -1002,7 +1031,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label18.Location = new System.Drawing.Point(395, 116);
+            this.label18.Location = new System.Drawing.Point(395, 103);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(86, 17);
             this.label18.TabIndex = 53;
@@ -1013,7 +1042,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label19.Location = new System.Drawing.Point(395, 88);
+            this.label19.Location = new System.Drawing.Point(395, 75);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(211, 17);
             this.label19.TabIndex = 51;
@@ -1024,7 +1053,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label20.Location = new System.Drawing.Point(395, 60);
+            this.label20.Location = new System.Drawing.Point(395, 47);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(131, 17);
             this.label20.TabIndex = 50;
@@ -1035,7 +1064,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label31.Location = new System.Drawing.Point(64, 341);
+            this.label31.Location = new System.Drawing.Point(64, 328);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(94, 17);
             this.label31.TabIndex = 43;
@@ -1046,7 +1075,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(64, 312);
+            this.label14.Location = new System.Drawing.Point(64, 299);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(113, 17);
             this.label14.TabIndex = 41;
@@ -1057,7 +1086,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(64, 32);
+            this.label4.Location = new System.Drawing.Point(64, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 17);
             this.label4.TabIndex = 31;
@@ -1068,7 +1097,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label13.Location = new System.Drawing.Point(64, 284);
+            this.label13.Location = new System.Drawing.Point(64, 271);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 17);
             this.label13.TabIndex = 40;
@@ -1079,7 +1108,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(64, 256);
+            this.label12.Location = new System.Drawing.Point(64, 243);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(88, 17);
             this.label12.TabIndex = 39;
@@ -1090,7 +1119,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(64, 228);
+            this.label11.Location = new System.Drawing.Point(64, 215);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(94, 17);
             this.label11.TabIndex = 38;
@@ -1101,7 +1130,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(64, 200);
+            this.label10.Location = new System.Drawing.Point(64, 187);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 17);
             this.label10.TabIndex = 37;
@@ -1112,7 +1141,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(64, 172);
+            this.label9.Location = new System.Drawing.Point(64, 159);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(115, 17);
             this.label9.TabIndex = 34;
@@ -1123,7 +1152,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(64, 144);
+            this.label8.Location = new System.Drawing.Point(64, 131);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 17);
             this.label8.TabIndex = 33;
@@ -1134,7 +1163,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(64, 116);
+            this.label7.Location = new System.Drawing.Point(64, 103);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 17);
             this.label7.TabIndex = 29;
@@ -1145,7 +1174,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(64, 88);
+            this.label6.Location = new System.Drawing.Point(64, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 17);
             this.label6.TabIndex = 27;
@@ -1156,11 +1185,331 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(64, 60);
+            this.label5.Location = new System.Drawing.Point(64, 47);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "Serial Number:";
+            // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.metroTabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroTabPage2.Controls.Add(this.buttonRefreshConnectedClient);
+            this.metroTabPage2.Controls.Add(this.groupBox11);
+            this.metroTabPage2.Controls.Add(this.listView1);
+            this.metroTabPage2.CustomBackground = true;
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(773, 390);
+            this.metroTabPage2.TabIndex = 1;
+            this.metroTabPage2.Text = "Device Management";
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            // 
+            // buttonRefreshConnectedClient
+            // 
+            this.buttonRefreshConnectedClient.Highlight = true;
+            this.buttonRefreshConnectedClient.Location = new System.Drawing.Point(22, 184);
+            this.buttonRefreshConnectedClient.Name = "buttonRefreshConnectedClient";
+            this.buttonRefreshConnectedClient.Size = new System.Drawing.Size(100, 23);
+            this.buttonRefreshConnectedClient.Style = MetroFramework.MetroColorStyle.Lime;
+            this.buttonRefreshConnectedClient.TabIndex = 41;
+            this.buttonRefreshConnectedClient.Text = "Refresh list";
+            this.buttonRefreshConnectedClient.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.buttonRefreshConnectedClient.Click += new System.EventHandler(this.MetroButton1_Click);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.label69);
+            this.groupBox11.Controls.Add(this.label68);
+            this.groupBox11.Controls.Add(this.label67);
+            this.groupBox11.Controls.Add(this.label66);
+            this.groupBox11.Controls.Add(this.label65);
+            this.groupBox11.Controls.Add(this.label64);
+            this.groupBox11.Controls.Add(this.label63);
+            this.groupBox11.Controls.Add(this.label62);
+            this.groupBox11.Controls.Add(this.label61);
+            this.groupBox11.Controls.Add(this.label32);
+            this.groupBox11.Controls.Add(this.btnRefreshMAC);
+            this.groupBox11.Controls.Add(this.buttonUnblockAll);
+            this.groupBox11.Controls.Add(this.buttonBlockDevice);
+            this.groupBox11.Controls.Add(this.textBoxBlockMAC0);
+            this.groupBox11.Controls.Add(this.textBoxBlockMAC1);
+            this.groupBox11.Controls.Add(this.textBoxBlockMAC2);
+            this.groupBox11.Controls.Add(this.textBoxBlockMAC3);
+            this.groupBox11.Controls.Add(this.textBoxBlockMAC4);
+            this.groupBox11.Controls.Add(this.textBoxBlockMAC5);
+            this.groupBox11.Controls.Add(this.textBoxBlockMAC9);
+            this.groupBox11.Controls.Add(this.textBoxBlockMAC6);
+            this.groupBox11.Controls.Add(this.textBoxBlockMAC8);
+            this.groupBox11.Controls.Add(this.textBoxBlockMAC7);
+            this.groupBox11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox11.ForeColor = System.Drawing.Color.DarkGray;
+            this.groupBox11.Location = new System.Drawing.Point(22, 213);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(727, 157);
+            this.groupBox11.TabIndex = 8;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Manage MAC Address";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label69.Location = new System.Drawing.Point(174, 22);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(107, 17);
+            this.label69.TabIndex = 101;
+            this.label69.Text = "MAC Address #2";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label68.Location = new System.Drawing.Point(312, 22);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(107, 17);
+            this.label68.TabIndex = 100;
+            this.label68.Text = "MAC Address #3";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label67.Location = new System.Drawing.Point(450, 22);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(107, 17);
+            this.label67.TabIndex = 99;
+            this.label67.Text = "MAC Address #4";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label66.Location = new System.Drawing.Point(588, 22);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(107, 17);
+            this.label66.TabIndex = 98;
+            this.label66.Text = "MAC Address #5";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label65.Location = new System.Drawing.Point(174, 68);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(107, 17);
+            this.label65.TabIndex = 97;
+            this.label65.Text = "MAC Address #7";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label64.Location = new System.Drawing.Point(312, 68);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(107, 17);
+            this.label64.TabIndex = 96;
+            this.label64.Text = "MAC Address #8";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label63.Location = new System.Drawing.Point(450, 68);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(107, 17);
+            this.label63.TabIndex = 95;
+            this.label63.Text = "MAC Address #9";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label62.Location = new System.Drawing.Point(588, 68);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(114, 17);
+            this.label62.TabIndex = 94;
+            this.label62.Text = "MAC Address #10";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label61.Location = new System.Drawing.Point(36, 68);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(107, 17);
+            this.label61.TabIndex = 93;
+            this.label61.Text = "MAC Address #6";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label32.Location = new System.Drawing.Point(36, 22);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(107, 17);
+            this.label32.TabIndex = 92;
+            this.label32.Text = "MAC Address #1";
+            // 
+            // btnRefreshMAC
+            // 
+            this.btnRefreshMAC.Highlight = true;
+            this.btnRefreshMAC.Location = new System.Drawing.Point(202, 123);
+            this.btnRefreshMAC.Name = "btnRefreshMAC";
+            this.btnRefreshMAC.Size = new System.Drawing.Size(100, 23);
+            this.btnRefreshMAC.Style = MetroFramework.MetroColorStyle.Lime;
+            this.btnRefreshMAC.TabIndex = 91;
+            this.btnRefreshMAC.Text = "Refresh";
+            this.btnRefreshMAC.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnRefreshMAC.Click += new System.EventHandler(this.btnRefreshMAC_Click);
+            // 
+            // buttonUnblockAll
+            // 
+            this.buttonUnblockAll.Highlight = true;
+            this.buttonUnblockAll.Location = new System.Drawing.Point(424, 123);
+            this.buttonUnblockAll.Name = "buttonUnblockAll";
+            this.buttonUnblockAll.Size = new System.Drawing.Size(100, 23);
+            this.buttonUnblockAll.Style = MetroFramework.MetroColorStyle.Lime;
+            this.buttonUnblockAll.TabIndex = 90;
+            this.buttonUnblockAll.Text = "Unblock all";
+            this.buttonUnblockAll.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.buttonUnblockAll.Click += new System.EventHandler(this.ButtonUnblockAll_Click);
+            // 
+            // buttonBlockDevice
+            // 
+            this.buttonBlockDevice.Highlight = true;
+            this.buttonBlockDevice.Location = new System.Drawing.Point(313, 123);
+            this.buttonBlockDevice.Name = "buttonBlockDevice";
+            this.buttonBlockDevice.Size = new System.Drawing.Size(100, 23);
+            this.buttonBlockDevice.Style = MetroFramework.MetroColorStyle.Lime;
+            this.buttonBlockDevice.TabIndex = 89;
+            this.buttonBlockDevice.Text = "Block device";
+            this.buttonBlockDevice.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.buttonBlockDevice.Click += new System.EventHandler(this.ButtonBlockDevice_Click);
+            // 
+            // textBoxBlockMAC0
+            // 
+            this.textBoxBlockMAC0.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBlockMAC0.CustomBackground = true;
+            this.textBoxBlockMAC0.Location = new System.Drawing.Point(39, 42);
+            this.textBoxBlockMAC0.Name = "textBoxBlockMAC0";
+            this.textBoxBlockMAC0.Size = new System.Drawing.Size(100, 23);
+            this.textBoxBlockMAC0.TabIndex = 88;
+            this.textBoxBlockMAC0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxBlockMAC1
+            // 
+            this.textBoxBlockMAC1.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBlockMAC1.CustomBackground = true;
+            this.textBoxBlockMAC1.Location = new System.Drawing.Point(177, 42);
+            this.textBoxBlockMAC1.Name = "textBoxBlockMAC1";
+            this.textBoxBlockMAC1.Size = new System.Drawing.Size(100, 23);
+            this.textBoxBlockMAC1.TabIndex = 87;
+            this.textBoxBlockMAC1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxBlockMAC2
+            // 
+            this.textBoxBlockMAC2.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBlockMAC2.CustomBackground = true;
+            this.textBoxBlockMAC2.Location = new System.Drawing.Point(315, 42);
+            this.textBoxBlockMAC2.Name = "textBoxBlockMAC2";
+            this.textBoxBlockMAC2.Size = new System.Drawing.Size(100, 23);
+            this.textBoxBlockMAC2.TabIndex = 86;
+            this.textBoxBlockMAC2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxBlockMAC3
+            // 
+            this.textBoxBlockMAC3.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBlockMAC3.CustomBackground = true;
+            this.textBoxBlockMAC3.Location = new System.Drawing.Point(453, 42);
+            this.textBoxBlockMAC3.Name = "textBoxBlockMAC3";
+            this.textBoxBlockMAC3.Size = new System.Drawing.Size(100, 23);
+            this.textBoxBlockMAC3.TabIndex = 85;
+            this.textBoxBlockMAC3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxBlockMAC4
+            // 
+            this.textBoxBlockMAC4.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBlockMAC4.CustomBackground = true;
+            this.textBoxBlockMAC4.Location = new System.Drawing.Point(591, 42);
+            this.textBoxBlockMAC4.Name = "textBoxBlockMAC4";
+            this.textBoxBlockMAC4.Size = new System.Drawing.Size(100, 23);
+            this.textBoxBlockMAC4.TabIndex = 84;
+            this.textBoxBlockMAC4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxBlockMAC5
+            // 
+            this.textBoxBlockMAC5.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBlockMAC5.CustomBackground = true;
+            this.textBoxBlockMAC5.Location = new System.Drawing.Point(39, 88);
+            this.textBoxBlockMAC5.Name = "textBoxBlockMAC5";
+            this.textBoxBlockMAC5.Size = new System.Drawing.Size(100, 23);
+            this.textBoxBlockMAC5.TabIndex = 83;
+            this.textBoxBlockMAC5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxBlockMAC9
+            // 
+            this.textBoxBlockMAC9.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBlockMAC9.CustomBackground = true;
+            this.textBoxBlockMAC9.Location = new System.Drawing.Point(591, 88);
+            this.textBoxBlockMAC9.Name = "textBoxBlockMAC9";
+            this.textBoxBlockMAC9.Size = new System.Drawing.Size(100, 23);
+            this.textBoxBlockMAC9.TabIndex = 82;
+            this.textBoxBlockMAC9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxBlockMAC6
+            // 
+            this.textBoxBlockMAC6.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBlockMAC6.CustomBackground = true;
+            this.textBoxBlockMAC6.Location = new System.Drawing.Point(177, 88);
+            this.textBoxBlockMAC6.Name = "textBoxBlockMAC6";
+            this.textBoxBlockMAC6.Size = new System.Drawing.Size(100, 23);
+            this.textBoxBlockMAC6.TabIndex = 81;
+            this.textBoxBlockMAC6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxBlockMAC8
+            // 
+            this.textBoxBlockMAC8.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBlockMAC8.CustomBackground = true;
+            this.textBoxBlockMAC8.Location = new System.Drawing.Point(453, 88);
+            this.textBoxBlockMAC8.Name = "textBoxBlockMAC8";
+            this.textBoxBlockMAC8.Size = new System.Drawing.Size(100, 23);
+            this.textBoxBlockMAC8.TabIndex = 80;
+            this.textBoxBlockMAC8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxBlockMAC7
+            // 
+            this.textBoxBlockMAC7.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxBlockMAC7.CustomBackground = true;
+            this.textBoxBlockMAC7.Location = new System.Drawing.Point(315, 88);
+            this.textBoxBlockMAC7.Name = "textBoxBlockMAC7";
+            this.textBoxBlockMAC7.Size = new System.Drawing.Size(100, 23);
+            this.textBoxBlockMAC7.TabIndex = 79;
+            this.textBoxBlockMAC7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.Color.DarkGray;
+            this.listView1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(22, 19);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(727, 159);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListView1_MouseClick);
             // 
             // metroTabPage3
             // 
@@ -1495,198 +1844,10 @@
             this.checkBoxFW1.UseVisualStyleBackColor = false;
             this.checkBoxFW1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CheckBoxFW1_MouseClick);
             // 
-            // metroTabPage2
-            // 
-            this.metroTabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.metroTabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroTabPage2.Controls.Add(this.buttonRefreshConnectedClient);
-            this.metroTabPage2.Controls.Add(this.groupBox11);
-            this.metroTabPage2.Controls.Add(this.listView1);
-            this.metroTabPage2.CustomBackground = true;
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(773, 390);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Device Management";
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            // 
-            // buttonRefreshConnectedClient
-            // 
-            this.buttonRefreshConnectedClient.Highlight = true;
-            this.buttonRefreshConnectedClient.Location = new System.Drawing.Point(22, 200);
-            this.buttonRefreshConnectedClient.Name = "buttonRefreshConnectedClient";
-            this.buttonRefreshConnectedClient.Size = new System.Drawing.Size(100, 23);
-            this.buttonRefreshConnectedClient.Style = MetroFramework.MetroColorStyle.Lime;
-            this.buttonRefreshConnectedClient.TabIndex = 41;
-            this.buttonRefreshConnectedClient.Text = "Refresh list";
-            this.buttonRefreshConnectedClient.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.buttonRefreshConnectedClient.Click += new System.EventHandler(this.MetroButton1_Click);
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.btnRefreshMAC);
-            this.groupBox11.Controls.Add(this.buttonUnblockAll);
-            this.groupBox11.Controls.Add(this.buttonBlockDevice);
-            this.groupBox11.Controls.Add(this.textBoxBlockMAC0);
-            this.groupBox11.Controls.Add(this.textBoxBlockMAC1);
-            this.groupBox11.Controls.Add(this.textBoxBlockMAC2);
-            this.groupBox11.Controls.Add(this.textBoxBlockMAC3);
-            this.groupBox11.Controls.Add(this.textBoxBlockMAC4);
-            this.groupBox11.Controls.Add(this.textBoxBlockMAC5);
-            this.groupBox11.Controls.Add(this.textBoxBlockMAC9);
-            this.groupBox11.Controls.Add(this.textBoxBlockMAC6);
-            this.groupBox11.Controls.Add(this.textBoxBlockMAC8);
-            this.groupBox11.Controls.Add(this.textBoxBlockMAC7);
-            this.groupBox11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox11.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox11.Location = new System.Drawing.Point(22, 238);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(727, 132);
-            this.groupBox11.TabIndex = 8;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Manage MAC Address";
-            // 
-            // buttonUnblockAll
-            // 
-            this.buttonUnblockAll.Highlight = true;
-            this.buttonUnblockAll.Location = new System.Drawing.Point(372, 96);
-            this.buttonUnblockAll.Name = "buttonUnblockAll";
-            this.buttonUnblockAll.Size = new System.Drawing.Size(100, 23);
-            this.buttonUnblockAll.Style = MetroFramework.MetroColorStyle.Lime;
-            this.buttonUnblockAll.TabIndex = 90;
-            this.buttonUnblockAll.Text = "Unblock all";
-            this.buttonUnblockAll.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.buttonUnblockAll.Click += new System.EventHandler(this.ButtonUnblockAll_Click);
-            // 
-            // buttonBlockDevice
-            // 
-            this.buttonBlockDevice.Highlight = true;
-            this.buttonBlockDevice.Location = new System.Drawing.Point(255, 96);
-            this.buttonBlockDevice.Name = "buttonBlockDevice";
-            this.buttonBlockDevice.Size = new System.Drawing.Size(100, 23);
-            this.buttonBlockDevice.Style = MetroFramework.MetroColorStyle.Lime;
-            this.buttonBlockDevice.TabIndex = 89;
-            this.buttonBlockDevice.Text = "Block device";
-            this.buttonBlockDevice.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.buttonBlockDevice.Click += new System.EventHandler(this.ButtonBlockDevice_Click);
-            // 
-            // textBoxBlockMAC0
-            // 
-            this.textBoxBlockMAC0.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxBlockMAC0.CustomBackground = true;
-            this.textBoxBlockMAC0.Location = new System.Drawing.Point(63, 27);
-            this.textBoxBlockMAC0.Name = "textBoxBlockMAC0";
-            this.textBoxBlockMAC0.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBlockMAC0.TabIndex = 88;
-            this.textBoxBlockMAC0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxBlockMAC1
-            // 
-            this.textBoxBlockMAC1.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxBlockMAC1.CustomBackground = true;
-            this.textBoxBlockMAC1.Location = new System.Drawing.Point(188, 26);
-            this.textBoxBlockMAC1.Name = "textBoxBlockMAC1";
-            this.textBoxBlockMAC1.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBlockMAC1.TabIndex = 87;
-            this.textBoxBlockMAC1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxBlockMAC2
-            // 
-            this.textBoxBlockMAC2.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxBlockMAC2.CustomBackground = true;
-            this.textBoxBlockMAC2.Location = new System.Drawing.Point(313, 26);
-            this.textBoxBlockMAC2.Name = "textBoxBlockMAC2";
-            this.textBoxBlockMAC2.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBlockMAC2.TabIndex = 86;
-            this.textBoxBlockMAC2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxBlockMAC3
-            // 
-            this.textBoxBlockMAC3.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxBlockMAC3.CustomBackground = true;
-            this.textBoxBlockMAC3.Location = new System.Drawing.Point(438, 27);
-            this.textBoxBlockMAC3.Name = "textBoxBlockMAC3";
-            this.textBoxBlockMAC3.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBlockMAC3.TabIndex = 85;
-            this.textBoxBlockMAC3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxBlockMAC4
-            // 
-            this.textBoxBlockMAC4.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxBlockMAC4.CustomBackground = true;
-            this.textBoxBlockMAC4.Location = new System.Drawing.Point(563, 27);
-            this.textBoxBlockMAC4.Name = "textBoxBlockMAC4";
-            this.textBoxBlockMAC4.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBlockMAC4.TabIndex = 84;
-            this.textBoxBlockMAC4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxBlockMAC5
-            // 
-            this.textBoxBlockMAC5.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxBlockMAC5.CustomBackground = true;
-            this.textBoxBlockMAC5.Location = new System.Drawing.Point(63, 64);
-            this.textBoxBlockMAC5.Name = "textBoxBlockMAC5";
-            this.textBoxBlockMAC5.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBlockMAC5.TabIndex = 83;
-            this.textBoxBlockMAC5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxBlockMAC9
-            // 
-            this.textBoxBlockMAC9.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxBlockMAC9.CustomBackground = true;
-            this.textBoxBlockMAC9.Location = new System.Drawing.Point(563, 64);
-            this.textBoxBlockMAC9.Name = "textBoxBlockMAC9";
-            this.textBoxBlockMAC9.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBlockMAC9.TabIndex = 82;
-            this.textBoxBlockMAC9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxBlockMAC6
-            // 
-            this.textBoxBlockMAC6.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxBlockMAC6.CustomBackground = true;
-            this.textBoxBlockMAC6.Location = new System.Drawing.Point(188, 64);
-            this.textBoxBlockMAC6.Name = "textBoxBlockMAC6";
-            this.textBoxBlockMAC6.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBlockMAC6.TabIndex = 81;
-            this.textBoxBlockMAC6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxBlockMAC8
-            // 
-            this.textBoxBlockMAC8.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxBlockMAC8.CustomBackground = true;
-            this.textBoxBlockMAC8.Location = new System.Drawing.Point(438, 64);
-            this.textBoxBlockMAC8.Name = "textBoxBlockMAC8";
-            this.textBoxBlockMAC8.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBlockMAC8.TabIndex = 80;
-            this.textBoxBlockMAC8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxBlockMAC7
-            // 
-            this.textBoxBlockMAC7.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxBlockMAC7.CustomBackground = true;
-            this.textBoxBlockMAC7.Location = new System.Drawing.Point(313, 64);
-            this.textBoxBlockMAC7.Name = "textBoxBlockMAC7";
-            this.textBoxBlockMAC7.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBlockMAC7.TabIndex = 79;
-            this.textBoxBlockMAC7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.Color.DarkGray;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(22, 19);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(727, 175);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListView1_MouseClick);
-            // 
             // metroTabPage4
             // 
             this.metroTabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.metroTabPage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroTabPage4.Controls.Add(this.groupBox13);
             this.metroTabPage4.Controls.Add(this.groupBox12);
             this.metroTabPage4.Controls.Add(this.groupBox5);
             this.metroTabPage4.Controls.Add(this.groupBox6);
@@ -1699,81 +1860,18 @@
             this.metroTabPage4.Text = "WLAN Tools";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.buttonAuto);
-            this.groupBox13.Controls.Add(this.button4G);
-            this.groupBox13.Controls.Add(this.button3G);
-            this.groupBox13.Controls.Add(this.button2G);
-            this.groupBox13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox13.Location = new System.Drawing.Point(37, 268);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(327, 91);
-            this.groupBox13.TabIndex = 50;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "LTE Band Quick Switch";
-            // 
-            // buttonAuto
-            // 
-            this.buttonAuto.Highlight = true;
-            this.buttonAuto.Location = new System.Drawing.Point(246, 36);
-            this.buttonAuto.Name = "buttonAuto";
-            this.buttonAuto.Size = new System.Drawing.Size(51, 27);
-            this.buttonAuto.Style = MetroFramework.MetroColorStyle.Lime;
-            this.buttonAuto.TabIndex = 44;
-            this.buttonAuto.Text = "Auto";
-            this.buttonAuto.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.buttonAuto.Click += new System.EventHandler(this.ButtonAuto_Click);
-            // 
-            // button4G
-            // 
-            this.button4G.Highlight = true;
-            this.button4G.Location = new System.Drawing.Point(174, 36);
-            this.button4G.Name = "button4G";
-            this.button4G.Size = new System.Drawing.Size(51, 27);
-            this.button4G.Style = MetroFramework.MetroColorStyle.Lime;
-            this.button4G.TabIndex = 43;
-            this.button4G.Text = "4G";
-            this.button4G.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.button4G.Click += new System.EventHandler(this.Button4G_Click);
-            // 
-            // button3G
-            // 
-            this.button3G.Highlight = true;
-            this.button3G.Location = new System.Drawing.Point(102, 36);
-            this.button3G.Name = "button3G";
-            this.button3G.Size = new System.Drawing.Size(51, 27);
-            this.button3G.Style = MetroFramework.MetroColorStyle.Lime;
-            this.button3G.TabIndex = 42;
-            this.button3G.Text = "3G";
-            this.button3G.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.button3G.Click += new System.EventHandler(this.Button3G_Click);
-            // 
-            // button2G
-            // 
-            this.button2G.Highlight = true;
-            this.button2G.Location = new System.Drawing.Point(30, 36);
-            this.button2G.Name = "button2G";
-            this.button2G.Size = new System.Drawing.Size(51, 27);
-            this.button2G.Style = MetroFramework.MetroColorStyle.Lime;
-            this.button2G.TabIndex = 41;
-            this.button2G.Text = "2G";
-            this.button2G.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.button2G.Click += new System.EventHandler(this.Button2G_Click);
-            // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.checkBoxOLED_Password);
             this.groupBox12.Controls.Add(this.label51);
             this.groupBox12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox12.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox12.Location = new System.Drawing.Point(414, 29);
+            this.groupBox12.Location = new System.Drawing.Point(384, 29);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(319, 106);
             this.groupBox12.TabIndex = 49;
             this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Extra Setting";
+            this.groupBox12.Text = "Wifi Password";
             // 
             // checkBoxOLED_Password
             // 
@@ -1783,10 +1881,10 @@
             this.checkBoxOLED_Password.ForeColor = System.Drawing.Color.Transparent;
             this.checkBoxOLED_Password.Location = new System.Drawing.Point(53, 59);
             this.checkBoxOLED_Password.Name = "checkBoxOLED_Password";
-            this.checkBoxOLED_Password.Size = new System.Drawing.Size(191, 15);
+            this.checkBoxOLED_Password.Size = new System.Drawing.Size(213, 15);
             this.checkBoxOLED_Password.Style = MetroFramework.MetroColorStyle.Lime;
             this.checkBoxOLED_Password.TabIndex = 54;
-            this.checkBoxOLED_Password.Text = "Show password on OLED screen";
+            this.checkBoxOLED_Password.Text = "Show wifi password on OLED screen";
             this.checkBoxOLED_Password.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.checkBoxOLED_Password.UseStyleColors = true;
             this.checkBoxOLED_Password.UseVisualStyleBackColor = false;
@@ -1814,17 +1912,17 @@
             this.groupBox5.Controls.Add(this.label43);
             this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox5.Location = new System.Drawing.Point(414, 152);
+            this.groupBox5.Location = new System.Drawing.Point(384, 141);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(319, 207);
+            this.groupBox5.Size = new System.Drawing.Size(319, 218);
             this.groupBox5.TabIndex = 48;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Network Band Status";
+            this.groupBox5.Text = "Network Setting Status";
             // 
             // buttonGetCurrentStat
             // 
             this.buttonGetCurrentStat.Highlight = true;
-            this.buttonGetCurrentStat.Location = new System.Drawing.Point(93, 152);
+            this.buttonGetCurrentStat.Location = new System.Drawing.Point(103, 156);
             this.buttonGetCurrentStat.Name = "buttonGetCurrentStat";
             this.buttonGetCurrentStat.Size = new System.Drawing.Size(112, 27);
             this.buttonGetCurrentStat.Style = MetroFramework.MetroColorStyle.Lime;
@@ -1837,7 +1935,7 @@
             // 
             this.textBoxLTE_Band.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxLTE_Band.CustomBackground = true;
-            this.textBoxLTE_Band.Location = new System.Drawing.Point(164, 107);
+            this.textBoxLTE_Band.Location = new System.Drawing.Point(164, 111);
             this.textBoxLTE_Band.Name = "textBoxLTE_Band";
             this.textBoxLTE_Band.Size = new System.Drawing.Size(105, 23);
             this.textBoxLTE_Band.TabIndex = 38;
@@ -1847,7 +1945,7 @@
             // 
             this.textBoxNetworkband.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxNetworkband.CustomBackground = true;
-            this.textBoxNetworkband.Location = new System.Drawing.Point(164, 75);
+            this.textBoxNetworkband.Location = new System.Drawing.Point(164, 79);
             this.textBoxNetworkband.Name = "textBoxNetworkband";
             this.textBoxNetworkband.Size = new System.Drawing.Size(105, 23);
             this.textBoxNetworkband.TabIndex = 37;
@@ -1857,7 +1955,7 @@
             // 
             this.textBoxNetworkMode.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxNetworkMode.CustomBackground = true;
-            this.textBoxNetworkMode.Location = new System.Drawing.Point(164, 41);
+            this.textBoxNetworkMode.Location = new System.Drawing.Point(164, 45);
             this.textBoxNetworkMode.Name = "textBoxNetworkMode";
             this.textBoxNetworkMode.Size = new System.Drawing.Size(105, 23);
             this.textBoxNetworkMode.TabIndex = 36;
@@ -1866,7 +1964,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(49, 110);
+            this.label45.Location = new System.Drawing.Point(49, 114);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(57, 15);
             this.label45.TabIndex = 32;
@@ -1875,7 +1973,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(49, 78);
+            this.label44.Location = new System.Drawing.Point(49, 82);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(85, 15);
             this.label44.TabIndex = 31;
@@ -1884,7 +1982,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(49, 44);
+            this.label43.Location = new System.Drawing.Point(49, 48);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(89, 15);
             this.label43.TabIndex = 17;
@@ -1892,147 +1990,43 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.checkBoxB3);
-            this.groupBox6.Controls.Add(this.checkBoxB7);
-            this.groupBox6.Controls.Add(this.checkBoxB8);
-            this.groupBox6.Controls.Add(this.checkBoxB40);
-            this.groupBox6.Controls.Add(this.checkBoxB38);
-            this.groupBox6.Controls.Add(this.checkBoxB20);
-            this.groupBox6.Controls.Add(this.checkBoxB1);
+            this.groupBox6.Controls.Add(this.label70);
+            this.groupBox6.Controls.Add(this.checkedListBox1);
             this.groupBox6.Controls.Add(this.buttonApplyBand);
-            this.groupBox6.Controls.Add(this.label32);
+            this.groupBox6.Controls.Add(this.groupBox13);
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox6.Location = new System.Drawing.Point(37, 29);
+            this.groupBox6.Location = new System.Drawing.Point(68, 29);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(325, 210);
+            this.groupBox6.Size = new System.Drawing.Size(290, 330);
             this.groupBox6.TabIndex = 47;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "LTE Band configuration";
             // 
-            // checkBoxB3
+            // label70
             // 
-            this.checkBoxB3.AutoSize = true;
-            this.checkBoxB3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.checkBoxB3.CustomBackground = true;
-            this.checkBoxB3.ForeColor = System.Drawing.Color.Transparent;
-            this.checkBoxB3.Location = new System.Drawing.Point(26, 61);
-            this.checkBoxB3.Name = "checkBoxB3";
-            this.checkBoxB3.Size = new System.Drawing.Size(121, 15);
-            this.checkBoxB3.Style = MetroFramework.MetroColorStyle.Lime;
-            this.checkBoxB3.TabIndex = 54;
-            this.checkBoxB3.Text = "B3 (FDD 1800MHz)";
-            this.checkBoxB3.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.checkBoxB3.UseStyleColors = true;
-            this.checkBoxB3.UseVisualStyleBackColor = false;
-            this.checkBoxB3.CheckStateChanged += new System.EventHandler(this.CheckBoxB3_CheckStateChanged);
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label70.Location = new System.Drawing.Point(13, 19);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(107, 15);
+            this.label70.TabIndex = 56;
+            this.label70.Text = "Select band to lock ";
             // 
-            // checkBoxB7
+            // checkedListBox1
             // 
-            this.checkBoxB7.AutoSize = true;
-            this.checkBoxB7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.checkBoxB7.CustomBackground = true;
-            this.checkBoxB7.ForeColor = System.Drawing.Color.Transparent;
-            this.checkBoxB7.Location = new System.Drawing.Point(26, 89);
-            this.checkBoxB7.Name = "checkBoxB7";
-            this.checkBoxB7.Size = new System.Drawing.Size(121, 15);
-            this.checkBoxB7.Style = MetroFramework.MetroColorStyle.Lime;
-            this.checkBoxB7.TabIndex = 53;
-            this.checkBoxB7.Text = "B7 (FDD 2600MHz)";
-            this.checkBoxB7.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.checkBoxB7.UseStyleColors = true;
-            this.checkBoxB7.UseVisualStyleBackColor = false;
-            this.checkBoxB7.CheckStateChanged += new System.EventHandler(this.CheckBoxB7_CheckStateChanged);
-            // 
-            // checkBoxB8
-            // 
-            this.checkBoxB8.AutoSize = true;
-            this.checkBoxB8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.checkBoxB8.CustomBackground = true;
-            this.checkBoxB8.ForeColor = System.Drawing.Color.Transparent;
-            this.checkBoxB8.Location = new System.Drawing.Point(26, 117);
-            this.checkBoxB8.Name = "checkBoxB8";
-            this.checkBoxB8.Size = new System.Drawing.Size(115, 15);
-            this.checkBoxB8.Style = MetroFramework.MetroColorStyle.Lime;
-            this.checkBoxB8.TabIndex = 52;
-            this.checkBoxB8.Text = "B8 (FDD 900MHz)";
-            this.checkBoxB8.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.checkBoxB8.UseStyleColors = true;
-            this.checkBoxB8.UseVisualStyleBackColor = false;
-            this.checkBoxB8.CheckStateChanged += new System.EventHandler(this.CheckBoxB8_CheckStateChanged);
-            // 
-            // checkBoxB40
-            // 
-            this.checkBoxB40.AutoSize = true;
-            this.checkBoxB40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.checkBoxB40.CustomBackground = true;
-            this.checkBoxB40.ForeColor = System.Drawing.Color.Transparent;
-            this.checkBoxB40.Location = new System.Drawing.Point(171, 91);
-            this.checkBoxB40.Name = "checkBoxB40";
-            this.checkBoxB40.Size = new System.Drawing.Size(127, 15);
-            this.checkBoxB40.Style = MetroFramework.MetroColorStyle.Lime;
-            this.checkBoxB40.TabIndex = 51;
-            this.checkBoxB40.Text = "B40 (TDD 2300MHz)";
-            this.checkBoxB40.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.checkBoxB40.UseStyleColors = true;
-            this.checkBoxB40.UseVisualStyleBackColor = false;
-            this.checkBoxB40.CheckStateChanged += new System.EventHandler(this.CheckBoxB40_CheckStateChanged);
-            // 
-            // checkBoxB38
-            // 
-            this.checkBoxB38.AutoSize = true;
-            this.checkBoxB38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.checkBoxB38.CustomBackground = true;
-            this.checkBoxB38.ForeColor = System.Drawing.Color.Transparent;
-            this.checkBoxB38.Location = new System.Drawing.Point(171, 62);
-            this.checkBoxB38.Name = "checkBoxB38";
-            this.checkBoxB38.Size = new System.Drawing.Size(127, 15);
-            this.checkBoxB38.Style = MetroFramework.MetroColorStyle.Lime;
-            this.checkBoxB38.TabIndex = 50;
-            this.checkBoxB38.Text = "B38 (TDD 2600MHz)";
-            this.checkBoxB38.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.checkBoxB38.UseStyleColors = true;
-            this.checkBoxB38.UseVisualStyleBackColor = false;
-            this.checkBoxB38.CheckStateChanged += new System.EventHandler(this.CheckBoxB38_CheckStateChanged);
-            // 
-            // checkBoxB20
-            // 
-            this.checkBoxB20.AutoSize = true;
-            this.checkBoxB20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.checkBoxB20.CustomBackground = true;
-            this.checkBoxB20.ForeColor = System.Drawing.Color.Transparent;
-            this.checkBoxB20.Location = new System.Drawing.Point(171, 33);
-            this.checkBoxB20.Name = "checkBoxB20";
-            this.checkBoxB20.Size = new System.Drawing.Size(121, 15);
-            this.checkBoxB20.Style = MetroFramework.MetroColorStyle.Lime;
-            this.checkBoxB20.TabIndex = 49;
-            this.checkBoxB20.Text = "B20 (FDD 800MHz)";
-            this.checkBoxB20.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.checkBoxB20.UseStyleColors = true;
-            this.checkBoxB20.UseVisualStyleBackColor = false;
-            this.checkBoxB20.CheckStateChanged += new System.EventHandler(this.CheckBoxB20_CheckStateChanged);
-            // 
-            // checkBoxB1
-            // 
-            this.checkBoxB1.AutoSize = true;
-            this.checkBoxB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.checkBoxB1.CustomBackground = true;
-            this.checkBoxB1.ForeColor = System.Drawing.Color.Transparent;
-            this.checkBoxB1.Location = new System.Drawing.Point(26, 33);
-            this.checkBoxB1.Name = "checkBoxB1";
-            this.checkBoxB1.Size = new System.Drawing.Size(121, 15);
-            this.checkBoxB1.Style = MetroFramework.MetroColorStyle.Lime;
-            this.checkBoxB1.TabIndex = 48;
-            this.checkBoxB1.Text = "B1 (FDD 2100MHz)";
-            this.checkBoxB1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.checkBoxB1.UseStyleColors = true;
-            this.checkBoxB1.UseVisualStyleBackColor = false;
-            this.checkBoxB1.CheckStateChanged += new System.EventHandler(this.CheckBoxB1_CheckStateChanged);
+            this.checkedListBox1.CheckOnClick = true;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(16, 37);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(259, 112);
+            this.checkedListBox1.TabIndex = 55;
             // 
             // buttonApplyBand
             // 
             this.buttonApplyBand.Highlight = true;
-            this.buttonApplyBand.Location = new System.Drawing.Point(115, 170);
+            this.buttonApplyBand.Location = new System.Drawing.Point(110, 155);
             this.buttonApplyBand.Name = "buttonApplyBand";
             this.buttonApplyBand.Size = new System.Drawing.Size(71, 27);
             this.buttonApplyBand.Style = MetroFramework.MetroColorStyle.Lime;
@@ -2041,134 +2035,68 @@
             this.buttonApplyBand.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.buttonApplyBand.Click += new System.EventHandler(this.ButtonApplyBand_Click);
             // 
-            // label32
+            // groupBox13
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label32.Location = new System.Drawing.Point(81, 145);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(163, 15);
-            this.label32.TabIndex = 46;
-            this.label32.Text = "You can lock up to 3 LTE band";
+            this.groupBox13.Controls.Add(this.buttonAuto);
+            this.groupBox13.Controls.Add(this.button4G);
+            this.groupBox13.Controls.Add(this.button3G);
+            this.groupBox13.Controls.Add(this.button2G);
+            this.groupBox13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.ForeColor = System.Drawing.Color.DarkGray;
+            this.groupBox13.Location = new System.Drawing.Point(16, 193);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(259, 120);
+            this.groupBox13.TabIndex = 50;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = " Network Mode Quick Switch";
             // 
-            // metroTabPage5
+            // buttonAuto
             // 
-            this.metroTabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.metroTabPage5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroTabPage5.Controls.Add(this.comboBoxAPIList);
-            this.metroTabPage5.Controls.Add(this.buttonpostAPI);
-            this.metroTabPage5.Controls.Add(this.buttonApplyAPI);
-            this.metroTabPage5.Controls.Add(this.comboBoxAPIs);
-            this.metroTabPage5.Controls.Add(this.label29);
-            this.metroTabPage5.Controls.Add(this.richTextBox2);
-            this.metroTabPage5.Controls.Add(this.label37);
-            this.metroTabPage5.Controls.Add(this.richTextBox1);
-            this.metroTabPage5.CustomBackground = true;
-            this.metroTabPage5.HorizontalScrollbarBarColor = true;
-            this.metroTabPage5.Location = new System.Drawing.Point(4, 35);
-            this.metroTabPage5.Name = "metroTabPage5";
-            this.metroTabPage5.Size = new System.Drawing.Size(773, 390);
-            this.metroTabPage5.TabIndex = 4;
-            this.metroTabPage5.Text = "API Control";
-            this.metroTabPage5.VerticalScrollbarBarColor = true;
+            this.buttonAuto.Highlight = true;
+            this.buttonAuto.Location = new System.Drawing.Point(145, 73);
+            this.buttonAuto.Name = "buttonAuto";
+            this.buttonAuto.Size = new System.Drawing.Size(81, 27);
+            this.buttonAuto.Style = MetroFramework.MetroColorStyle.Lime;
+            this.buttonAuto.TabIndex = 44;
+            this.buttonAuto.Text = "Auto";
+            this.buttonAuto.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.buttonAuto.Click += new System.EventHandler(this.ButtonAuto_Click);
             // 
-            // comboBoxAPIList
+            // button4G
             // 
-            this.comboBoxAPIList.FormattingEnabled = true;
-            this.comboBoxAPIList.ItemHeight = 23;
-            this.comboBoxAPIList.Location = new System.Drawing.Point(22, 352);
-            this.comboBoxAPIList.Name = "comboBoxAPIList";
-            this.comboBoxAPIList.Size = new System.Drawing.Size(296, 29);
-            this.comboBoxAPIList.Sorted = true;
-            this.comboBoxAPIList.Style = MetroFramework.MetroColorStyle.Lime;
-            this.comboBoxAPIList.TabIndex = 43;
-            this.comboBoxAPIList.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.comboBoxAPIList.SelectedIndexChanged += new System.EventHandler(this.ComboBoxAPIList_SelectedIndexChanged_2);
+            this.button4G.Highlight = true;
+            this.button4G.Location = new System.Drawing.Point(33, 73);
+            this.button4G.Name = "button4G";
+            this.button4G.Size = new System.Drawing.Size(81, 27);
+            this.button4G.Style = MetroFramework.MetroColorStyle.Lime;
+            this.button4G.TabIndex = 43;
+            this.button4G.Text = "LTE (4G)";
+            this.button4G.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.button4G.Click += new System.EventHandler(this.Button4G_Click);
             // 
-            // buttonpostAPI
+            // button3G
             // 
-            this.buttonpostAPI.Highlight = true;
-            this.buttonpostAPI.Location = new System.Drawing.Point(701, 352);
-            this.buttonpostAPI.Name = "buttonpostAPI";
-            this.buttonpostAPI.Size = new System.Drawing.Size(50, 29);
-            this.buttonpostAPI.Style = MetroFramework.MetroColorStyle.Lime;
-            this.buttonpostAPI.TabIndex = 42;
-            this.buttonpostAPI.Text = "POST";
-            this.buttonpostAPI.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.buttonpostAPI.Click += new System.EventHandler(this.ButtonpostAPI_Click);
+            this.button3G.Highlight = true;
+            this.button3G.Location = new System.Drawing.Point(145, 32);
+            this.button3G.Name = "button3G";
+            this.button3G.Size = new System.Drawing.Size(81, 27);
+            this.button3G.Style = MetroFramework.MetroColorStyle.Lime;
+            this.button3G.TabIndex = 42;
+            this.button3G.Text = "UMTS (3G)";
+            this.button3G.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.button3G.Click += new System.EventHandler(this.Button3G_Click);
             // 
-            // buttonApplyAPI
+            // button2G
             // 
-            this.buttonApplyAPI.Highlight = true;
-            this.buttonApplyAPI.Location = new System.Drawing.Point(324, 351);
-            this.buttonApplyAPI.Name = "buttonApplyAPI";
-            this.buttonApplyAPI.Size = new System.Drawing.Size(50, 29);
-            this.buttonApplyAPI.Style = MetroFramework.MetroColorStyle.Lime;
-            this.buttonApplyAPI.TabIndex = 41;
-            this.buttonApplyAPI.Text = "GET";
-            this.buttonApplyAPI.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.buttonApplyAPI.Click += new System.EventHandler(this.ButtonApplyAPI_Click_1);
-            // 
-            // comboBoxAPIs
-            // 
-            this.comboBoxAPIs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAPIs.FormattingEnabled = true;
-            this.comboBoxAPIs.Location = new System.Drawing.Point(22, 358);
-            this.comboBoxAPIs.Name = "comboBoxAPIs";
-            this.comboBoxAPIs.Size = new System.Drawing.Size(257, 21);
-            this.comboBoxAPIs.Sorted = true;
-            this.comboBoxAPIs.TabIndex = 26;
-            this.comboBoxAPIs.Visible = false;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label29.Location = new System.Drawing.Point(396, 7);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(73, 15);
-            this.label29.TabIndex = 24;
-            this.label29.Text = "Write to API:";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.Color.DarkGray;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox2.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(399, 23);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.richTextBox2.Size = new System.Drawing.Size(352, 323);
-            this.richTextBox2.TabIndex = 22;
-            this.richTextBox2.Text = "";
-            this.richTextBox2.WordWrap = false;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label37.Location = new System.Drawing.Point(19, 7);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(60, 15);
-            this.label37.TabIndex = 21;
-            this.label37.Text = "Response:";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(22, 23);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.richTextBox1.Size = new System.Drawing.Size(352, 323);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.WordWrap = false;
+            this.button2G.Highlight = true;
+            this.button2G.Location = new System.Drawing.Point(33, 32);
+            this.button2G.Name = "button2G";
+            this.button2G.Size = new System.Drawing.Size(81, 27);
+            this.button2G.Style = MetroFramework.MetroColorStyle.Lime;
+            this.button2G.TabIndex = 41;
+            this.button2G.Text = "GSM (2G)";
+            this.button2G.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.button2G.Click += new System.EventHandler(this.Button2G_Click);
             // 
             // metroTabPage9
             // 
@@ -2220,14 +2148,14 @@
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
             this.label41.Location = new System.Drawing.Point(61, 16);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(70, 17);
+            this.label41.Size = new System.Drawing.Size(170, 17);
             this.label41.TabIndex = 57;
-            this.label41.Text = "Recipients:";
+            this.label41.Text = "Recipients (eg:0123456789):";
             // 
             // btnSMSSend
             // 
             this.btnSMSSend.Highlight = true;
-            this.btnSMSSend.Location = new System.Drawing.Point(209, 36);
+            this.btnSMSSend.Location = new System.Drawing.Point(238, 36);
             this.btnSMSSend.Name = "btnSMSSend";
             this.btnSMSSend.Size = new System.Drawing.Size(96, 23);
             this.btnSMSSend.Style = MetroFramework.MetroColorStyle.Lime;
@@ -2265,9 +2193,8 @@
             this.rtbSMSRecipient.CustomBackground = true;
             this.rtbSMSRecipient.Location = new System.Drawing.Point(64, 36);
             this.rtbSMSRecipient.Name = "rtbSMSRecipient";
-            this.rtbSMSRecipient.Size = new System.Drawing.Size(139, 23);
+            this.rtbSMSRecipient.Size = new System.Drawing.Size(167, 23);
             this.rtbSMSRecipient.TabIndex = 61;
-            this.rtbSMSRecipient.Text = "0176612934";
             this.rtbSMSRecipient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox14
@@ -2404,6 +2331,7 @@
             // 
             this.richTextBox3.BackColor = System.Drawing.Color.DarkGray;
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox3.Location = new System.Drawing.Point(214, 142);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
@@ -2482,6 +2410,124 @@
             this.toolStripMenuItem5.Size = new System.Drawing.Size(107, 22);
             this.toolStripMenuItem5.Text = "About";
             // 
+            // metroTabPage5
+            // 
+            this.metroTabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.metroTabPage5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroTabPage5.Controls.Add(this.comboBoxAPIList);
+            this.metroTabPage5.Controls.Add(this.buttonpostAPI);
+            this.metroTabPage5.Controls.Add(this.buttonApplyAPI);
+            this.metroTabPage5.Controls.Add(this.comboBoxAPIs);
+            this.metroTabPage5.Controls.Add(this.label29);
+            this.metroTabPage5.Controls.Add(this.richTextBox2);
+            this.metroTabPage5.Controls.Add(this.label37);
+            this.metroTabPage5.Controls.Add(this.richTextBox1);
+            this.metroTabPage5.CustomBackground = true;
+            this.metroTabPage5.HorizontalScrollbarBarColor = true;
+            this.metroTabPage5.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage5.Name = "metroTabPage5";
+            this.metroTabPage5.Size = new System.Drawing.Size(773, 390);
+            this.metroTabPage5.TabIndex = 4;
+            this.metroTabPage5.Text = "API Control";
+            this.metroTabPage5.VerticalScrollbarBarColor = true;
+            // 
+            // comboBoxAPIList
+            // 
+            this.comboBoxAPIList.FormattingEnabled = true;
+            this.comboBoxAPIList.ItemHeight = 23;
+            this.comboBoxAPIList.Location = new System.Drawing.Point(22, 352);
+            this.comboBoxAPIList.Name = "comboBoxAPIList";
+            this.comboBoxAPIList.Size = new System.Drawing.Size(296, 29);
+            this.comboBoxAPIList.Sorted = true;
+            this.comboBoxAPIList.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxAPIList.TabIndex = 43;
+            this.comboBoxAPIList.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.comboBoxAPIList.SelectedIndexChanged += new System.EventHandler(this.ComboBoxAPIList_SelectedIndexChanged_2);
+            // 
+            // buttonpostAPI
+            // 
+            this.buttonpostAPI.Highlight = true;
+            this.buttonpostAPI.Location = new System.Drawing.Point(701, 352);
+            this.buttonpostAPI.Name = "buttonpostAPI";
+            this.buttonpostAPI.Size = new System.Drawing.Size(50, 29);
+            this.buttonpostAPI.Style = MetroFramework.MetroColorStyle.Lime;
+            this.buttonpostAPI.TabIndex = 42;
+            this.buttonpostAPI.Text = "POST";
+            this.buttonpostAPI.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.buttonpostAPI.Click += new System.EventHandler(this.ButtonpostAPI_Click);
+            // 
+            // buttonApplyAPI
+            // 
+            this.buttonApplyAPI.Highlight = true;
+            this.buttonApplyAPI.Location = new System.Drawing.Point(324, 351);
+            this.buttonApplyAPI.Name = "buttonApplyAPI";
+            this.buttonApplyAPI.Size = new System.Drawing.Size(50, 29);
+            this.buttonApplyAPI.Style = MetroFramework.MetroColorStyle.Lime;
+            this.buttonApplyAPI.TabIndex = 41;
+            this.buttonApplyAPI.Text = "GET";
+            this.buttonApplyAPI.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.buttonApplyAPI.Click += new System.EventHandler(this.ButtonApplyAPI_Click_1);
+            // 
+            // comboBoxAPIs
+            // 
+            this.comboBoxAPIs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAPIs.FormattingEnabled = true;
+            this.comboBoxAPIs.Location = new System.Drawing.Point(22, 358);
+            this.comboBoxAPIs.Name = "comboBoxAPIs";
+            this.comboBoxAPIs.Size = new System.Drawing.Size(257, 21);
+            this.comboBoxAPIs.Sorted = true;
+            this.comboBoxAPIs.TabIndex = 26;
+            this.comboBoxAPIs.Visible = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label29.Location = new System.Drawing.Point(396, 7);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(73, 15);
+            this.label29.TabIndex = 24;
+            this.label29.Text = "Write to API:";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.Color.DarkGray;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.Location = new System.Drawing.Point(399, 23);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.richTextBox2.Size = new System.Drawing.Size(352, 323);
+            this.richTextBox2.TabIndex = 22;
+            this.richTextBox2.Text = "";
+            this.richTextBox2.WordWrap = false;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            this.label37.Location = new System.Drawing.Point(19, 7);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(60, 15);
+            this.label37.TabIndex = 21;
+            this.label37.Text = "Response:";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.richTextBox1.Location = new System.Drawing.Point(22, 23);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.richTextBox1.Size = new System.Drawing.Size(352, 323);
+            this.richTextBox1.TabIndex = 19;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.WordWrap = false;
+            // 
             // metroTabPage6
             // 
             this.metroTabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -2501,15 +2547,17 @@
             this.metroTabPage6.Name = "metroTabPage6";
             this.metroTabPage6.Size = new System.Drawing.Size(773, 390);
             this.metroTabPage6.TabIndex = 5;
-            this.metroTabPage6.Text = "Log";
+            this.metroTabPage6.Text = "Event Log";
             this.metroTabPage6.VerticalScrollbarBarColor = true;
             // 
             // richTextBoxLog
             // 
             this.richTextBoxLog.BackColor = System.Drawing.Color.DarkGray;
             this.richTextBoxLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBoxLog.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxLog.Location = new System.Drawing.Point(23, 56);
             this.richTextBoxLog.Name = "richTextBoxLog";
+            this.richTextBoxLog.ReadOnly = true;
             this.richTextBoxLog.Size = new System.Drawing.Size(727, 295);
             this.richTextBoxLog.TabIndex = 45;
             this.richTextBoxLog.Text = "";
@@ -2888,6 +2936,7 @@
             // 
             this.AboutLog.BackColor = System.Drawing.Color.DarkGray;
             this.AboutLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AboutLog.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AboutLog.Location = new System.Drawing.Point(20, 153);
             this.AboutLog.Name = "AboutLog";
             this.AboutLog.ReadOnly = true;
@@ -2997,16 +3046,13 @@
             this.panel1.Size = new System.Drawing.Size(777, 1);
             this.panel1.TabIndex = 44;
             // 
-            // backgroundWorkerDetect_eerorCODE
-            // 
-            this.backgroundWorkerDetect_eerorCODE.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorkerDetect_eerorCODE_DoWork);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.copyPhoneNumberToolStripMenuItem});
+            this.copyPhoneNumberToolStripMenuItem,
+            this.replyMessageToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 48);
             // 
             // copyPhoneNumberToolStripMenuItem
             // 
@@ -3015,17 +3061,17 @@
             this.copyPhoneNumberToolStripMenuItem.Text = "Copy Phone Number";
             this.copyPhoneNumberToolStripMenuItem.Click += new System.EventHandler(this.copyPhoneNumberToolStripMenuItem_Click);
             // 
-            // btnRefreshMAC
+            // replyMessageToolStripMenuItem
             // 
-            this.btnRefreshMAC.Highlight = true;
-            this.btnRefreshMAC.Location = new System.Drawing.Point(149, 96);
-            this.btnRefreshMAC.Name = "btnRefreshMAC";
-            this.btnRefreshMAC.Size = new System.Drawing.Size(100, 23);
-            this.btnRefreshMAC.Style = MetroFramework.MetroColorStyle.Lime;
-            this.btnRefreshMAC.TabIndex = 91;
-            this.btnRefreshMAC.Text = "Refresh";
-            this.btnRefreshMAC.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnRefreshMAC.Click += new System.EventHandler(this.btnRefreshMAC_Click);
+            this.replyMessageToolStripMenuItem.Name = "replyMessageToolStripMenuItem";
+            this.replyMessageToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.replyMessageToolStripMenuItem.Text = "Reply Message";
+            this.replyMessageToolStripMenuItem.Click += new System.EventHandler(this.replyMessageToolStripMenuItem_Click);
+            // 
+            // bgw_networkQuickSwitch
+            // 
+            this.bgw_networkQuickSwitch.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgw_networkQuickSwitch_DoWork);
+            this.bgw_networkQuickSwitch.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgw_networkQuickSwitch_RunWorkerCompleted);
             // 
             // Form1
             // 
@@ -3058,7 +3104,6 @@
             this.Text = "Huawei Router Tool";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.metroTabControl1.ResumeLayout(false);
@@ -3066,6 +3111,9 @@
             this.metroTabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.metroTabPage2.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
             this.groupBox10.ResumeLayout(false);
@@ -3074,18 +3122,14 @@
             this.groupBox9.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.metroTabPage2.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
             this.metroTabPage4.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.metroTabPage5.ResumeLayout(false);
-            this.metroTabPage5.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
             this.metroTabPage9.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
@@ -3095,6 +3139,8 @@
             this.metroTabPage8.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.metroTabPage5.ResumeLayout(false);
+            this.metroTabPage5.PerformLayout();
             this.metroTabPage6.ResumeLayout(false);
             this.metroTabPage6.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -3206,7 +3252,6 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label32;
         private MetroFramework.Controls.MetroTabPage metroTabPage5;
         private System.Windows.Forms.ComboBox comboBoxAPIs;
         private System.Windows.Forms.Label label29;
@@ -3293,13 +3338,6 @@
         private MetroFramework.Controls.MetroButton button3G;
         private MetroFramework.Controls.MetroButton button2G;
         private MetroFramework.Controls.MetroButton buttonApplyBand;
-        private MetroFramework.Controls.MetroCheckBox checkBoxB3;
-        private MetroFramework.Controls.MetroCheckBox checkBoxB7;
-        private MetroFramework.Controls.MetroCheckBox checkBoxB8;
-        private MetroFramework.Controls.MetroCheckBox checkBoxB40;
-        private MetroFramework.Controls.MetroCheckBox checkBoxB38;
-        private MetroFramework.Controls.MetroCheckBox checkBoxB20;
-        private MetroFramework.Controls.MetroCheckBox checkBoxB1;
         private MetroFramework.Controls.MetroCheckBox checkBoxOLED_Password;
         private MetroFramework.Controls.MetroButton buttonGetCurrentStat;
         private MetroFramework.Controls.MetroTextBox textBoxLTE_Band;
@@ -3348,6 +3386,22 @@
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroButton btnRefreshMAC;
+        private MetroFramework.Controls.MetroTextBox textBoxSupportedBand;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.ComponentModel.BackgroundWorker bgw_networkQuickSwitch;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.ToolStripMenuItem replyMessageToolStripMenuItem;
     }
 }
 

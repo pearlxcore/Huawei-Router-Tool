@@ -17,6 +17,7 @@ namespace Huawei_Router_Tool_GUI
 {
     public partial class SignalMonitor : MetroFramework.Forms.MetroForm
     {
+        Form1 form1 = new Form1();
         private int GridlinesOffset = 0;
         TextBox txtRSRQ = Application.OpenForms["Form1"].Controls["textBoxRSRQ"] as TextBox;
 
@@ -483,8 +484,8 @@ namespace Huawei_Router_Tool_GUI
                                 }
                                 else
                                 {
+                                    form1.LogDebug("Signal Monitor window closed.");
                                     this.Hide();
-
                                 }
                             }
                             else

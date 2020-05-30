@@ -177,7 +177,16 @@
 </value>
   </data>
   <data name="AboutLog.Text" xml:space="preserve">
-    <value>
+    <value>V7 Changelog :
+
+- Improved : Band selection now only displaying supported network band by the router. 
+- Improved : No maximum number of bands for locking network band.
+- Fixed : Fixed method for POST rand GET request. This fixed session error encountered by some router model while trying to send POST ar GET request.
+- Fixed : Fixed repeating messagebox error while viewing 'Signal Monitoring' windows.
+- Added : Quick reply for messaging.
+- Added : Notification for new version on program startup.
+- Known bug : Program freeze while restarting after changing router password.
+
 V6 Changelog :
 
 - Compatibility : This program now works with both 32-bit and 64-bit Windows.
@@ -312,8 +321,11 @@ Note : Some features may not work on some Huawei router due to router's API won'
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>558, 56</value>
   </metadata>
+  <metadata name="bgw_networkQuickSwitch.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 28</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>148</value>
+    <value>75</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

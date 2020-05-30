@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Huawei_Router_Tool_GUI</RootNamespace>
     <AssemblyName>Huawei Router Tool</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile>
@@ -70,6 +70,7 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -80,6 +81,7 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ByteSize, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -103,12 +105,18 @@
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="Octokit">
+      <HintPath>C:\Users\pearlxcore\Desktop\PS4-PKG-Tool-master\PKG TOOL GUI\bin\Debug\Octokit.dll</HintPath>
+    </Reference>
     <Reference Include="PastebinAPI, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\pastebin-csharp-master\PastebinAPI\bin\Debug\netstandard2.0\PastebinAPI.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Semver">
+      <HintPath>C:\Users\pearlxcore\Desktop\PS4-PKG-Tool-master\packages\Semver.2.0.4\lib\net452\Semver.dll</HintPath>
+    </Reference>
     <Reference Include="SpeedTest, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SpeedTest.Net-master\SpeedTest.Client\bin\Debug\netcoreapp2.0\SpeedTest.dll</HintPath>
@@ -148,7 +156,11 @@
     <Compile Include="API_Remarks.Designer.cs">
       <DependentUpon>API_Remarks.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckGithbRelease\Helper.cs" />
+    <Compile Include="CheckGithbRelease\UpdateChecker.cs" />
     <Compile Include="ISpeedtest.cs" />
+    <Compile Include="modifyPassword.cs" />
+    <Compile Include="ResetForm.cs" />
     <Compile Include="SignalMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +175,10 @@
     </Compile>
     <Compile Include="SpeedTestClient.cs" />
     <Compile Include="SpeedTestHttpClient.cs" />
+    <Compile Include="themeColor.cs" />
+    <Compile Include="WebclientEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="webpage.cs">
       <SubType>Form</SubType>
     </Compile>
