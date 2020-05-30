@@ -5,14 +5,7 @@ Tool to interact with Huawei router using Huawei API. This tool worked with most
 pearlxcore   ![image](https://user-images.githubusercontent.com/36906814/73320967-f8c08a80-427b-11ea-8f62-845fdd69e1fc.png)
 
 # Screenshot
-
-![image](https://user-images.githubusercontent.com/36906814/73320586-c3676d00-427a-11ea-94db-3de46c5399a1.png)
-![image](https://user-images.githubusercontent.com/36906814/73320597-c8c4b780-427a-11ea-8971-d473c15c1c9a.png)
-![image](https://user-images.githubusercontent.com/36906814/73320612-d8dc9700-427a-11ea-886d-e1caadbf1c2d.png)
-![image](https://user-images.githubusercontent.com/36906814/73320619-dc701e00-427a-11ea-96af-63ffb91e2b3b.png)
-![image](https://user-images.githubusercontent.com/36906814/73320628-e7c34980-427a-11ea-9742-63f0bc969b2b.png)
-![image](https://user-images.githubusercontent.com/36906814/73320633-f01b8480-427a-11ea-9e0f-7fd516304982.png)
-![image](https://user-images.githubusercontent.com/36906814/73320674-15a88e00-427b-11ea-90e7-3c31dbefbe83.png)
+![Untitled](https://user-images.githubusercontent.com/36906814/83325626-396af780-a2a0-11ea-910e-1701ffa4b92d.png)
 
 # Build Instruction
 - Download repo and open on Visual Studio
