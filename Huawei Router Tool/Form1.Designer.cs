@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.backgroundWorkerDeviceInfo = new System.ComponentModel.BackgroundWorker();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -274,6 +274,9 @@
             this.copyPhoneNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.replyMessageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bgw_networkQuickSwitch = new System.ComponentModel.BackgroundWorker();
+            this.autoLoginChk = new MetroFramework.Controls.MetroCheckBox();
+            this.showHidePass = new MetroFramework.Controls.MetroButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -426,9 +429,9 @@
             // buttonShutdown
             // 
             this.buttonShutdown.Highlight = true;
-            this.buttonShutdown.Location = new System.Drawing.Point(584, 76);
+            this.buttonShutdown.Location = new System.Drawing.Point(599, 76);
             this.buttonShutdown.Name = "buttonShutdown";
-            this.buttonShutdown.Size = new System.Drawing.Size(92, 47);
+            this.buttonShutdown.Size = new System.Drawing.Size(77, 58);
             this.buttonShutdown.Style = MetroFramework.MetroColorStyle.Lime;
             this.buttonShutdown.TabIndex = 42;
             this.buttonShutdown.Text = "Shutdown";
@@ -438,9 +441,9 @@
             // buttonReboot
             // 
             this.buttonReboot.Highlight = true;
-            this.buttonReboot.Location = new System.Drawing.Point(479, 76);
+            this.buttonReboot.Location = new System.Drawing.Point(506, 77);
             this.buttonReboot.Name = "buttonReboot";
-            this.buttonReboot.Size = new System.Drawing.Size(92, 47);
+            this.buttonReboot.Size = new System.Drawing.Size(77, 57);
             this.buttonReboot.Style = MetroFramework.MetroColorStyle.Lime;
             this.buttonReboot.TabIndex = 41;
             this.buttonReboot.Text = "Reboot";
@@ -450,9 +453,9 @@
             // buttonLogin
             // 
             this.buttonLogin.Highlight = true;
-            this.buttonLogin.Location = new System.Drawing.Point(374, 76);
+            this.buttonLogin.Location = new System.Drawing.Point(414, 78);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(92, 47);
+            this.buttonLogin.Size = new System.Drawing.Size(77, 56);
             this.buttonLogin.Style = MetroFramework.MetroColorStyle.Lime;
             this.buttonLogin.TabIndex = 40;
             this.buttonLogin.Text = "Login";
@@ -465,12 +468,12 @@
             this.checkBoxRememberUserpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.checkBoxRememberUserpass.CustomBackground = true;
             this.checkBoxRememberUserpass.ForeColor = System.Drawing.Color.Transparent;
-            this.checkBoxRememberUserpass.Location = new System.Drawing.Point(206, 114);
+            this.checkBoxRememberUserpass.Location = new System.Drawing.Point(209, 115);
             this.checkBoxRememberUserpass.Name = "checkBoxRememberUserpass";
-            this.checkBoxRememberUserpass.Size = new System.Drawing.Size(142, 15);
+            this.checkBoxRememberUserpass.Size = new System.Drawing.Size(86, 15);
             this.checkBoxRememberUserpass.Style = MetroFramework.MetroColorStyle.Lime;
             this.checkBoxRememberUserpass.TabIndex = 39;
-            this.checkBoxRememberUserpass.Text = "  Remember credential";
+            this.checkBoxRememberUserpass.Text = "Save Config";
             this.checkBoxRememberUserpass.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.checkBoxRememberUserpass.UseStyleColors = true;
             this.checkBoxRememberUserpass.UseVisualStyleBackColor = false;
@@ -479,7 +482,7 @@
             // 
             this.textBoxPassword.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxPassword.CustomBackground = true;
-            this.textBoxPassword.Location = new System.Drawing.Point(268, 73);
+            this.textBoxPassword.Location = new System.Drawing.Point(255, 78);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(89, 23);
             this.textBoxPassword.TabIndex = 37;
@@ -499,7 +502,7 @@
             // 
             this.textBoxIP.BackColor = System.Drawing.Color.DarkGray;
             this.textBoxIP.CustomBackground = true;
-            this.textBoxIP.Location = new System.Drawing.Point(91, 73);
+            this.textBoxIP.Location = new System.Drawing.Point(91, 78);
             this.textBoxIP.Name = "textBoxIP";
             this.textBoxIP.Size = new System.Drawing.Size(89, 23);
             this.textBoxIP.TabIndex = 35;
@@ -510,7 +513,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(203, 76);
+            this.label3.Location = new System.Drawing.Point(190, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 15);
             this.label3.TabIndex = 34;
@@ -521,7 +524,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(20, 109);
+            this.label2.Location = new System.Drawing.Point(20, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 33;
@@ -532,7 +535,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(20, 76);
+            this.label1.Location = new System.Drawing.Point(20, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.TabIndex = 32;
@@ -2216,46 +2219,46 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(85)))), ((int)(((byte)(88)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(85)))), ((int)(((byte)(88)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(69)))), ((int)(((byte)(71)))));
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.Location = new System.Drawing.Point(56, 51);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Silver;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Silver;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -3031,10 +3034,10 @@
             this.buttonWebpage.Highlight = true;
             this.buttonWebpage.Location = new System.Drawing.Point(689, 76);
             this.buttonWebpage.Name = "buttonWebpage";
-            this.buttonWebpage.Size = new System.Drawing.Size(109, 48);
+            this.buttonWebpage.Size = new System.Drawing.Size(109, 58);
             this.buttonWebpage.Style = MetroFramework.MetroColorStyle.Lime;
             this.buttonWebpage.TabIndex = 41;
-            this.buttonWebpage.Text = "Router Homepage";
+            this.buttonWebpage.Text = "Router\r\nHomepage";
             this.buttonWebpage.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.buttonWebpage.Click += new System.EventHandler(this.MetroButton1_Click_2);
             // 
@@ -3073,12 +3076,46 @@
             this.bgw_networkQuickSwitch.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgw_networkQuickSwitch_DoWork);
             this.bgw_networkQuickSwitch.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgw_networkQuickSwitch_RunWorkerCompleted);
             // 
+            // autoLoginChk
+            // 
+            this.autoLoginChk.AutoSize = true;
+            this.autoLoginChk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.autoLoginChk.CustomBackground = true;
+            this.autoLoginChk.ForeColor = System.Drawing.Color.Transparent;
+            this.autoLoginChk.Location = new System.Drawing.Point(301, 115);
+            this.autoLoginChk.Name = "autoLoginChk";
+            this.autoLoginChk.Size = new System.Drawing.Size(82, 15);
+            this.autoLoginChk.Style = MetroFramework.MetroColorStyle.Lime;
+            this.autoLoginChk.TabIndex = 45;
+            this.autoLoginChk.Text = "Auto Login";
+            this.autoLoginChk.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.autoLoginChk.UseStyleColors = true;
+            this.autoLoginChk.UseVisualStyleBackColor = false;
+            // 
+            // showHidePass
+            // 
+            this.showHidePass.Highlight = true;
+            this.showHidePass.Location = new System.Drawing.Point(350, 76);
+            this.showHidePass.Name = "showHidePass";
+            this.showHidePass.Size = new System.Drawing.Size(42, 25);
+            this.showHidePass.Style = MetroFramework.MetroColorStyle.Lime;
+            this.showHidePass.TabIndex = 46;
+            this.showHidePass.Text = "Hide";
+            this.showHidePass.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.showHidePass.Click += new System.EventHandler(this.showHidePass_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(818, 602);
+            this.Controls.Add(this.showHidePass);
+            this.Controls.Add(this.autoLoginChk);
             this.Controls.Add(this.buttonWebpage);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -3100,7 +3137,7 @@
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.DropShadow;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Style = MetroFramework.MetroColorStyle.Lime;
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Huawei Router Tool";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -3402,6 +3439,9 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.ToolStripMenuItem replyMessageToolStripMenuItem;
+        private MetroFramework.Controls.MetroCheckBox autoLoginChk;
+        private MetroFramework.Controls.MetroButton showHidePass;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

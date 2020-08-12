@@ -1,0 +1,11 @@
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\obj\Debug\Huawei Router Tool.csprojResolveAssemblyReference.cache
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\obj\Debug\Huawei_Router_Tool_GUI.About.resources
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\obj\Debug\Huawei_Router_Tool_GUI.API_Remarks.resources
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\obj\Debug\Huawei_Router_Tool_GUI.Form1.resources
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\obj\Debug\Huawei_Router_Tool_GUI.Properties.Resources.resources
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\obj\Debug\Huawei_Router_Tool_GUI.SignalMonitor.resources
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\obj\Debug\Huawei_Router_Tool_GUI.SpecialAppSetting.resources
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\obj\Debug\Huawei_Router_Tool_GUI.webpage.resources
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\obj\Debug\Huawei Router Tool.csproj.GenerateResource.Cache
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\obj\Debug\Huawei Router Tool.csprojFakesResolveAssemblyReference.cache
+F:\VisualStudioProjects\Projects\HuaweiRouterTool\Huawei Router Tool\bin\Debug\Huawei Router Tool.exe.config

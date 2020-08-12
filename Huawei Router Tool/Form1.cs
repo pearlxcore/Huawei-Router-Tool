@@ -845,9 +845,11 @@ namespace Huawei_Router_Tool_GUI
             textBoxPassword.Text = Huawei_Router_Tool_GUI.Properties.Settings.Default.Password;
             textBoxIP.Text = Huawei_Router_Tool_GUI.Properties.Settings.Default.IPAddress;
             checkBoxRememberUserpass.CheckState = Huawei_Router_Tool_GUI.Properties.Settings.Default.Checkbox;
-            
+            autoLoginChk.Checked = Huawei_Router_Tool_GUI.Properties.Settings.Default.AutoLogin;
+
             //automatic login if checkBoxRememberUserpass state is true
-            if (checkBoxRememberUserpass.Checked == true)
+            //if (checkBoxRememberUserpass.Checked == true)
+            if (autoLoginChk.Checked == true)
             {
                 buttonLogin.PerformClick();
                 //ButtonLogin_Click_3(null);
@@ -855,6 +857,9 @@ namespace Huawei_Router_Tool_GUI
             //end of automatic login if checkBoxRememberUserpass state is true
 
             //MessageBox.Show("this is beta version, so pls do me a favor..\n\npls test if there any critical bug or glitch..\n\npls test if the app is too heavy for ur machine..\n\npls test all the function are working or not..\n\npls dont share this program.. this is specifically build for tester..\n\npls state ur machine specs (os platform)..\n\nTQ\n\n- pearlxcore -\n\nFixed :\n-signal monitor button locked\n-login button locked", "Huawei Router Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
         }
 
         public void GetTraffic()
@@ -2325,6 +2330,7 @@ namespace Huawei_Router_Tool_GUI
                         Huawei_Router_Tool_GUI.Properties.Settings.Default.Password = textBoxPassword.Text;
                         Huawei_Router_Tool_GUI.Properties.Settings.Default.IPAddress = textBoxIP.Text;
                         Huawei_Router_Tool_GUI.Properties.Settings.Default.Checkbox = checkBoxRememberUserpass.CheckState;
+                        Huawei_Router_Tool_GUI.Properties.Settings.Default.AutoLogin = autoLoginChk.Checked;
                         Huawei_Router_Tool_GUI.Properties.Settings.Default.Save();
                     }
                     else
@@ -3625,6 +3631,30 @@ namespace Huawei_Router_Tool_GUI
             rtbSMSContent.Focus();
 
 
+        }
+
+        private void showHidePass_Click(object sender, EventArgs e)
+        {
+            if (textBoxPassword.UseSystemPasswordChar == true)
+            {
+                textBoxPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBoxPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (textBoxPassword.UseSystemPasswordChar == true)
+            {
+                showHidePass.Text = "Show";
+            }
+            else
+            {
+                showHidePass.Text = "Hide";
+            }
         }
 
         private void backgroundWorkerDeviceInfo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
