@@ -11,6 +11,9 @@ pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-
 - (Optional) Add SpeedTest.Client.dll and SpeedTest.dll to reference (Download [speedtest.lib.rar](https://github.com/pearlxcore/Huawei-Router-Tool/releases/download/v4/speedtest.lib.rar)). If you dont want to include this, just delete from reference.
 - Profit
 
+# Support me on Ko-Fi
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X)
+
 # Error Code List
 
             ERROR_BUSY = 100004,
