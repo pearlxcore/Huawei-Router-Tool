@@ -5,12 +5,6 @@ Huawei Router Tool is a tool to interact with Huawei router using Huawei API. Th
 
 pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-f8c08a80-427b-11ea-8f62-845fdd69e1fc.png)
 
-# Build Instruction
-- Download repo and open on Visual Studio
-- Click Rebuild Solution in Solution Explorer
-- (Optional) Add SpeedTest.Client.dll and SpeedTest.dll to reference (Download [speedtest.lib.rar](https://github.com/pearlxcore/Huawei-Router-Tool/releases/download/v4/speedtest.lib.rar)). If you dont want to include this, just delete from reference.
-- Profit
-
 # Support me on Ko-Fi
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X)
 
