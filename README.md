@@ -25,7 +25,7 @@ pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-
 - API control
 - View signal information detail and monitor signal quality
 
-# Support me on Ko-Fi
+# Support my work
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X) or [paypal](https://www.paypal.com/paypalme/pearlxcoree).
 
 # Credit
