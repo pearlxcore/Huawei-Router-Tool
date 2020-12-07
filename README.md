@@ -1,9 +1,28 @@
 # Huawei Router Tool
-![Untitled](https://user-images.githubusercontent.com/36906814/83325626-396af780-a2a0-11ea-910e-1701ffa4b92d.png)
-![Untitled](https://user-images.githubusercontent.com/36906814/86981420-21e52f80-c1b9-11ea-9cb0-7f935089d61a.png)
-Huawei Router Tool is a tool to interact with Huawei router using Huawei API. This tool worked with most Huawei router. **Please note that some function will not work on some router because of different API used by the router.**
+![Untitled](https://user-images.githubusercontent.com/36906814/101397696-fef5ad80-3907-11eb-93a5-48c16a3f5f4b.png)
+![Untitled1](https://user-images.githubusercontent.com/36906814/101397698-0026da80-3908-11eb-981f-ceefa321a2e5.png)
+![Untitled2](https://user-images.githubusercontent.com/36906814/101397705-00bf7100-3908-11eb-8dce-67c30a35bd7e.png)
+![Untitled3](https://user-images.githubusercontent.com/36906814/101397708-01580780-3908-11eb-8b3a-2cf2fa1136f0.png)
+![Untitled4](https://user-images.githubusercontent.com/36906814/101397711-01580780-3908-11eb-9f67-f23ad513a537.png)
+![Untitled5](https://user-images.githubusercontent.com/36906814/101397713-01f09e00-3908-11eb-8066-5d6191e08644.png)
+![Untitled6](https://user-images.githubusercontent.com/36906814/101397715-02893480-3908-11eb-9e1b-c3ae9b0ce42b.png)
+![Untitled7](https://user-images.githubusercontent.com/36906814/101397720-0321cb00-3908-11eb-9efa-9d79b0813fca.png)
+![Untitled8](https://user-images.githubusercontent.com/36906814/101397722-0321cb00-3908-11eb-90b6-2d8dcd1bcf8a.png)
+![Untitled9](https://user-images.githubusercontent.com/36906814/101397724-03ba6180-3908-11eb-933e-edf5a6b2a9a6.png)
+Huawei Router Tool is a tool to interact with Huawei router using Huawei API. This tool worked with most Huawei router. I re-wrote many parts of this tool and changed the program versioning because the previous versioning is messed up. For new release I will start with v1.0. All suggestion are welcome. Report if there any bugs - [here](https://github.com/pearlxcore/Huawei-Router-Tool/issues)
+
+ **Please note that some function may not work on some type of Huawei router. **
 
 pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-f8c08a80-427b-11ea-8f62-845fdd69e1fc.png)
+
+# Features
+- View router information, connected devices, stats and network signal
+- Manage connected devices (allow/block devices)
+- Change router settings
+- View network status or manually lock your preferred network band 
+- View and send SMS
+- API control
+- View signal information detail and monitor signal quality
 
 # Support me on Ko-Fi
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X)
