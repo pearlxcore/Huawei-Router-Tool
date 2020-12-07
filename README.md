@@ -22,7 +22,7 @@ pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-
 - View network status or manually lock your preferred network band 
 - View and send SMS
 - API control
-- View signal information detail and monitor signal quality
+- View signal and cellular tower information and monitor signal quality
 
 # Support my work
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X) 
