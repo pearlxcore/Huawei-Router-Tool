@@ -26,7 +26,8 @@ pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-
 - View signal information detail and monitor signal quality
 
 # Support my work
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X) or [paypal](https://www.paypal.com/paypalme/pearlxcoree).
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X) 
+or [paypal](https://www.paypal.com/paypalme/pearlxcoree).
 
 # Credit
 HSPDev | Raggles | valexi | zainuddin
