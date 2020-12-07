@@ -9,7 +9,7 @@
 ![Untitled8](https://user-images.githubusercontent.com/36906814/101399342-4c731a00-390a-11eb-9ba9-3a5334628387.png)
 ![Untitled9](https://user-images.githubusercontent.com/36906814/101399344-4d0bb080-390a-11eb-8433-90d38d6f1145.png)
 
-Huawei Router Tool is a tool to interact with Huawei router using Huawei API. This tool worked with most Huawei router. I re-wrote many parts of this tool and changed the program versioning because the previous versioning is messed up. For new release I will start with v1.0. All suggestion are welcome. Report if there any bugs [here](https://github.com/pearlxcore/Huawei-Router-Tool/issues).
+Huawei Router Tool is a tool to interact with Huawei router using Huawei API (this program developed using B525s-65a as API reference). This tool worked with most Huawei router. I re-wrote many parts of this tool and changed the program versioning because the previous versioning is messed up. For new release I will start with v1.0. All suggestion are welcome. Report if there any bugs [here](https://github.com/pearlxcore/Huawei-Router-Tool/issues).
 
  **Please note that some function may not work on some type of Huawei router. **
 
