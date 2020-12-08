@@ -5,6 +5,15 @@ Huawei Router Tool is a tool to interact with Huawei router using Huawei API (th
 
 pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-f8c08a80-427b-11ea-8f62-845fdd69e1fc.png)
 
+# Features
+- View router information, connected devices, stats and network signal
+- Manage connected devices (allow/block devices)
+- Change router settings
+- View network status or manually lock your preferred network band 
+- View and send SMS
+- API control
+- View signal and cellular tower information and monitor signal quality
+
 # Screenshot
 ![Untitled](https://user-images.githubusercontent.com/36906814/101399328-47ae6600-390a-11eb-88fa-ec7a233f3517.png)
 ![Untitled1](https://user-images.githubusercontent.com/36906814/101399332-48df9300-390a-11eb-9a17-001ed8c6513b.png)
@@ -15,15 +24,6 @@ pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-
 ![Untitled6](https://user-images.githubusercontent.com/36906814/101399339-4bda8380-390a-11eb-9cd0-58a625e39d3c.png)
 ![Untitled8](https://user-images.githubusercontent.com/36906814/101399342-4c731a00-390a-11eb-9ba9-3a5334628387.png)
 ![Untitled9](https://user-images.githubusercontent.com/36906814/101399344-4d0bb080-390a-11eb-8433-90d38d6f1145.png)
-
-# Features
-- View router information, connected devices, stats and network signal
-- Manage connected devices (allow/block devices)
-- Change router settings
-- View network status or manually lock your preferred network band 
-- View and send SMS
-- API control
-- View signal and cellular tower information and monitor signal quality
 
 # Known unsupported router
 - WBB Router30-22a
