@@ -14,6 +14,9 @@ pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-
 - API control
 - View signal and cellular tower information and monitor signal quality
 
+# Requirement
+- [.Net Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472)
+
 # Screenshot
 ![Untitled](https://user-images.githubusercontent.com/36906814/101399328-47ae6600-390a-11eb-88fa-ec7a233f3517.png)
 ![Untitled1](https://user-images.githubusercontent.com/36906814/101399332-48df9300-390a-11eb-9a17-001ed8c6513b.png)
