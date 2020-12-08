@@ -24,6 +24,9 @@ pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-
 - API control
 - View signal and cellular tower information and monitor signal quality
 
+# Known unsupported router
+- WBB Router30-22a
+
 # Support my work
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X) 
 or [paypal](https://www.paypal.com/paypalme/pearlxcoree).
