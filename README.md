@@ -31,9 +31,8 @@ pearlxcore ![image](https://user-images.githubusercontent.com/36906814/73320967-
 # Known unsupported router
 - WBB Router30-22a
 
-# Support my work
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X) 
-or [paypal](https://www.paypal.com/paypalme/pearlxcoree).
+# Support my work with Ko-Fi
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X)  [![paypal](https://user-images.githubusercontent.com/36906814/102657760-39d1ce00-41b1-11eb-96fe-c10e2d9b3f39.png)](https://www.paypal.com/paypalme/pearlxcoree)
 
 # Credit
 HSPDev | Raggles | valexi | zainuddin
